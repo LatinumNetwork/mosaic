@@ -1,9 +1,7 @@
 # Mosaic - Collage Group's Design System
 Mosaic is a design system library created for Collage Group, built with Storybook, TypeScript and using the Material UI (MUI) library as its foundation. It provides customizable, pre-built React components that can be combined to create modern and responsive user interfaces. 
 
----
 ## Getting Started
-<br />
 
 ### Clone the repository.
 ```bash
@@ -18,5 +16,3 @@ npm install
 ```bash
 npm run storybook
 ```
-
----
