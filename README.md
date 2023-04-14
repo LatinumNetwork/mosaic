@@ -1,5 +1,5 @@
 # Mosaic - Collage Group's Design System
-Mosaic is a design system library created for Collage Group, built with Storybook, TypeScript and using the Material UI (MUI) library as its foundation. It provides customizable, pre-built React components that can be combined to create modern and responsive user interfaces. 
+Mosaic is a design system library created for Collage Group, built with Storybook, CRA, TypeScript and using the Material UI (MUI) library as its foundation. It provides customizable, pre-built React components that can be combined to create modern and responsive user interfaces. 
 
 ## Getting Started
 
