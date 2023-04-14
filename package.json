@@ -1,5 +1,5 @@
 {
-  "name": "test-app",
+  "name": "mosaic",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -66,5 +66,15 @@
     "prop-types": "^15.8.1",
     "storybook": "^7.0.4",
     "webpack": "^5.79.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LatinumNetwork/mosaic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LatinumNetwork/mosaic/issues"
+  },
+  "homepage": "https://github.com/LatinumNetwork/mosaic#readme"
 }
