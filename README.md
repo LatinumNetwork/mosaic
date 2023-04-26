@@ -16,3 +16,46 @@ npm install
 ```bash
 npm run storybook
 ```
+
+## Organization
+
+This library follows the Atomic design pattern: Atoms, Molecules, and Organisms. 
+
+**Atoms**: These are the smallest building blocks of the UI, such as buttons, inputs, and labels.
+
+**Molecules**: These are groups of atoms bonded together to form a functional unit, such as a form element with a label, input, and validation message.
+
+**Organisms**: These are groups of molecules combined together to form a more complex, standalone UI section, like a header, footer, or a complete form.
+
+### Structure
+
+This is how are components are organized.
+
+```css
+src/
+  └─ components/
+      ├─ atoms/
+      ├─ molecules/
+      └─ organisms/
+```
+
+This is an example of a component inside a building block.
+
+```css
+src/
+  └─ components/
+      ├─ atoms/
+      |   ├─ Button/
+      |   |   ├─ Button.tsx
+      |   |   ├─ Button.stories.tsx
+      |   |   ├─ Button.stories.mdx
+      |   |   └─ index.tsx
+      |   └─ ...
+
+```
+
+### Naming Conventions
+
+Component names should be PascalCase and descriptive.
+Keep names relatively short, but they must be still clear.
+Component names should be consistent across atoms, molecules, and organisms.
