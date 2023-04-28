@@ -57,5 +57,15 @@ src/
 ### Naming Conventions
 
 Component names should be PascalCase and descriptive.
+
 Keep names relatively short, but they must be still clear.
+
 Component names should be consistent across atoms, molecules, and organisms.
+
+## Development - Creating New Components
+
+A new component should exist in its own folder following the convetions listed above. That folder should have:
+- A file creating the component. ex: **Button.tsx**. This file will house your atom, molecule, or organism. 
+- A template file or multiple template files. ex: **Button.stories.tsx** and/or **Button.stories.mdx**. **mdx** stands for markdown. Storybook lets you use a markdown file to further explain components and their uses.
+
+
