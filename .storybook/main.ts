@@ -1,11 +1,10 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/preset-create-react-app",
     "@storybook/addon-interactions",
   ],
   typescript: {
@@ -18,11 +17,12 @@ const config: StorybookConfig = {
     },
   },
   framework: {
-    name: "@storybook/react-webpack5",
+    name: "@storybook/react-vite",
     options: {},
   },
-  core: {
-    disableTelemetry: true,
+  async viteFinal(config, options) {
+    // Add your configuration here
+    return config;
   },
   docs: {
     autodocs: "tag",
