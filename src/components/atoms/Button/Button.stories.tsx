@@ -4,7 +4,6 @@ import { Button } from './Button';
 export default {
   title: 'Atoms/Button',
   component: Button,
-  tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },
   },
