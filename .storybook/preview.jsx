@@ -9,6 +9,7 @@ const withMuiTheme = (Story) => (
         <Story />
     </ThemeProvider>
 );
+
 const preview = {
     parameters: {
         docs: {

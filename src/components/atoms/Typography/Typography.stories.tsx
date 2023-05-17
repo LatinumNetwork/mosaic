@@ -43,11 +43,11 @@ Header.args = {
 export const Body = Template.bind({});
 Body.args = {
     text: 'Body',
-    variant: 'b1',
+    variant: 'h1',
 };
 
 export const Test = (args) => (
-    <Typography variant={'b1'} {...args}>
+    <Typography {...args}>
         Stuff
     </Typography>
 );

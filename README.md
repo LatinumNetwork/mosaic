@@ -8,10 +8,12 @@ Mosaic is a design system library created for Collage Group, built with Storyboo
 git clone git@github.com:LatinumNetwork/mosaic.git
 ```
 
-### Install dependencies.
+### Install dependencies
 ```bash
 npm install
 ```
+
+### Run Storybook
 
 ```bash
 npm run storybook
