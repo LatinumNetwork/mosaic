@@ -1,3 +1,4 @@
+import React from 'react';
 import MuiTypography, {
     TypographyProps as MuiTypographyProps,
 } from '@mui/material/Typography';
@@ -10,7 +11,7 @@ export const fontWeightMapping: Record<FontWeightVariant, number> = {
     medium: 500,
     semiBold: 800,
     bold: 900,
-};
+}; 
 
 export interface TypographyProps extends MuiTypographyProps {
     /**
@@ -20,17 +21,13 @@ export interface TypographyProps extends MuiTypographyProps {
 }
 
 const TypographyRoot = styled(MuiTypography).withConfig({
-    shouldForwardProp: (prop) =>  {
-        console.log('stuff?', prop);
-        return prop !== 'weight';
-    },
+    shouldForwardProp: (prop) => prop !== 'weight',
 })`
     font-weight: ${({ weight }) =>
         weight ? fontWeightMapping[weight] : 'inherit'};
 `;
 
 const Typography = (props: TypographyProps): JSX.Element => {
-    console.log('file: Typography.tsx:30 ~ props:', props);
     return <TypographyRoot {...props} />;
 };
 

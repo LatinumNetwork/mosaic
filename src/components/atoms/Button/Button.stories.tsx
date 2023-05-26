@@ -1,38 +1,42 @@
-import { Button } from './Button';
+import { ComponentStory } from '@storybook/react';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+import { Button, ButtonProps } from './Button';
+const argTypes = {
+    variant: {
+        control: { type: 'select' },
+        options: ['primary', 'secondary', 'tertiary', 'link', 'nav', 'outlined', 'text', 'contained'],
+        table: {
+            defaultValue: {
+                summary: 'primary',
+            },
+        },
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large'],
+      table: {
+          defaultValue: {
+              summary: 'small',
+          },
+      },
+  },
+};
+
 export default {
-  title: 'Atoms/Button',
-  component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-};
+    title: 'Atoms/Button',
+    component: Button,
+    argTypes,
+    parameters: {
+      controls: { include: Object.keys(argTypes) }
+    }
+} as ComponentStory<typeof ButtonProps>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
-};
+const Template: ComponentStory<typeof Button> = (
+    args: ButtonProps
+): JSX.Element => <Button {...args} />;
 
-export const Secondary = {
-  args: {
-    label: 'Button',
-  },
-};
-
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+export const Default = Template.bind({});
+Default.args = {
+    children: 'Stufff',
+    variant: 'outlined',
 };
