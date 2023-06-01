@@ -1,25 +1,33 @@
 import React from 'react';
-import './button.css';
+import styled from 'styled-components';
+import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 
-export type ButtonProps = {
-  primary?: boolean;
-  size: string;
-  backgroundColor?: string;
-  label: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>
+import Typography from '../Typography/Typography';
+import colors from '../../../colors';
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary, size, label, ...props }: ButtonProps ) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type={"button"}
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      {...props}
-    >
-      {label}
-    </button>
-  );
+// export type ButtonProps = {
+//     primary?: boolean;
+//     size: string;
+//     backgroundColor?: string;
+//     label: string;
+// } & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+export type ButtonProps = MuiButtonProps;
+
+// const ButtonRoot = styled(MuiButton)`
+//     display: 'flex';
+//     border-radius: 8;
+//     align-items: 'center';
+//     box-shadow: 'none';
+//     text-transform: 'none';
+//     height: 48;
+//     justify-content: 'center';
+//     text-align: 'center';
+//     minHeight: 0,
+//     whiteSpace: 'nowrap',
+// `;
+
+export const Button = ({ children, ...props }: MuiButtonProps) => {
+  console.log("file: Button.tsx:31 ~ props:", props);
+    return <MuiButton {...props}>{children}</MuiButton>;
 };

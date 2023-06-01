@@ -19,8 +19,7 @@ export default {
     component: Typography,
     argTypes,
     parameters: {
-        controls: { sort: 'requiredFirst' },
-        include: ['foo', 'bar'],
+        controls: { include: Object.keys(argTypes) },
     },
 } as ComponentStory<typeof Typography>;
 
@@ -46,8 +45,4 @@ Body.args = {
     variant: 'h1',
 };
 
-export const Test = (args) => (
-    <Typography {...args}>
-        Stuff
-    </Typography>
-);
+export const Test = (args) => <Typography {...args}>Stuff</Typography>;
