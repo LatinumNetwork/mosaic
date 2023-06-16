@@ -11,7 +11,7 @@ export const fontWeightMapping: Record<FontWeightVariant, number> = {
     medium: 500,
     semiBold: 800,
     bold: 900,
-}; 
+};
 
 export interface TypographyProps extends MuiTypographyProps {
     /**
