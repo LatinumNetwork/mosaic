@@ -1,6 +1,52 @@
+import { PaletteColorOptions } from '@mui/material/styles';
 import React from 'react';
 
 declare module '@mui/material/styles' {
+    interface CustomPaletteColor {
+        50?: string;
+        100?: string;
+        200?: string;
+        300?: string;
+        400?: string;
+        500?: string;
+        600?: string;
+        700?: string;
+        900?: string;
+    }
+
+    type CustomPaletteColorOption = PaletteColorOptions & CustomPaletteColor;
+
+    interface CustomPalette {
+        collageRed: CustomPaletteColorOption;
+        collageYellow: CustomPaletteColorOption;
+        collageOrange: CustomPaletteColorOption;
+        collageViolet: CustomPaletteColorOption;
+        collageTeal: CustomPaletteColorOption;
+        uiGray: CustomPaletteColorOption;
+        uiWhite: CustomPaletteColorOption;
+        uiBlue: CustomPaletteColorOption;
+        uiCoolGray: CustomPaletteColorOption;
+    }
+
+    interface CustomPaletteOptions {
+        collageRed?: CustomPaletteColorOption;
+        collageYellow?: CustomPaletteColorOption;
+        collageOrange?: CustomPaletteColorOption;
+        collageViolet?: CustomPaletteColorOption;
+        collageTeal?: CustomPaletteColorOption;
+        uiGray?: CustomPaletteColorOption;
+        uiWhite?: CustomPaletteColorOption;
+        uiBlue?: CustomPaletteColorOption;
+        uiCoolGray?: CustomPaletteColorOption;
+    }
+
+    interface Theme {
+        palette: Palette & CustomPalette;
+    }
+
+    interface ThemeOptions {
+        palette?: PaletteOptions & CustomPaletteOptions;
+    }
     interface TypographyVariants {
         b1: React.CSSProperties;
         b2: React.CSSProperties;
@@ -21,6 +67,8 @@ declare module '@mui/material/styles' {
         secondary: string;
         tertiary: string;
         link: string;
+        nav: string;
+        text: string;
     }
 
     interface ButtonPropsVariantOverrides {
@@ -28,6 +76,8 @@ declare module '@mui/material/styles' {
         secondary: string;
         tertiary: string;
         link: string;
+        nav: string;
+        text: string;
     }
 
     interface ButtonClasses {
@@ -35,6 +85,8 @@ declare module '@mui/material/styles' {
         secondary: true;
         tertiary: true;
         link: true;
+        nav: string;
+        text: string;
     }
 }
 
@@ -55,5 +107,31 @@ declare module '@mui/material/Typography' {
         button: false;
         overline: false;
         poster: false;
+    }
+}
+
+declare module '@mui/material/Button' {
+    interface ButtonPropsVariantOverrides {
+        primary: true;
+        secondary: true;
+        filled: false;
+        contained: false;
+        text: true;
+    }
+
+    interface ButtonClasses {
+        primary: true;
+        secondary: true;
+        filled: false;
+        contained: false;
+        text: true;
+    }
+
+    interface ButtonPropsColorOverrides extends CustomColorOptions {
+        basic: false;
+        info: false;
+        success: false;
+        secondary: false;
+        inherit: false;
     }
 }
