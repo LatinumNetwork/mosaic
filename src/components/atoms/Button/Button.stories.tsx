@@ -87,6 +87,22 @@ Nav.args = {
     children: 'Nav Button',
 };
 
+export const Disabled: StoryObj<typeof React.ReactNode> = () => {
+    return (
+        <Box display="flex" justifyContent="space-around">
+            <Button variant="primary" disabled>
+                Button
+            </Button>
+            <Button variant="secondary" disabled>
+                Button
+            </Button>
+            <Button variant="tertiary" disabled>
+                Button
+            </Button>
+        </Box>
+    );
+};
+
 export const Colors: StoryObj<typeof React.ReactNode> = () => {
     return (
         <Box display="flex" justifyContent="space-around">
