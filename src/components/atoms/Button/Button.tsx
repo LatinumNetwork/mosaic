@@ -42,6 +42,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
             textTransform: 'none',
             justifyContent: 'center',
             minHeight: 0,
+            height: '40px',
             whiteSpace: 'nowrap',
 
             ...(size === 'small' && {
