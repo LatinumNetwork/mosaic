@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 
-import { PaletteColors } from '../../../types';
+import { PaletteColors } from 'src/types';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'nav';
 export interface ButtonProps extends MuiButtonProps {
@@ -155,15 +155,17 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
     }
 );
 
-export const Button = ({
+const Button = ({
     children,
     variant = 'primary',
     size = 'medium',
     ...props
-}: MuiButtonProps) => {
+}: ButtonProps) => {
     return (
         <ButtonRoot variant={variant} size={size} {...props}>
             {children}
         </ButtonRoot>
     );
 };
+
+export default Button;

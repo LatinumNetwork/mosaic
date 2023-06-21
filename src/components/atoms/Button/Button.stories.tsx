@@ -1,10 +1,12 @@
 import { ComponentStory, StoryObj, Meta } from '@storybook/react';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { PaletteColors } from '../../../types';
 
-import { Button } from './Button';
-import Box from '../Box';
+import { PaletteColors } from 'src/types';
+import Box from 'atoms/Box';
+
+import Button from './Button';
+
 const argTypes = {
     variant: {
         control: { type: 'select' },

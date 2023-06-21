@@ -1,6 +1,6 @@
 import { ThemeOptions, createTheme, PaletteOptions } from '@mui/material';
 
-import { ui, collage } from '../colors';
+import { ui, collage } from 'src/colors';
 
 import './augmentations';
 
