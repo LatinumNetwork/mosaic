@@ -73,7 +73,7 @@ const ui = {
     },
     white: {
         500: '#FFFFFF',
-    }
+    },
 };
 
 export default ui;

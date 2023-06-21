@@ -65,6 +65,12 @@ Secondary.args = {
     children: 'Secondary Button',
 };
 
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+    variant: 'tertiary',
+    children: 'Tertiary Button',
+};
+
 export const Text = Template.bind({});
 Text.args = {
     variant: 'text',
@@ -81,6 +87,22 @@ export const Nav = Template.bind({});
 Nav.args = {
     variant: 'nav',
     children: 'Nav Button',
+};
+
+export const Disabled: StoryObj<typeof React.ReactNode> = () => {
+    return (
+        <Box display="flex" justifyContent="space-around">
+            <Button variant="primary" disabled>
+                Button
+            </Button>
+            <Button variant="secondary" disabled>
+                Button
+            </Button>
+            <Button variant="tertiary" disabled>
+                Button
+            </Button>
+        </Box>
+    );
 };
 
 export const Colors: StoryObj<typeof React.ReactNode> = () => {

@@ -1,2 +1,4 @@
 dist/**/*.js
 storybook-static/**/*.js
+node_modules
+dist

@@ -8,7 +8,7 @@ export default defineConfig({
         alias: {
             src: '/src',
             atoms: '/src/components/atoms',
-            molecules: 'src/components/molecules'
+            molecules: 'src/components/molecules',
         },
     },
 });
