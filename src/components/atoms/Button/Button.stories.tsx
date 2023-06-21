@@ -63,6 +63,12 @@ Secondary.args = {
     children: 'Secondary Button',
 };
 
+export const Tertiary = Template.bind({});
+Secondary.args = {
+    variant: 'tertiary',
+    children: 'Tertiary Button',
+};
+
 export const Text = Template.bind({});
 Text.args = {
     variant: 'text',
