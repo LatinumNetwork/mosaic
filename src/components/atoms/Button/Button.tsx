@@ -42,7 +42,6 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
             textTransform: 'none',
             justifyContent: 'center',
             minHeight: 0,
-            height: '40px',
             whiteSpace: 'nowrap',
 
             ...(size === 'small' && {
@@ -61,6 +60,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
             ...(variant === 'primary' && {
                 color: theme.palette.uiWhite[500],
                 backgroundColor: theme.palette[mainColor][400],
+                height: '40px',
                 '&:hover': {
                     backgroundColor: theme.palette[mainColor][500],
                 },
@@ -70,6 +70,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
                 border: '1px solid',
                 borderColor: theme.palette[mainColor][200],
                 backgroundColor: theme.palette.uiWhite[500],
+                height: '40px',
                 '&:hover': {
                     backgroundColor: theme.palette[mainColor][50],
                     borderColor: theme.palette[mainColor][500],
@@ -80,6 +81,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
                 border: '1px solid',
                 borderColor: theme.palette[mainColor][200],
                 backgroundColor: theme.palette.uiWhite[500],
+                height: '40px',
                 '&:hover': {
                     backgroundColor: theme.palette.uiCoolGray[50],
                     borderColor: theme.palette[mainColor][500],
