@@ -1,5 +1,6 @@
 const collage = {
-    red: { // collage-group-red
+    red: {
+        // collage-group-red
         50: '#f2e8eb',
         100: '#d6b7c2',
         200: '#c295a4',
@@ -11,7 +12,8 @@ const collage = {
         800: '#440d1f',
         900: '#340a18',
     },
-    yellow: { // multi-cultural-yellow
+    yellow: {
+        // multi-cultural-yellow
         50: '#f9f5ed',
         100: '#ebe0c8',
         200: '#e2d1ae',
@@ -23,7 +25,8 @@ const collage = {
         800: '#69562b',
         900: '#504221',
     },
-    orange: { // generations-orange
+    orange: {
+        // generations-orange
         50: '#faf0ed',
         100: '#efd2c8',
         200: '#e8bcae',
@@ -35,7 +38,8 @@ const collage = {
         800: '#703c2b',
         900: '#562e21',
     },
-    violet: { // lgbtq-gender-violet
+    violet: {
+        // lgbtq-gender-violet
         50: '#faebeb',
         100: '#efc0c0',
         200: '#e8a1a1',
@@ -47,7 +51,8 @@ const collage = {
         800: '#701c1c',
         900: '#561515',
     },
-    teal: { // parents-kids-teal
+    teal: {
+        // parents-kids-teal
         50: '#e9f3f3',
         100: '#bbdada',
         200: '#9ac9c8',

@@ -1,10 +1,35 @@
-import { ThemeOptions, createTheme } from '@mui/material';
+import { ThemeOptions, createTheme, PaletteOptions } from '@mui/material';
+
+import { ui, collage } from '../colors';
 
 import './augmentations';
 
 const pxToRem = createTheme().typography.pxToRem;
 
+const capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+const generatePalette = (swatch, name) => {
+    const palette = {};
+
+    for (const color in swatch) {
+        palette[`${name}${capitalize(color)}`] = {
+            ...swatch[color],
+        };
+    }
+
+    // ex: 'uiYellow': { '50': '#fdf5eb', '100': '#f8e1c0' }
+    return palette;
+};
+
+export const palette: PaletteOptions = {
+    ...generatePalette(ui, 'ui'),
+    ...generatePalette(collage, 'collage'),
+};
+
 const themeOptions: ThemeOptions = {
+    palette,
     typography: {
         fontFamily: "'Roboto', sans-serif",
         fontSize: 16,
@@ -51,7 +76,7 @@ const themeOptions: ThemeOptions = {
             styleOverrides: {
                 root: {
                     fontWeight: 'unset',
-                }
+                },
             },
             defaultProps: {
                 fontFamily: "'Roboto', sans-serif",
