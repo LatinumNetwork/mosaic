@@ -4,14 +4,25 @@ import { ui, collage } from 'src/colors';
 
 import './augmentations';
 
+export interface ColorRecord {
+    [shade: string]: string;
+}
+
+export interface Palette {
+    [key: string]: ColorRecord;
+}
+
 const pxToRem = createTheme().typography.pxToRem;
 
-const capitalize = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+const capitalize = (text: string) => {
+    return text.charAt(0).toUpperCase() + text.slice(1);
 };
 
-const generatePalette = (swatch, name) => {
-    const palette = {};
+const generatePalette = (
+    swatch: Record<string, ColorRecord>,
+    name: string
+): Palette => {
+    const palette: Palette = {};
 
     for (const color in swatch) {
         palette[`${name}${capitalize(color)}`] = {
@@ -90,6 +101,7 @@ const themeOptions: ThemeOptions = {
         },
     },
 };
+
 const theme = createTheme(themeOptions);
 
 export default theme;

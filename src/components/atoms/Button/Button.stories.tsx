@@ -1,8 +1,9 @@
-import { ComponentStory, StoryObj, Meta } from '@storybook/react';
+import React from 'react';
+import { ComponentStory, Story, Meta } from '@storybook/react';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import { PaletteColors } from 'src/types';
+import { PaletteColors } from 'src/typings';
 import Box from 'atoms/Box';
 
 import Button from './Button';
@@ -89,7 +90,7 @@ Nav.args = {
     children: 'Nav Button',
 };
 
-export const Disabled: StoryObj<typeof React.ReactNode> = () => {
+export const Disabled: Story = () => {
     return (
         <Box display="flex" justifyContent="space-around">
             <Button variant="primary" disabled>
@@ -105,14 +106,14 @@ export const Disabled: StoryObj<typeof React.ReactNode> = () => {
     );
 };
 
-export const Colors: StoryObj<typeof React.ReactNode> = () => {
+export const Colors: Story = () => {
     return (
         <Box display="flex" justifyContent="space-around">
-            <Button color="uiGray">uiGray</Button>
-            <Button color="collageViolet">collageViolet</Button>
-            <Button color="collageOrange">collageOrange</Button>
-            <Button color="collageTeal">collageTeal</Button>
-            <Button color="collageYellow">collageYellow</Button>
+            <Button color={PaletteColors.uiGray}>uiGray</Button>
+            <Button color={PaletteColors.collageViolet}>collageViolet</Button>
+            <Button color={PaletteColors.collageOrange}>collageOrange</Button>
+            <Button color={PaletteColors.collageTeal}>collageTeal</Button>
+            <Button color={PaletteColors.collageYellow}>collageYellow</Button>
         </Box>
     );
 };

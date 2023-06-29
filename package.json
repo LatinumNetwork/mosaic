@@ -1,23 +1,26 @@
 {
   "name": "mosaic",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/styled": "^11.10.8",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.12.3",
-    "@mui/styled-engine-sc": "^5.12.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^5.3.9"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/LatinumNetwork",
+    "access": "public"
   },
+  "author": "Vernon",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic --exit-zero-on-changes",
     "lint": "npx eslint .",
-    "lint-fix": "npx eslint . --fix"
+    "lint-fix": "npx eslint . --fix",
+    "rollup": "rollup -c"
   },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "eslintConfig": {
     "extends": [
       "react-app"
@@ -45,7 +48,19 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "@emotion/styled": "^11.10.8",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.3",
+    "@mui/styled-engine-sc": "^5.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.9"
+  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.1",
     "@storybook/addon-essentials": "^7.0.4",
     "@storybook/addon-interactions": "^7.0.4",
     "@storybook/addon-links": "^7.0.4",
@@ -66,7 +81,11 @@
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.8",
+    "rollup": "^3.25.1",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "^7.0.4",
     "typescript": "^5.1.3"
   },
@@ -74,7 +93,6 @@
     "type": "git",
     "url": "git+https://github.com/LatinumNetwork/mosaic.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LatinumNetwork/mosaic/issues"

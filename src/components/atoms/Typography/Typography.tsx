@@ -17,18 +17,20 @@ export interface TypographyProps extends MuiTypographyProps {
     /**
      * @default 'regular'
      */
-    weight?: FontWeightVariant;
+    weight: FontWeightVariant;
 }
 
 const TypographyRoot = styled(MuiTypography).withConfig({
-    shouldForwardProp: (prop) => prop !== 'weight',
-})`
+    shouldForwardProp: (prop: keyof TypographyProps) => {
+        return prop !== 'weight';
+    },
+})<TypographyProps>`
     font-weight: ${({ weight }) =>
-        weight ? fontWeightMapping[weight] : 'inherit'};
+        weight ? fontWeightMapping[weight as FontWeightVariant] : 'inherit'};
 `;
 
-const Typography = (props: TypographyProps): JSX.Element => {
-    return <TypographyRoot {...props} />;
+const Typography = ({ children, ...props }: TypographyProps): JSX.Element => {
+    return <TypographyRoot {...props}>{children}</TypographyRoot>;
 };
 
 export default Typography;

@@ -1,3 +1,4 @@
 export * from './components';
 export * from './colors';
-export * from './types';
+export * from './typings';
+export * from './theme';

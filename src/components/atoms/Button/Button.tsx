@@ -2,15 +2,38 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 
-import { PaletteColors } from 'src/types';
+import { PaletteColors } from 'src/typings';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'nav';
-export interface ButtonProps extends MuiButtonProps {
+type MuiVariant = MuiButtonProps['variant'];
+type OmitMuiButtonWrapperProps = Omit<MuiButtonProps, 'color' | 'variant'>;
+
+export interface ButtonWrapperProps extends OmitMuiButtonWrapperProps {
     variant?: Variant;
     color?: PaletteColors;
 }
+export interface ButtonProps extends MuiButtonProps {
+    customVariant?: Variant;
+    customColor?: PaletteColors;
+}
 
-const getDefaultColor = (variant) => {
+const mapVariantToMui = (variant: Variant | undefined): MuiVariant => {
+    switch (variant) {
+        case 'primary':
+        case 'secondary':
+            return 'contained' as MuiVariant;
+        case 'tertiary':
+            return 'outlined' as MuiVariant;
+        case 'text':
+        case 'link':
+        case 'nav':
+            return 'text';
+        default:
+            return 'contained' as MuiVariant;
+    }
+};
+
+const getDefaultColor = (variant: Variant | undefined) => {
     switch (variant) {
         case 'primary':
         case 'secondary':
@@ -27,9 +50,9 @@ const getDefaultColor = (variant) => {
 };
 
 const ButtonRoot = styled(MuiButton)<ButtonProps>(
-    ({ theme, variant, size, color }) => {
-        let mainColor = color;
-        if (!color) mainColor = getDefaultColor(variant);
+    ({ theme, customVariant, size, color }) => {
+        let mainColor: string | undefined = color;
+        if (!color) mainColor = getDefaultColor(customVariant);
 
         return {
             display: 'flex',
@@ -57,7 +80,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
                 padding: '12px 20px',
             }),
 
-            ...(variant === 'primary' && {
+            ...(customVariant === 'primary' && {
                 color: theme.palette.uiWhite[500],
                 backgroundColor: theme.palette[mainColor][400],
                 height: '40px',
@@ -65,7 +88,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
                     backgroundColor: theme.palette[mainColor][500],
                 },
             }),
-            ...(variant === 'secondary' && {
+            ...(customVariant === 'secondary' && {
                 color: theme.palette[mainColor][500],
                 border: '1px solid',
                 borderColor: theme.palette[mainColor][200],
@@ -76,7 +99,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
                     borderColor: theme.palette[mainColor][500],
                 },
             }),
-            ...(variant === 'tertiary' && {
+            ...(customVariant === 'tertiary' && {
                 color: theme.palette[mainColor][800],
                 border: '1px solid',
                 borderColor: theme.palette[mainColor][200],
@@ -87,7 +110,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
                     borderColor: theme.palette[mainColor][500],
                 },
             }),
-            ...(variant === 'text' && {
+            ...(customVariant === 'text' && {
                 padding: '2px 4px',
                 color: theme.palette[mainColor][800],
                 '&:hover': {
@@ -96,7 +119,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
                     color: theme.palette.collageRed[600],
                 },
             }),
-            ...(variant === 'link' && {
+            ...(customVariant === 'link' && {
                 color: theme.palette[mainColor][600],
                 background: 'none',
                 padding: '2px 4px',
@@ -124,7 +147,7 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
                     },
                 },
             }),
-            ...(variant === 'nav' && {
+            ...(customVariant === 'nav' && {
                 color: theme.palette[mainColor][800],
                 background: 'none',
                 padding: '2px 4px',
@@ -138,17 +161,17 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
             }),
 
             '&:disabled': {
-                ...(variant === 'primary' && {
+                ...(customVariant === 'primary' && {
                     backgroundColor: theme.palette.uiCoolGray[100],
                     color: theme.palette.uiCoolGray[300],
                 }),
-                ...(variant === 'secondary' && {
+                ...(customVariant === 'secondary' && {
                     border: '1px solid',
                     borderColor: theme.palette.uiCoolGray[100],
                     color: theme.palette.uiCoolGray[300],
                     backgroundColor: 'transparent',
                 }),
-                ...(variant === 'tertiary' && {
+                ...(customVariant === 'tertiary' && {
                     backgroundColor: 'transparent',
                     color: theme.palette.uiCoolGray[300],
                     border: 'none',
@@ -158,17 +181,26 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
     }
 );
 
-const Button = ({
+function Button({
     children,
     variant = 'primary',
     size = 'medium',
+    // color is a custom color we use but not MUI. destruct-ed it out.
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    color,
     ...props
-}: ButtonProps) => {
+}: ButtonWrapperProps) {
+    const muiVariant = mapVariantToMui(variant);
     return (
-        <ButtonRoot variant={variant} size={size} {...props}>
+        <ButtonRoot
+            variant={muiVariant}
+            customVariant={variant}
+            size={size}
+            {...props}
+        >
             {children}
         </ButtonRoot>
     );
-};
+}
 
 export default Button;

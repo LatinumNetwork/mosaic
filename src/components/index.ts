@@ -7,4 +7,3 @@ export * from './atoms/Box/Box';
 
 export { default as Typography } from './atoms/Typography';
 export * from './atoms/Typography/Typography';
-

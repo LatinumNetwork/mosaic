@@ -1,12 +1,12 @@
 import { ComponentStory } from '@storybook/react';
-import Typography from './Typography';
+import Typography, { TypographyProps } from './Typography';
 
 const argTypes = {
     weight: {
         defaultValue: 'regular',
         control: { type: 'radio' },
     },
-    text: {
+    children: {
         defaultValue: 'Hello world!',
         control: {
             type: 'text',
@@ -21,28 +21,29 @@ export default {
     parameters: {
         controls: { include: Object.keys(argTypes) },
     },
-} as ComponentStory<typeof Typography>;
+};
 
-const Template: ComponentStory<typeof Typography> = (
-    args: TypographyProps
-): JSX.Element => <Typography {...args}> {args.text} </Typography>;
+const Template: ComponentStory<typeof Typography> = ({
+    children,
+    ...args
+}: TypographyProps): JSX.Element => (
+    <Typography {...args}> {children} </Typography>
+);
 
 export const Default = Template.bind({});
 Default.args = {
-    text: 'Default',
+    children: 'Default',
 };
 
 export const Header = Template.bind({});
 Header.args = {
-    text: 'Heading',
+    children: 'Heading',
     variant: 'h1',
     weight: 'semiBold',
 };
 
 export const Body = Template.bind({});
 Body.args = {
-    text: 'Body',
+    children: 'Body',
     variant: 'h1',
 };
-
-export const Test = (args) => <Typography {...args}>Stuff</Typography>;

@@ -1,5 +1,5 @@
-import { PaletteColorOptions } from '@mui/material/styles';
 import React from 'react';
+import { PaletteColorOptions } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
     interface CustomPaletteColor {
@@ -40,13 +40,8 @@ declare module '@mui/material/styles' {
         uiCoolGray?: CustomPaletteColorOption;
     }
 
-    interface Theme {
-        palette: Palette & CustomPalette;
-    }
+    interface PaletteOptions extends PaletteOptions, CustomPaletteOptions {}
 
-    interface ThemeOptions {
-        palette?: PaletteOptions & CustomPaletteOptions;
-    }
     interface TypographyVariants {
         b1: React.CSSProperties;
         b2: React.CSSProperties;
@@ -76,15 +71,6 @@ declare module '@mui/material/styles' {
         secondary: string;
         tertiary: string;
         link: string;
-        nav: string;
-        text: string;
-    }
-
-    interface ButtonClasses {
-        primary: true;
-        secondary: true;
-        tertiary: true;
-        link: true;
         nav: string;
         text: string;
     }
@@ -119,15 +105,7 @@ declare module '@mui/material/Button' {
         text: true;
     }
 
-    interface ButtonClasses {
-        primary: true;
-        secondary: true;
-        filled: false;
-        contained: false;
-        text: true;
-    }
-
-    interface ButtonPropsColorOverrides extends CustomColorOptions {
+    interface ButtonPropsColorOverrides {
         basic: false;
         info: false;
         success: false;
