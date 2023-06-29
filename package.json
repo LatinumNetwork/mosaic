@@ -1,12 +1,11 @@
 {
-  "name": "mosaic",
+  "name": "@latinum-network/mosaic",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/LatinumNetwork",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "author": "Vernon",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
