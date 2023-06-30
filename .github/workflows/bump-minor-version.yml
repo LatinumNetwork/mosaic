@@ -13,10 +13,11 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - name: npm version minor
-        run: npm version minor
-      - name: Push changes
+      - name: Configure Git
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git push --tags
+      - name: npm version minor
+        run: npm version minor
+      - name: Push changes
+        run: git push --tags
