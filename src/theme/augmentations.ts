@@ -1,46 +1,53 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import React from 'react';
-import { PaletteColorOptions } from '@mui/material/styles';
+// import { PaletteColorOptions, Palette } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
-    interface CustomPaletteColor {
-        50?: string;
-        100?: string;
-        200?: string;
-        300?: string;
-        400?: string;
-        500?: string;
-        600?: string;
-        700?: string;
-        900?: string;
+    interface CustomColorShades {
+        '50'?: string;
+        '100'?: string;
+        '200'?: string;
+        '300'?: string;
+        '400'?: string;
+        '500'?: string;
+        '600'?: string;
+        '700'?: string;
+        '800'?: string;
+        '900'?: string;
     }
-
-    type CustomPaletteColorOption = PaletteColorOptions & CustomPaletteColor;
-
     interface CustomPalette {
-        collageRed: CustomPaletteColorOption;
-        collageYellow: CustomPaletteColorOption;
-        collageOrange: CustomPaletteColorOption;
-        collageViolet: CustomPaletteColorOption;
-        collageTeal: CustomPaletteColorOption;
-        uiGray: CustomPaletteColorOption;
-        uiWhite: CustomPaletteColorOption;
-        uiBlue: CustomPaletteColorOption;
-        uiCoolGray: CustomPaletteColorOption;
+        collageRed: CustomColorShades;
+        collageYellow: CustomColorShades;
+        collageOrange: CustomColorShades;
+        collageViolet: CustomColorShades;
+        collageTeal: CustomColorShades;
+        uiGray: CustomColorShades;
+        uiCoolGray: CustomColorShades;
+        uiWhite: CustomColorShades;
+        uiBlue: CustomColorShades;
+        uiGreen: CustomColorShades;
+        uiYellow: CustomColorShades;
+        uiRed: CustomColorShades;
     }
 
     interface CustomPaletteOptions {
-        collageRed?: CustomPaletteColorOption;
-        collageYellow?: CustomPaletteColorOption;
-        collageOrange?: CustomPaletteColorOption;
-        collageViolet?: CustomPaletteColorOption;
-        collageTeal?: CustomPaletteColorOption;
-        uiGray?: CustomPaletteColorOption;
-        uiWhite?: CustomPaletteColorOption;
-        uiBlue?: CustomPaletteColorOption;
-        uiCoolGray?: CustomPaletteColorOption;
+        collageRed?: CustomColorShades;
+        collageYellow?: CustomColorShades;
+        collageOrange?: CustomColorShades;
+        collageViolet?: CustomColorShades;
+        collageTeal?: CustomColorShades;
+        uiGray?: CustomColorShades;
+        uiCoolGray?: CustomColorShades;
+        uiWhite?: CustomColorShades;
+        uiBlue?: CustomColorShades;
+        uiGreen?: CustomColorShades;
+        uiYellow?: CustomColorShades;
+        uiRed?: CustomColorShades;
     }
 
-    interface PaletteOptions extends PaletteOptions, CustomPaletteOptions {}
+    interface PaletteOptions extends CustomPaletteOptions {}
+
+    interface Palette extends CustomPalette {}
 
     interface TypographyVariants {
         b1: React.CSSProperties;

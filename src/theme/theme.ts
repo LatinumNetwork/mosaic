@@ -1,8 +1,13 @@
-import { ThemeOptions, createTheme, PaletteOptions } from '@mui/material';
-
-import { ui, collage } from 'src/colors';
-
 import './augmentations';
+
+import {
+    ThemeOptions,
+    createTheme,
+    PaletteOptions,
+    CustomPaletteOptions,
+    CustomColorShades,
+} from '@mui/material';
+import { ui, collage } from 'src/colors';
 
 export interface ColorRecord {
     [shade: string]: string;
@@ -19,13 +24,16 @@ const capitalize = (text: string) => {
 };
 
 const generatePalette = (
-    swatch: Record<string, ColorRecord>,
+    swatch: Record<string, CustomColorShades>,
     name: string
-): Palette => {
-    const palette: Palette = {};
+): CustomPaletteOptions => {
+    const palette: CustomPaletteOptions = {};
 
     for (const color in swatch) {
-        palette[`${name}${capitalize(color)}`] = {
+        const colorKey = `${name}${capitalize(
+            color
+        )}` as keyof CustomPaletteOptions;
+        palette[colorKey] = {
             ...swatch[color],
         };
     }

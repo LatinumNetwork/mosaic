@@ -7,6 +7,7 @@ import { PaletteColors } from 'src/typings';
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'nav';
 type MuiVariant = MuiButtonProps['variant'];
 type OmitMuiButtonWrapperProps = Omit<MuiButtonProps, 'color' | 'variant'>;
+type MainColor = keyof typeof PaletteColors;
 
 export interface ButtonWrapperProps extends OmitMuiButtonWrapperProps {
     variant?: Variant;
@@ -37,22 +38,22 @@ const getDefaultColor = (variant: Variant | undefined) => {
     switch (variant) {
         case 'primary':
         case 'secondary':
-            return 'collageRed';
+            return PaletteColors.collageRed;
         case 'tertiary':
         case 'text':
         case 'nav':
-            return 'uiGray';
+            return PaletteColors.uiGray;
         case 'link':
-            return 'uiBlue';
+            return PaletteColors.uiBlue;
         default:
-            return 'collageRed';
+            return PaletteColors.collageRed;
     }
 };
 
 const ButtonRoot = styled(MuiButton)<ButtonProps>(
-    ({ theme, customVariant, size, color }) => {
-        let mainColor: string | undefined = color;
-        if (!color) mainColor = getDefaultColor(customVariant);
+    ({ theme, customVariant, size, customColor }) => {
+        const mainColor: MainColor =
+            customColor ?? getDefaultColor(customVariant);
 
         return {
             display: 'flex',
@@ -185,7 +186,7 @@ function Button({
     children,
     variant = 'primary',
     size = 'medium',
-    // color is a custom color we use but not MUI. destruct-ed it out.
+    // color is a custom color prop we use but MUI does not so I destruct-ed it out.
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     color,
     ...props
@@ -195,6 +196,7 @@ function Button({
         <ButtonRoot
             variant={muiVariant}
             customVariant={variant}
+            customColor={color}
             size={size}
             {...props}
         >
