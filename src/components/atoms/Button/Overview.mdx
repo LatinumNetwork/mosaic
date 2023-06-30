@@ -3,7 +3,7 @@ import { Meta, Story, Canvas } from '@storybook/blocks';
 import Box from 'atoms/Box';
 
 import Button from './Button';
-import *  as Stories from './Button.stories.tsx';
+import * as Stories from './Button.stories.tsx';
 
 <Meta title="Atoms/Button" component={Button} of={Stories} />
 
@@ -11,12 +11,12 @@ import *  as Stories from './Button.stories.tsx';
 
 The `Button` component is an enhanced version of the Material UI Button. It provides six distinct variants:
 
-- `Primary`: A solid button used for primary actions.
-- `Secondary`: An outlined button used for secondary actions.
-- `Tertiary`: A button with subtle borders, used for tertiary actions.
-- `Text`: A button that appears like a regular text but performs as a button.
-- `Link`: A button that appears like a link, suitable for navigation purposes.
-- `Nav`: A button with no background or border that changes color when active, suitable for navigation bars.
+-   `Primary`: A solid button used for primary actions.
+-   `Secondary`: An outlined button used for secondary actions.
+-   `Tertiary`: A button with subtle borders, used for tertiary actions.
+-   `Text`: A button that appears like a regular text but performs as a button.
+-   `Link`: A button that appears like a link, suitable for navigation purposes.
+-   `Nav`: A button with no background or border that changes color when active, suitable for navigation bars.
 
 Each variant has three size options: small, medium, and large.
 
@@ -44,7 +44,6 @@ Each variant has three size options: small, medium, and large.
     <Story of={Stories.Nav} />
 </Canvas>
 
-
 ## Colors
 
 The `Button` component allows the use of colors placed into the theme's palette: `uiGray`, `collageRed`, `collageYellow`, `collageTeal`, `collageOrange`, `collageViolet`.
@@ -52,7 +51,6 @@ The `Button` component allows the use of colors placed into the theme's palette:
 <Canvas>
     <Story of={Stories.Colors} />
 </Canvas>
-
 
 ## Disabled
 

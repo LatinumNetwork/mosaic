@@ -1,16 +1,14 @@
-import { Meta, ColorPalette, ColorItem } from '@storybook/blocks'
-import { ui, collage } from './index.ts'
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import { ui, collage } from './index.ts';
 
 <Meta title="Colors" />
 
 # Collage Palette
+
 <br />
 
 <ColorPalette>
-    <ColorItem
-        title="Collage Red"
-        colors={collage.red}
-    />
+    <ColorItem title="Collage Red" colors={collage.red} />
     <ColorItem title="Multicultural Yellow" colors={collage.yellow} />
     <ColorItem title="Generations Orange" colors={collage.orange} />
     <ColorItem title="LGBTQ+ & Gender Violet" colors={collage.violet} />
@@ -18,6 +16,7 @@ import { ui, collage } from './index.ts'
 </ColorPalette>
 
 # UI Palette
+
 <br />
 
 <ColorPalette>
@@ -28,4 +27,3 @@ import { ui, collage } from './index.ts'
     <ColorItem title="Gray" colors={ui.gray} />
     <ColorItem title="Cool Gray" colors={ui.coolGray} />
 </ColorPalette>
-
