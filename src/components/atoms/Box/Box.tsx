@@ -1,5 +1,5 @@
-import React from 'react';
 import MuiBox, { BoxProps as MuiBoxProps } from '@mui/material/Box';
+import React from 'react';
 
 export type BoxProps = MuiBoxProps;
 

@@ -1,9 +1,10 @@
-import theme from './theme';
 import {
-    ThemeProvider,
-    StyledEngineProvider,
-    useTheme,
+  StyledEngineProvider,
+  ThemeProvider,
+  useTheme,
 } from '@mui/material/styles';
+
+import theme from './theme';
 
 export { theme, ThemeProvider, StyledEngineProvider, useTheme };
 

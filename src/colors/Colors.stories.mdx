@@ -1,5 +1,6 @@
-import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
-import { ui, collage } from './index.ts';
+import { ColorItem, ColorPalette, Meta } from '@storybook/blocks';
+
+import { collage, ui } from './index.ts';
 
 <Meta title="Colors" />
 
@@ -8,11 +9,11 @@ import { ui, collage } from './index.ts';
 <br />
 
 <ColorPalette>
-    <ColorItem title="Collage Red" colors={collage.red} />
-    <ColorItem title="Multicultural Yellow" colors={collage.yellow} />
-    <ColorItem title="Generations Orange" colors={collage.orange} />
-    <ColorItem title="LGBTQ+ & Gender Violet" colors={collage.violet} />
-    <ColorItem title="Parents & Kids Teal" colors={collage.teal} />
+  <ColorItem title="Collage Red" colors={collage.red} />
+  <ColorItem title="Multicultural Yellow" colors={collage.yellow} />
+  <ColorItem title="Generations Orange" colors={collage.orange} />
+  <ColorItem title="LGBTQ+ & Gender Violet" colors={collage.violet} />
+  <ColorItem title="Parents & Kids Teal" colors={collage.teal} />
 </ColorPalette>
 
 # UI Palette
@@ -20,10 +21,10 @@ import { ui, collage } from './index.ts';
 <br />
 
 <ColorPalette>
-    <ColorItem title="UI Blue" colors={ui.blue} />
-    <ColorItem title="UI Green" colors={ui.green} />
-    <ColorItem title="UI Yellow" colors={ui.yellow} />
-    <ColorItem title="UI Red" colors={ui.red} />
-    <ColorItem title="Gray" colors={ui.gray} />
-    <ColorItem title="Cool Gray" colors={ui.coolGray} />
+  <ColorItem title="UI Blue" colors={ui.blue} />
+  <ColorItem title="UI Green" colors={ui.green} />
+  <ColorItem title="UI Yellow" colors={ui.yellow} />
+  <ColorItem title="UI Red" colors={ui.red} />
+  <ColorItem title="Gray" colors={ui.gray} />
+  <ColorItem title="Cool Gray" colors={ui.coolGray} />
 </ColorPalette>
