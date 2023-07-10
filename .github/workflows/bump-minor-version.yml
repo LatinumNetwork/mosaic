@@ -8,15 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PAT }}
       - uses: actions/setup-node@v2
         with:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - name: npm version minor
-        run: npm version minor
-      - name: Push changes
+     
+      - name: Checkout dev
+        run: git checkout dev
+      
+      - name: Configure Git
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git push --tags
+          
+      - name: npm version minor
+        run: npm version minor
+        
+      - name: Push changes
+        run: git push origin dev --tags
