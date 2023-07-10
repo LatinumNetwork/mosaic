@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
 import React from 'react';
-// import { PaletteColorOptions, Palette } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
     interface CustomColorShades {
