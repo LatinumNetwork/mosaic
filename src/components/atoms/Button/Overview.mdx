@@ -1,7 +1,8 @@
-import { Meta, Story, Canvas } from '@storybook/blocks';
-import { Button } from './Button';
-import *  as Stories from './Button.stories.tsx';
-import Box from '../Box';
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import Box from 'atoms/Box';
+
+import Button from './Button';
+import * as Stories from './Button.stories.tsx';
 
 <Meta title="Atoms/Button" component={Button} of={Stories} />
 
@@ -19,45 +20,43 @@ The `Button` component is an enhanced version of the Material UI Button. It prov
 Each variant has three size options: small, medium, and large.
 
 <Canvas>
-    <Story of={Stories.Primary} />
+  <Story of={Stories.Primary} />
 </Canvas>
 
 <Canvas>
-    <Story of={Stories.Secondary} />
+  <Story of={Stories.Secondary} />
 </Canvas>
 
 <Canvas>
-    <Story of={Stories.Tertiary} />
+  <Story of={Stories.Tertiary} />
 </Canvas>
 
 <Canvas>
-    <Story of={Stories.Text} />
+  <Story of={Stories.Text} />
 </Canvas>
 
 <Canvas>
-    <Story of={Stories.Link} />
+  <Story of={Stories.Link} />
 </Canvas>
 
 <Canvas>
-    <Story of={Stories.Nav} />
+  <Story of={Stories.Nav} />
 </Canvas>
-
 
 ## Colors
 
 The `Button` component allows the use of colors placed into the theme's palette: `uiGray`, `collageRed`, `collageYellow`, `collageTeal`, `collageOrange`, `collageViolet`.
 
 <Canvas>
-    <Story of={Stories.Colors} />
+  <Story of={Stories.Colors} />
 </Canvas>
-
 
 ## Disabled
 
 The main three variants: `primary`, `secondary`, and `tertiary` can be disabled.
 
 <Canvas>
-    <Story of={Stories.Disabled} />
+  <Story of={Stories.Disabled} />
 </Canvas>
 
 ## With Icon
@@ -65,9 +64,9 @@ The main three variants: `primary`, `secondary`, and `tertiary` can be disabled.
 Buttons can optionally include icons, either at the start or the end of the button text.
 
 <Canvas>
-    <Story of={Stories.WithIconStart} />
+  <Story of={Stories.WithIconStart} />
 </Canvas>
 
 <Canvas>
-    <Story of={Stories.WithIconEnd} />
+  <Story of={Stories.WithIconEnd} />
 </Canvas>

@@ -1,14 +1,17 @@
 # Mosaic - Collage Group's Design System
-Mosaic is a design system library created for Collage Group, built with Storybook, CRA, TypeScript and using the Material UI (MUI) library as its foundation. It provides customizable, pre-built React components that can be combined to create modern and responsive user interfaces. 
+
+Mosaic is a design system library created for Collage Group, built with Storybook, CRA, TypeScript and using the Material UI (MUI) library as its foundation. It provides customizable, pre-built React components that can be combined to create modern and responsive user interfaces.
 
 ## Getting Started
 
 ### Clone the repository.
+
 ```bash
 git clone git@github.com:LatinumNetwork/mosaic.git
 ```
 
 ### Install dependencies
+
 ```bash
 npm install
 ```
@@ -21,7 +24,7 @@ npm run storybook
 
 ## Organization
 
-This library follows the Atomic design pattern: Atoms, Molecules, and Organisms. 
+This library follows the Atomic design pattern: Atoms, Molecules, and Organisms.
 
 **Atoms**: These are the smallest building blocks of the UI, such as buttons, inputs, and labels.
 
@@ -67,7 +70,6 @@ Component names should be consistent across atoms, molecules, and organisms.
 ## Development - Creating New Components
 
 A new component should exist in its own folder following the convetions listed above. That folder should have:
-- A file creating the component. ex: **Button.tsx**. This file will house your atom, molecule, or organism. 
-- A template file or multiple template files. ex: **Button.stories.tsx** and/or **Button.stories.mdx**. **mdx** stands for markdown. Storybook lets you use a markdown file to further explain components and their uses.
 
-
+-   A file creating the component. ex: **Button.tsx**. This file will house your atom, molecule, or organism.
+-   A template file or multiple template files. ex: **Button.stories.tsx** and/or **Button.stories.mdx**. **mdx** stands for markdown. Storybook lets you use a markdown file to further explain components and their uses.

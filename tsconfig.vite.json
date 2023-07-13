@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "composite": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "baseUrl": "./src",
+        "paths": {
+            "/*": ["./src/*"]
+        }
+    },
+    "include": ["vite.config.ts"],
+    "exclude": ["**/*.stories.tsx"]
+}
