@@ -183,7 +183,7 @@ function Button({
   children,
   variant = 'primary',
   size = 'medium',
-  // color is a custom color prop we use but MUI does not so I destruct-ed it out.
+  // color is a prop we want to use for our own colors but MUI won't recognize them, so I destruct-ed it out.
   color,
   ...props
 }: ButtonWrapperProps) {
