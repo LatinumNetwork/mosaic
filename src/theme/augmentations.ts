@@ -1,7 +1,4 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import type {} from '@mui/material/Button';
-import type {} from '@mui/material/Typography';
-import type {} from '@mui/material/styles';
 import React from 'react';
 
 declare module '@mui/material/styles' {
