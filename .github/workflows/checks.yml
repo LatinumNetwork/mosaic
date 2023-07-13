@@ -15,7 +15,9 @@ jobs:
           - check_name: Lint Check
             run_script: npm run lint
           - check_name: Typescript Check
-            run_script: npx run ts
+            run_script: npm run ts
+          - check_name: Prettier Check
+            run_script: npm run prettier
     steps:
     - name: Check out source repository
       uses: actions/checkout@v2
