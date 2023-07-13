@@ -1,6 +1,5 @@
 import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import React from 'react';
 import { PaletteColors } from 'src/typings';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'nav';
@@ -185,11 +184,11 @@ function Button({
   variant = 'primary',
   size = 'medium',
   // color is a custom color prop we use but MUI does not so I destruct-ed it out.
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   color,
   ...props
 }: ButtonWrapperProps) {
   const muiVariant = mapVariantToMui(variant);
+
   return (
     <ButtonRoot
       variant={muiVariant}

@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
@@ -9,7 +11,6 @@ const config: StorybookConfig = {
     ],
     typescript: {
         check: false,
-        checkOptions: {},
         reactDocgen: 'react-docgen-typescript',
         reactDocgenTypescriptOptions: {
             shouldExtractLiteralValuesFromEnum: true,
@@ -21,7 +22,7 @@ const config: StorybookConfig = {
         name: '@storybook/react-vite',
         options: {},
     },
-    async viteFinal(config, options) {
+    async viteFinal(config) {
         // Add your configuration here
         return config;
     },
@@ -30,4 +31,5 @@ const config: StorybookConfig = {
     },
 };
 
+//
 export default config;

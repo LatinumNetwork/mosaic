@@ -1,8 +1,7 @@
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { StoryFn, Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import Box from 'atoms/Box';
-import React from 'react';
 import { PaletteColors } from 'src/typings';
 
 import Button from './Button';
@@ -89,7 +88,7 @@ Nav.args = {
   children: 'Nav Button',
 };
 
-export const Disabled: Story = () => {
+export const Disabled: StoryFn = () => {
   return (
     <Box display="flex" justifyContent="space-around">
       <Button variant="primary" disabled>
@@ -105,7 +104,7 @@ export const Disabled: Story = () => {
   );
 };
 
-export const Colors: Story = () => {
+export const Colors: StoryFn = () => {
   return (
     <Box display="flex" justifyContent="space-around">
       <Button color={PaletteColors.uiGray}>uiGray</Button>

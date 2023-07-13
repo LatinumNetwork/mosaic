@@ -1,5 +1,3 @@
-import React from 'react';
-
 import companyLogos from './companyLogos.json';
 
 type CompanyLogoName = keyof typeof companyLogos;

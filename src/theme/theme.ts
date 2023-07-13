@@ -9,14 +9,6 @@ import { collage, ui } from 'src/colors';
 
 import './augmentations';
 
-export interface ColorRecord {
-  [shade: string]: string;
-}
-
-export interface Palette {
-  [key: string]: ColorRecord;
-}
-
 const pxToRem = createTheme().typography.pxToRem;
 
 const capitalize = (text: string) => {

@@ -1,7 +1,6 @@
 import MuiTypography, {
   TypographyProps as MuiTypographyProps,
 } from '@mui/material/Typography';
-import React from 'react';
 import styled from 'styled-components';
 
 type FontWeightVariant = 'regular' | 'medium' | 'semiBold' | 'bold';
