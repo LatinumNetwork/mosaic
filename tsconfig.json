@@ -21,11 +21,12 @@
         "baseUrl": ".",
         "paths": {
             "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"],
-            "atoms/*": ["src/components/atoms/*"],
-            "src/*": ["src/*"]
+            "atoms/*": ["./src/components/atoms/*"],
+            "molecules/*": ["./src/components/molecules/*"],
+            "src/*": ["./src/*"]
         }
     },
-    "include": ["./src", "./globals.d.ts", "**/*.tsx"],
+    "include": ["./src/*", "./globals.d.ts", "**/*.tsx"],
     "typeRoots": ["./src/theme"],
     "exclude": ["node_modules"],
     "references": [{ "path": "./tsconfig.vite.json" }]

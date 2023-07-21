@@ -1,5 +1,6 @@
 import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import React from 'react';
 import { PaletteColors } from 'src/typings';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'nav';
@@ -48,7 +49,17 @@ const getDefaultColor = (variant: Variant | undefined) => {
   }
 };
 
-const ButtonRoot = styled(MuiButton)<ButtonProps>(
+const ButtonForwardRef = React.forwardRef(
+  (
+    {
+      customVariant: _customVariant,
+      customColor: _customColor,
+      ...props
+    }: ButtonProps,
+    ref: React.ForwardedRef<HTMLButtonElement>
+  ) => <MuiButton ref={ref} {...props} />
+);
+const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
   ({ theme, customVariant, size, customColor }) => {
     const mainColor: MainColor = customColor ?? getDefaultColor(customVariant);
 
@@ -179,27 +190,32 @@ const ButtonRoot = styled(MuiButton)<ButtonProps>(
   }
 );
 
-function Button({
-  children,
-  variant = 'primary',
-  size = 'medium',
-  // color is a prop we want to use for our own colors but MUI won't recognize them, so I destruct-ed it out.
-  color,
-  ...props
-}: ButtonWrapperProps) {
-  const muiVariant = mapVariantToMui(variant);
+const Button = React.forwardRef(
+  (
+    {
+      children,
+      variant = 'primary',
+      size = 'medium',
+      color,
+      ...props
+    }: ButtonWrapperProps,
+    ref?: React.ForwardedRef<HTMLButtonElement>
+  ) => {
+    const muiVariant = mapVariantToMui(variant);
 
-  return (
-    <ButtonRoot
-      variant={muiVariant}
-      customVariant={variant}
-      customColor={color}
-      size={size}
-      {...props}
-    >
-      {children}
-    </ButtonRoot>
-  );
-}
+    return (
+      <ButtonRoot
+        ref={ref}
+        variant={muiVariant}
+        customVariant={variant}
+        customColor={color}
+        size={size}
+        {...props}
+      >
+        {children}
+      </ButtonRoot>
+    );
+  }
+);
 
 export default Button;
