@@ -13,7 +13,7 @@ export default [
     input: 'src/index.ts',
     external: globals,
     output: {
-      file: packageJson.main,  // using `main` here for simplicity
+      file: packageJson.main,
       format: 'esm',
       sourcemap: true,
     },
