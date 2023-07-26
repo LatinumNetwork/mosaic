@@ -19,10 +19,9 @@
         "isolatedModules": true,
         "noEmit": false,
         "baseUrl": ".",
+        "esModuleInterop": true,
         "paths": {
             "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"],
-            "atoms/*": ["./src/components/atoms/*"],
-            "molecules/*": ["./src/components/molecules/*"],
             "src/*": ["./src/*"]
         }
     },

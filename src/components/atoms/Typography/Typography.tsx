@@ -1,8 +1,8 @@
 import MuiTypography, {
   TypographyProps as MuiTypographyProps,
 } from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 import React from 'react';
-import styled from 'styled-components';
 
 type FontWeightVariant = 'regular' | 'medium' | 'semiBold' | 'bold';
 
@@ -20,16 +20,15 @@ export interface TypographyProps extends MuiTypographyProps {
   weight?: FontWeightVariant;
 }
 
-const TypographyRoot = styled(MuiTypography).withConfig({
-  shouldForwardProp: (prop: keyof TypographyProps) => {
+const TypographyRoot = styled(MuiTypography, {
+  shouldForwardProp: (prop: string | number | symbol) => {
     return prop !== 'weight';
   },
 })<TypographyProps>`
   font-weight: ${({ weight }) =>
     weight ? fontWeightMapping[weight as FontWeightVariant] : 'inherit'};
 `;
-
-const Typography = ({
+export const Typography = ({
   children,
   weight = 'regular',
   component,
@@ -41,5 +40,3 @@ const Typography = ({
     </TypographyRoot>
   );
 };
-
-export default Typography;

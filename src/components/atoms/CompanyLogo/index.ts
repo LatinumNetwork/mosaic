@@ -1,2 +1,2 @@
-export { default } from './CompanyLogo';
-export * from './CompanyLogo';
+export { CompanyLogo } from './CompanyLogo';
+export type { CompanyLogoProps } from './CompanyLogo';

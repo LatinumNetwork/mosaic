@@ -12,22 +12,18 @@ export default [
   {
     input: 'src/index.ts',
     external: globals,
-    output: [
-      {
-        file: packageJson.main,
-        format: 'cjs',
-        sourcemap: true,
-      },
-      {
-        file: packageJson.module,
-        format: 'esm',
-        sourcemap: true,
-      },
-    ],
+    output: {
+      file: packageJson.main,  // using `main` here for simplicity
+      format: 'esm',
+      sourcemap: true,
+    },
     plugins: [
       peerDepsExternal(),
       resolve(),
-      commonjs(),
+      commonjs({
+        esmExternals: true,
+        requireReturnsDefault: 'namespace',
+      }),
       typescript({ tsconfig: './tsconfig.json' }),
     ],
   },

@@ -1,9 +1,9 @@
 // atoms
-export { default as Button } from './atoms/Button';
-export * from './atoms/Button/Button';
+export { Typography } from './atoms/Typography';
+export type { TypographyProps } from './atoms/Typography';
 
-export { default as Box } from './atoms/Box';
-export * from './atoms/Box/Box';
+export { Button } from './atoms/Button';
+export type { ButtonProps } from './atoms/Button';
 
-export { default as Typography } from './atoms/Typography';
-export * from './atoms/Typography/Typography';
+export { Box } from './atoms/Box';
+export type { BoxProps } from './atoms/Box';

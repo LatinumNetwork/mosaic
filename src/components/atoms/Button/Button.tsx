@@ -190,7 +190,7 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
   }
 );
 
-const Button = React.forwardRef(
+export const Button = React.forwardRef(
   (
     {
       children,
@@ -217,5 +217,3 @@ const Button = React.forwardRef(
     );
   }
 );
-
-export default Button;
