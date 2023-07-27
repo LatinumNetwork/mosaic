@@ -30,7 +30,6 @@ This library follows the Atomic design pattern: Atoms, Molecules, and Organisms.
 
 **Molecules**: These are groups of atoms bonded together to form a functional unit, such as a form element with a label, input, and validation message.
 
-
 **Organisms**: These are groups of molecules combined to form a more complex, standalone UI section, like a header, footer, or a complete form.
 
 
