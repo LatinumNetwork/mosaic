@@ -1,14 +1,14 @@
-import companyLogos from './companyLogos.json';
+import companyLogos from './companyLogos';
 
 type CompanyLogoName = keyof typeof companyLogos;
 
-type CompanyLogoProps = {
+export type CompanyLogoProps = {
   name: CompanyLogoName;
   width: number;
   height: number;
 };
 
-const CompanyLogo = ({ name, width, height }: CompanyLogoProps) => (
+export const CompanyLogo = ({ name, width, height }: CompanyLogoProps) => (
   <img
     width={width}
     height={height}
@@ -16,5 +16,3 @@ const CompanyLogo = ({ name, width, height }: CompanyLogoProps) => (
     alt={companyLogos[name].alt}
   />
 );
-
-export default CompanyLogo;

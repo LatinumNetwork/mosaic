@@ -1,6 +1,6 @@
 import { StoryFn } from '@storybook/react';
-
-import Typography, { TypographyProps } from './Typography';
+import React from 'react';
+import { Typography, TypographyProps } from 'src/components';
 
 const argTypes = {
   weight: {
@@ -27,7 +27,7 @@ export default {
 const Template: StoryFn<typeof Typography> = ({
   children,
   ...args
-}: TypographyProps): JSX.Element => (
+}: TypographyProps): React.JSX.Element => (
   <Typography {...args}> {children} </Typography>
 );
 

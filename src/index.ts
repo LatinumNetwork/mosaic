@@ -1,6 +1,17 @@
-export * from '@mui/material';
+import { Box, Button, Typography } from './components';
+import type { BoxProps, ButtonProps, TypographyProps } from './components';
 
-export { Box, Button, Typography } from './components';
 export * from './colors';
 export * from './typings';
 export * from './theme';
+
+export * from '@mui/material';
+
+export {
+  ThemeProvider,
+  StyledEngineProvider,
+  useTheme,
+  styled,
+} from '@mui/material/styles';
+
+export { Box, BoxProps, Button, ButtonProps, Typography, TypographyProps };

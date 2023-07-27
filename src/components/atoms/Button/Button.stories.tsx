@@ -1,10 +1,9 @@
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Meta, StoryFn } from '@storybook/react';
-import Box from 'atoms/Box';
+import React from 'react';
+import { Box, Button } from 'src/components';
 import { PaletteColors } from 'src/typings';
-
-import Button from './Button';
 
 const argTypes = {
   variant: {
@@ -50,7 +49,7 @@ export default meta;
 const Template: StoryFn<typeof Button> = ({
   children,
   ...args
-}): JSX.Element => <Button {...args} children={children} />;
+}): React.JSX.Element => <Button {...args} children={children} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
