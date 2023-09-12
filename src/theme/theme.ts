@@ -113,6 +113,15 @@ const themeOptions: ThemeOptions = {
         },
       },
     },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          '&.Mui-selected': {
+            backgroundColor: '#954661', //CollageRed[500]
+          },
+        },
+      },
+    },
   },
 };
 
