@@ -104,6 +104,15 @@ const themeOptions: ThemeOptions = {
         disableRipple: true,
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            boxShadow: 'none',
+          },
+        },
+      },
+    },
   },
 };
 

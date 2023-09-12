@@ -94,7 +94,6 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         backgroundColor: theme.palette[mainColor][400],
         height: '40px',
         '&:hover': {
-          boxShadow: 'none',
           backgroundColor: theme.palette[mainColor][500],
         },
       }),
@@ -105,7 +104,6 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         backgroundColor: theme.palette.uiWhite[500],
         height: '40px',
         '&:hover': {
-          boxShadow: 'none',
           backgroundColor: theme.palette[mainColor][50],
           borderColor: theme.palette[mainColor][500],
         },
@@ -117,7 +115,6 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         backgroundColor: theme.palette.uiWhite[500],
         height: '40px',
         '&:hover': {
-          boxShadow: 'none',
           backgroundColor: theme.palette.uiCoolGray[50],
           borderColor: theme.palette[mainColor][500],
         },
@@ -126,7 +123,6 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         padding: '2px 4px',
         color: theme.palette[mainColor][800],
         '&:hover': {
-          boxShadow: 'none',
           background: 'none',
           border: 'none',
           color: theme.palette.collageRed[600],
@@ -139,7 +135,6 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         borderRadius: 0,
         minWidth: 0,
         '&:hover': {
-          boxShadow: 'none',
           ':after': {
             content: '""',
             background: theme.palette[mainColor][600],
@@ -148,7 +143,6 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
             left: '0',
             height: '1px',
             width: '100%',
-            boxShadow: 'none',
           },
           background: 'none',
         },
@@ -167,7 +161,6 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         background: 'none',
         padding: '2px 4px',
         '&:hover': {
-          boxShadow: 'none',
           backgroundColor: theme.palette.uiCoolGray[50],
         },
         '&:active': {
