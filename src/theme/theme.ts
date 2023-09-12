@@ -99,6 +99,11 @@ const themeOptions: ThemeOptions = {
         },
       },
     },
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
   },
 };
 

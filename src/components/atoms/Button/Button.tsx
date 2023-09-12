@@ -218,7 +218,6 @@ export const Button = React.forwardRef(
         customColor={color}
         size={size}
         {...props}
-        disableRipple
       >
         {children}
       </ButtonRoot>
