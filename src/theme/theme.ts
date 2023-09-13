@@ -99,29 +99,6 @@ const themeOptions: ThemeOptions = {
         },
       },
     },
-    MuiButtonBase: {
-      defaultProps: {
-        disableRipple: true,
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          '&:hover': {
-            boxShadow: 'none',
-          },
-        },
-      },
-    },
-    MuiMenuItem: {
-      styleOverrides: {
-        root: {
-          '&.Mui-selected': {
-            backgroundColor: '#954661', //CollageRed[500]
-          },
-        },
-      },
-    },
   },
 };
 
