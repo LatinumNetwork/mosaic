@@ -1,8 +1,12 @@
+import { SxProps, Theme } from '@mui/material/';
 import MuiBox, { BoxProps as MuiBoxProps } from '@mui/material/Box';
 import React from 'react';
 
-export type BoxProps = MuiBoxProps;
+export interface ExtendedBoxProps extends MuiBoxProps {
+  className?: string;
+  sx?: SxProps<Theme>;
+}
 
-export const Box = (props: BoxProps): React.JSX.Element => (
+export const Box = (props: ExtendedBoxProps): React.JSX.Element => (
   <MuiBox {...props} />
 );

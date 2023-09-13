@@ -1,5 +1,5 @@
 import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
+import { SxProps, Theme, styled } from '@mui/material/styles';
 import React from 'react';
 import { PaletteColors } from 'src/typings';
 
@@ -11,10 +11,14 @@ type MainColor = keyof typeof PaletteColors;
 export interface ButtonWrapperProps extends OmitMuiButtonWrapperProps {
   variant?: Variant;
   color?: PaletteColors;
+  className?: string;
+  sx?: SxProps<Theme>;
 }
 export interface ButtonProps extends MuiButtonProps {
   customVariant?: Variant;
   customColor?: PaletteColors;
+  className?: string;
+  sx?: SxProps<Theme>;
 }
 
 const mapVariantToMui = (variant: Variant | undefined): MuiVariant => {
@@ -197,6 +201,8 @@ export const Button = React.forwardRef(
       variant = 'primary',
       size = 'medium',
       color,
+      className,
+      sx,
       ...props
     }: ButtonWrapperProps,
     ref?: React.ForwardedRef<HTMLButtonElement>
@@ -210,6 +216,8 @@ export const Button = React.forwardRef(
         customVariant={variant}
         customColor={color}
         size={size}
+        className={className}
+        sx={sx}
         {...props}
       >
         {children}

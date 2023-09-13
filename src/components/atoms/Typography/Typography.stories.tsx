@@ -13,6 +13,19 @@ const argTypes = {
       type: 'text',
     },
   },
+  className: {
+    defaultValue: '', // or some default class for demonstration
+    control: {
+      type: 'text',
+    },
+    description: 'CSS class applied to the Typography component',
+  },
+  sx: {
+    control: {
+      type: 'object',
+    },
+    description: 'Inline styles applied to the Typography component',
+  },
 };
 
 export default {

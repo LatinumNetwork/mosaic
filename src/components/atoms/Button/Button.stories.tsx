@@ -33,6 +33,14 @@ const argTypes = {
       },
     },
   },
+  className: {
+    control: 'text',
+    description: 'CSS class for the button.',
+  },
+  sx: {
+    control: 'object',
+    description: 'Inline styles for the button using the MUI sx system.',
+  },
 };
 
 const meta: Meta<typeof Button> = {

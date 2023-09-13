@@ -1,7 +1,7 @@
 import MuiTypography, {
   TypographyProps as MuiTypographyProps,
 } from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
+import { SxProps, Theme, styled } from '@mui/material/styles';
 import React from 'react';
 
 type FontWeightVariant = 'regular' | 'medium' | 'semiBold' | 'bold';
@@ -18,6 +18,8 @@ export interface TypographyProps extends MuiTypographyProps {
    * @default 'regular'
    */
   weight?: FontWeightVariant;
+  className?: string;
+  sx?: SxProps<Theme>;
 }
 
 const TypographyRoot = styled(MuiTypography, {
@@ -32,10 +34,18 @@ export const Typography = ({
   children,
   weight = 'regular',
   component,
+  className,
+  sx,
   ...props
 }: TypographyProps): React.JSX.Element => {
   return (
-    <TypographyRoot component={component} weight={weight} {...props}>
+    <TypographyRoot
+      component={component}
+      weight={weight}
+      className={className}
+      sx={sx}
+      {...props}
+    >
       {children}
     </TypographyRoot>
   );
