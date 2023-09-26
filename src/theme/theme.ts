@@ -1,3 +1,4 @@
+import '@fontsource/nunito-sans';
 import {
   CustomColorShades,
   CustomPaletteOptions,
@@ -42,7 +43,10 @@ export const palette: PaletteOptions = {
 const themeOptions: ThemeOptions = {
   palette,
   typography: {
-    fontFamily: "'Roboto', sans-serif",
+    allVariants: {
+      fontFamily: "'Nunito', sans-serif",
+    },
+    fontFamily: "'Nunito', sans-serif",
     fontSize: 16,
     h4: undefined,
     h5: undefined,
@@ -90,7 +94,7 @@ const themeOptions: ThemeOptions = {
         },
       },
       defaultProps: {
-        fontFamily: "'Roboto', sans-serif",
+        fontFamily: "'Nunito', sans-serif",
         // by default, new variants will render as span
         variantMapping: {
           b1: 'p',
