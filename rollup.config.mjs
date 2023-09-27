@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import css from "rollup-plugin-import-css";
 
 import packageJson from './package.json' assert { type: 'json' };
 
@@ -25,6 +26,7 @@ export default [
         requireReturnsDefault: 'namespace',
       }),
       typescript({ tsconfig: './tsconfig.json' }),
+      css() 
     ],
   },
   {
