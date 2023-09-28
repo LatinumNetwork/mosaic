@@ -1,6 +1,6 @@
 import { ColorItem, ColorPalette, Meta } from '@storybook/blocks';
 
-import { collage, ui } from './index.ts';
+import { collage, themeColors, ui } from './index.ts';
 
 <Meta title="Colors" />
 
@@ -27,4 +27,16 @@ import { collage, ui } from './index.ts';
   <ColorItem title="UI Red" colors={ui.red} />
   <ColorItem title="Gray" colors={ui.gray} />
   <ColorItem title="Cool Gray" colors={ui.coolGray} />
+</ColorPalette>
+
+# Theme Colors
+
+<br />
+
+<ColorPalette>
+  <ColorItem title="Dark Pink" colors={themeColors.primary} />
+  <ColorItem title="Soft Pink" colors={themeColors.secondary} />
+  <ColorItem title="Red" colors={themeColors.error} />
+  <ColorItem title="Orange" colors={themeColors.warning} />
+  <ColorItem title="Green" colors={themeColors.success} />
 </ColorPalette>
