@@ -1,18 +1,4 @@
-type ColorShade = {
-  main: string;
-  dark: string;
-  light: string;
-};
-
-type ThemeColors = {
-  primary: ColorShade;
-  secondary: ColorShade;
-  error: ColorShade;
-  warning: ColorShade;
-  success: ColorShade;
-};
-
-const themeColors: ThemeColors = {
+const themeColors = {
   primary: {
     main: '#954661',
     dark: '#7b1839',
@@ -37,6 +23,11 @@ const themeColors: ThemeColors = {
     main: '#18914c',
     light: '#46a770',
     dark: '#168445',
+  },
+  text: {
+    primary: '#333333',
+    secondary: '#5c5c5c',
+    disabled: '#b4b4b4',
   },
 };
 

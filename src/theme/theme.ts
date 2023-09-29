@@ -38,16 +38,7 @@ export const palette: PaletteOptions = {
   ...generatePalette(ui, 'ui'),
   ...generatePalette(collage, 'collage'),
   mode: 'light',
-  primary: themeColors.primary,
-  secondary: themeColors.secondary,
-  error: themeColors.error,
-  warning: themeColors.warning,
-  success: themeColors.success,
-  text: {
-    primary: '#333333',
-    secondary: '#5c5c5c',
-    disabled: '#b4b4b4',
-  },
+  ...{ themeColors },
 };
 
 const themeOptions: ThemeOptions = {
