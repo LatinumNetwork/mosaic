@@ -1,4 +1,4 @@
-import { StoryFn } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 import { Typography, TypographyProps } from 'src/components';
 
@@ -47,4 +47,42 @@ export const Body = Template.bind({});
 Body.args = {
   children: 'Body',
   variant: 'h1',
+};
+
+type FontWeightPropsAndCustomArgs = React.ComponentProps<typeof Typography>;
+
+const argTypesFontWeight = {
+  variant: {
+    control: { type: 'radio' },
+    options: ['h1', 'h2', 'h3', 'b1', 'b2', 'b3', 'caption'],
+  },
+  fontWeight: {
+    control: { type: 'radio' },
+    options: ['400', '500', '700', '900'],
+    table: {
+      defaultValue: '400',
+    },
+  },
+  children: {
+    defaultValue: 'Mosaic by Collage Group',
+    control: {
+      type: 'text',
+    },
+  },
+};
+
+export const Variant: Meta<FontWeightPropsAndCustomArgs> = {
+  component: Typography,
+  args: {
+    children: 'Mosaic by Collage Group',
+  },
+  argTypes: argTypesFontWeight,
+  parameters: {
+    controls: { include: Object.keys(argTypesFontWeight) },
+  },
+  render: ({ children, fontWeight, ...args }) => (
+    <Typography {...args} sx={{ fontWeight: `${fontWeight}` }}>
+      {children}
+    </Typography>
+  ),
 };
