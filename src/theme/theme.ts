@@ -38,7 +38,7 @@ export const palette: PaletteOptions = {
   ...generatePalette(ui, 'ui'),
   ...generatePalette(collage, 'collage'),
   mode: 'light',
-  ...{ themeColors },
+  ...themeColors,
 };
 
 const themeOptions: ThemeOptions = {
