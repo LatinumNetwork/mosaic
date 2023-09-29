@@ -75,6 +75,7 @@ export const Variant: Meta<FontWeightPropsAndCustomArgs> = {
   component: Typography,
   args: {
     children: 'Mosaic by Collage Group',
+    fontWeight: '400',
   },
   argTypes: argTypesFontWeight,
   parameters: {
