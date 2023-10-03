@@ -1,4 +1,7 @@
-import '@fontsource/nunito-sans';
+import '@fontsource/nunito-sans/400.css';
+import '@fontsource/nunito-sans/500.css';
+import '@fontsource/nunito-sans/700.css';
+import '@fontsource/nunito-sans/900.css';
 import {
   CustomColorShades,
   CustomPaletteOptions,
@@ -42,49 +45,13 @@ export const palette: PaletteOptions = {
   ...themeColors,
 };
 
-const nunitoSansRegular = {
-  fontFamily: 'Nunito Sans',
-  fontStyle: 'normal',
-  fontWeight: '400',
-  fontStretch: '100%',
-  fontDisplay: 'swap',
-  src: "local('Nunito Sans') format('woff2')",
-};
-
-const nunitoSansMedium = {
-  fontFamily: 'Nunito Sans',
-  fontStyle: 'normal',
-  fontWeight: '500',
-  fontStretch: '100%',
-  fontDisplay: 'swap',
-  src: "local('Nunito Sans') format('woff2')",
-};
-
-const nunitoSansSemiBold = {
-  fontFamily: 'Nunito Sans',
-  fontStyle: 'normal',
-  fontWeight: '700',
-  fontStretch: '100%',
-  fontDisplay: 'swap',
-  src: "local('Nunito Sans') format('woff2')",
-};
-
-const nunitoSansBold = {
-  fontFamily: 'Nunito Sans',
-  fontStyle: 'normal',
-  fontWeight: '900',
-  fontStretch: '100%',
-  fontDisplay: 'swap',
-  src: "local('Nunito Sans') format('woff2')",
-};
-
 const themeOptions: ThemeOptions = {
   palette,
   typography: {
     allVariants: {
-      fontFamily: "'Nunito Sans', sans-serif",
+      fontFamily: "'Nunito Sans', cursive",
     },
-    fontFamily: "'Nunito Sans', sans-serif",
+    fontFamily: "'Nunito Sans', cursive",
     fontSize: 16,
     h4: undefined,
     h5: undefined,
@@ -132,8 +99,8 @@ const themeOptions: ThemeOptions = {
         },
       },
       defaultProps: {
-        fontFamily: "'Nunito Sans', sans-serif",
-        // by default, new variants will render as span
+        fontFamily: "'Nunito Sans', cursive",
+        // NOTE: by default, new variants will render as span
         variantMapping: {
           b1: 'p',
           b2: 'p',
@@ -157,15 +124,12 @@ const themeOptions: ThemeOptions = {
     },
     MuiCssBaseline: {
       styleOverrides: {
-        html: [
-          { '@font-face': nunitoSansRegular },
-          { '@font-face': nunitoSansMedium },
-          { '@font-face': nunitoSansSemiBold },
-          { '@font-face': nunitoSansBold },
-        ],
-        'html, body': {
-          padding: 0,
-          scrollbarWidth: 'thin',
+        html: {
+          fontFamily: "'Nunito Sans', sans-serif",
+        },
+        body: {
+          fontFamily: "'Nunito Sans', sans-serif",
+          backgroundColor: ui.coolGray[50],
         },
       },
     },

@@ -7,12 +7,9 @@ import css from "rollup-plugin-import-css";
 
 import packageJson from './package.json' assert { type: 'json' };
 
-const globals = [...Object.keys(packageJson.peerDependencies || {})];
-
 export default [
   {
     input: 'src/index.ts',
-    external: globals,
     output: {
       file: packageJson.main,
       format: 'esm',
