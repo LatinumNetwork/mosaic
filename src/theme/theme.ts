@@ -6,7 +6,7 @@ import {
   ThemeOptions,
   createTheme,
 } from '@mui/material';
-import { collage, ui } from 'src/colors';
+import { collage, themeColors, ui } from 'src/colors';
 
 import './augmentations';
 
@@ -38,6 +38,8 @@ const generatePalette = (
 export const palette: PaletteOptions = {
   ...generatePalette(ui, 'ui'),
   ...generatePalette(collage, 'collage'),
+  mode: 'light',
+  ...themeColors,
 };
 
 const nunitoSansRegular = {
@@ -136,6 +138,20 @@ const themeOptions: ThemeOptions = {
           b1: 'p',
           b2: 'p',
           b3: 'p',
+        },
+      },
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            boxShadow: 'none',
+          },
         },
       },
     },
