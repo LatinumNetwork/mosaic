@@ -1,7 +1,7 @@
 import '@fontsource/nunito-sans/400.css';
-import '@fontsource/nunito-sans/500.css';
+import '@fontsource/nunito-sans/600.css';
 import '@fontsource/nunito-sans/700.css';
-import '@fontsource/nunito-sans/900.css';
+import '@fontsource/nunito-sans/800.css';
 import {
   CustomColorShades,
   CustomPaletteOptions,
@@ -34,7 +34,7 @@ const generatePalette = (
     };
   }
 
-  // ex: 'uiYellow': { '50': '#fdf5eb', '100': '#f8e1c0' }
+  // NOTE: ex. { 'uiYellow': { '50': '#fdf5eb', '100': '#f8e1c0' } }
   return palette;
 };
 

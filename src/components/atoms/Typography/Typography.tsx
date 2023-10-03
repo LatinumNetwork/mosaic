@@ -8,9 +8,9 @@ type FontWeightVariant = 'regular' | 'medium' | 'semiBold' | 'bold';
 
 export const fontWeightMapping: Record<FontWeightVariant, number> = {
   regular: 400,
-  medium: 500,
-  semiBold: 800,
-  bold: 900,
+  medium: 600,
+  semiBold: 700,
+  bold: 800,
 };
 
 export interface TypographyProps extends MuiTypographyProps {
