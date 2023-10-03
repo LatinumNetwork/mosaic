@@ -1,6 +1,13 @@
 import { Meta, Typeset } from '@storybook/blocks';
+import { Typography } from 'src/components';
 
-<Meta title="Typography" />
+import * as Stories from './Typography.stories.tsx';
+
+
+<Meta title="Atoms/Typography" component={Typography} of={Stories} />
+# Typography
+
+The `Typography` component is an enhanced version of the Material UI Button. It adds the weight prop that aligns with our design system:
 
 export const typography = {
   type: {
@@ -31,7 +38,7 @@ export const SampleText = 'Mosaic by Collage Group.';
 
 **Font:** Nunito Sans
 
-**Weights:** 400(regular), 500(medium), 700(semiBold), 900(bold)
+**Weights:** 400(regular), 600(medium), 700(semiBold), 800(bold)
 
 <Typeset
   fontSizes={[
