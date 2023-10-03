@@ -43,15 +43,18 @@ export const palette: PaletteOptions = {
   ...generatePalette(collage, 'collage'),
   mode: 'light',
   ...themeColors,
+  background: {
+    default: ui.coolGray[50],
+  },
 };
 
 const themeOptions: ThemeOptions = {
   palette,
   typography: {
     allVariants: {
-      fontFamily: "'Nunito Sans', cursive",
+      fontFamily: "'Nunito Sans', sans-serif",
     },
-    fontFamily: "'Nunito Sans', cursive",
+    fontFamily: "'Nunito Sans', sans-serif",
     fontSize: 16,
     h4: undefined,
     h5: undefined,
@@ -99,7 +102,7 @@ const themeOptions: ThemeOptions = {
         },
       },
       defaultProps: {
-        fontFamily: "'Nunito Sans', cursive",
+        fontFamily: "'Nunito Sans', sans-serif",
         // NOTE: by default, new variants will render as span
         variantMapping: {
           b1: 'p',
@@ -129,7 +132,6 @@ const themeOptions: ThemeOptions = {
         },
         body: {
           fontFamily: "'Nunito Sans', sans-serif",
-          backgroundColor: ui.coolGray[50],
         },
       },
     },
