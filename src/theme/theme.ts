@@ -1,3 +1,7 @@
+import '@fontsource/nunito-sans/400.css';
+import '@fontsource/nunito-sans/600.css';
+import '@fontsource/nunito-sans/700.css';
+import '@fontsource/nunito-sans/800.css';
 import {
   CustomColorShades,
   CustomPaletteOptions,
@@ -30,7 +34,7 @@ const generatePalette = (
     };
   }
 
-  // ex: 'uiYellow': { '50': '#fdf5eb', '100': '#f8e1c0' }
+  // NOTE: ex. { 'uiYellow': { '50': '#fdf5eb', '100': '#f8e1c0' } }
   return palette;
 };
 
@@ -39,12 +43,18 @@ export const palette: PaletteOptions = {
   ...generatePalette(collage, 'collage'),
   mode: 'light',
   ...themeColors,
+  background: {
+    default: ui.coolGray[50],
+  },
 };
 
 const themeOptions: ThemeOptions = {
   palette,
   typography: {
-    fontFamily: "'Roboto', sans-serif",
+    allVariants: {
+      fontFamily: "'Nunito Sans', sans-serif",
+    },
+    fontFamily: "'Nunito Sans', sans-serif",
     fontSize: 16,
     h4: undefined,
     h5: undefined,
@@ -92,8 +102,8 @@ const themeOptions: ThemeOptions = {
         },
       },
       defaultProps: {
-        fontFamily: "'Roboto', sans-serif",
-        // by default, new variants will render as span
+        fontFamily: "'Nunito Sans', sans-serif",
+        // NOTE: by default, new variants will render as span
         variantMapping: {
           b1: 'p',
           b2: 'p',
@@ -112,6 +122,16 @@ const themeOptions: ThemeOptions = {
           '&:hover': {
             boxShadow: 'none',
           },
+        },
+      },
+    },
+    MuiCssBaseline: {
+      styleOverrides: {
+        html: {
+          fontFamily: "'Nunito Sans', sans-serif",
+        },
+        body: {
+          fontFamily: "'Nunito Sans', sans-serif",
         },
       },
     },
