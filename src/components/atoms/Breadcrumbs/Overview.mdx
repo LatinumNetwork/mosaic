@@ -1,0 +1,38 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import { Breadcrumbs } from 'src/components';
+
+import * as Stories from './Breadcrumbs.stories.tsx';
+
+<Meta title="Components/Breadcrumbs" component={Breadcrumbs} of={Stories} />
+
+# Breadcrumbs
+
+The `Breadcrumbs` component is a navigation component that indicates the user's location within a navigational structure. It can handle text, links, and buttons as children.
+
+## Usage
+
+You can pass in text or links as children to the `Breadcrumbs` component to create a navigational trail.
+
+## Basic Breadcrumbs
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Breadcrumbs with Icons
+
+<Canvas>
+  <Story of={Stories.WithIcons} />
+</Canvas>
+
+## Breadcrumbs with Custom Styles
+
+<Canvas>
+  <Story of={Stories.CustomStyles} />
+</Canvas>
+
+## Collapsed Breadcrumbs
+
+<Canvas>
+  <Story of={Stories.Collapsed} />
+</Canvas>
