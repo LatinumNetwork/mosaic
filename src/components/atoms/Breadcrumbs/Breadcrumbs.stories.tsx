@@ -46,6 +46,22 @@ WithIcons.args = {
   ],
 };
 
+export const WithIButtons = Template.bind({});
+WithIButtons.args = {
+  children: [
+    <Box key="box2" display="flex" alignItems="center" gap={1}>
+      <HomeIcon fontSize="small" />
+      Menu Item
+    </Box>,
+    <Button key="11" variant="secondary">
+      Item
+    </Button>,
+    <Button key="12" variant="primary">
+      Item 2
+    </Button>,
+  ],
+};
+
 export const CustomStyles = Template.bind({});
 CustomStyles.args = {
   children: [
