@@ -48,15 +48,15 @@ WithIcons.args = {
 
 export const WithIButtons = Template.bind({});
 WithIButtons.args = {
+  separator: false,
   children: [
-    <Box key="box2" display="flex" alignItems="center" gap={1}>
-      <HomeIcon fontSize="small" />
+    <Button key="11" variant="text">
       Menu Item
-    </Box>,
-    <Button key="11" variant="secondary">
-      Item
     </Button>,
     <Button key="12" variant="primary">
+      Item
+    </Button>,
+    <Button key="13" variant="secondary">
       Item 2
     </Button>,
   ],
