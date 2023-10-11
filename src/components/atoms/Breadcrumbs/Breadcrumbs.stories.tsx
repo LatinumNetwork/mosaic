@@ -1,5 +1,4 @@
 import HomeIcon from '@mui/icons-material/Home';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import Link from '@mui/material/Link';
 import { Meta, StoryFn } from '@storybook/react';
 import { Box, Breadcrumbs, BreadcrumbsProps, Button } from 'src/components';
@@ -10,13 +9,9 @@ export default {
 } as Meta;
 
 const Template: StoryFn<BreadcrumbsProps> = (args) => <Breadcrumbs {...args} />;
-const ArrowSeparator = () => (
-  <NavigateNextIcon fontSize="small" color="action" />
-);
 
 export const Basic = Template.bind({});
 Basic.args = {
-  separator: <ArrowSeparator />,
   children: [
     <Button key="1" variant="text">
       Menu Item
