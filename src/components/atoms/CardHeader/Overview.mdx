@@ -1,0 +1,21 @@
+// CardHeader.stories.mdx
+
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import { CardHeader } from 'src/components';
+
+import * as Stories from './CardHeader.stories.tsx';
+
+<Meta title="Components/CardHeader" component={CardHeader} of={Stories} />
+
+# CardHeader
+
+The `CardHeader` component is designed to display headers in card components. It provides a flexible way to display titles, subtitles, and avatars.
+
+## Usage
+
+You can pass titles, subtitles, and avatars to the `CardHeader` component.
+
+<Canvas>
+  <Story of={Stories.Default} />
+  <Story of={Stories.WithAvatar} />
+</Canvas>
