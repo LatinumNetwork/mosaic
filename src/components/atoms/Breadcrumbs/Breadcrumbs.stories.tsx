@@ -46,8 +46,8 @@ WithIcons.args = {
   ],
 };
 
-export const WithIButtons = Template.bind({});
-WithIButtons.args = {
+export const WithButtons = Template.bind({});
+WithButtons.args = {
   separator: false,
   children: [
     <Button key="11" variant="text">
