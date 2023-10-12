@@ -1,15 +1,10 @@
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import MuiBreadcrumbs, {
   BreadcrumbsProps as MuiBreadcrumbsProps,
 } from '@mui/material/Breadcrumbs';
+import { CaretRight } from '@phosphor-icons/react';
 
-export type BreadcrumbsProps = MuiBreadcrumbsProps;
-
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
-  children,
-  ...props
-}) => (
-  <MuiBreadcrumbs separator={<NavigateNextIcon fontSize="small" />} {...props}>
+export const Breadcrumbs = ({ children, ...props }: MuiBreadcrumbsProps) => (
+  <MuiBreadcrumbs separator={<CaretRight size={20} />} {...props}>
     {children}
   </MuiBreadcrumbs>
 );

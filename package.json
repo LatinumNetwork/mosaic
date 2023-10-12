@@ -117,5 +117,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "dependencies": {
+        "@phosphor-icons/react": "^2.0.13"
     }
 }

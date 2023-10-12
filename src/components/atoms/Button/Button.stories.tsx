@@ -1,5 +1,4 @@
-import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Plus, TrashSimple } from '@phosphor-icons/react';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 import { Box, Button } from 'src/components';
@@ -116,7 +115,7 @@ export const Colors: StoryFn = () => {
 };
 
 export const WithIconStart: StoryFn<typeof Button> = (args) => (
-  <Button startIcon={<AddIcon />} {...args}>
+  <Button startIcon={<Plus size={18} />} {...args}>
     Button
   </Button>
 );
@@ -127,7 +126,7 @@ WithIconStart.args = {
 };
 
 export const WithIconEnd: StoryFn<typeof Button> = (args) => (
-  <Button endIcon={<DeleteIcon />} {...args}>
+  <Button endIcon={<TrashSimple size={20} />} {...args}>
     Button
   </Button>
 );

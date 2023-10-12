@@ -1,14 +1,41 @@
-import HomeIcon from '@mui/icons-material/Home';
 import Link from '@mui/material/Link';
+import { House } from '@phosphor-icons/react';
 import { Meta, StoryFn } from '@storybook/react';
-import { Box, Breadcrumbs, BreadcrumbsProps, Button } from 'src/components';
+import { Box, Breadcrumbs, Button } from 'src/components';
+
+const argTypes = {
+  maxItems: {
+    control: { type: 'number' },
+    description: 'Maximum number of breadcrumbs to display.',
+    table: {
+      defaultValue: {
+        summary: '8',
+      },
+    },
+  },
+  separator: {
+    control: { type: 'text' },
+    description: 'The string or node used to separate the breadcrumbs.',
+    table: {
+      defaultValue: {
+        summary: '>',
+      },
+    },
+  },
+};
 
 export default {
   title: 'Components/Breadcrumbs',
   component: Breadcrumbs,
+  argTypes,
+  parameters: {
+    controls: { include: Object.keys(argTypes) },
+  },
 } as Meta;
 
-const Template: StoryFn<BreadcrumbsProps> = (args) => <Breadcrumbs {...args} />;
+const Template: StoryFn<typeof Breadcrumbs> = ({ children, ...args }) => (
+  <Breadcrumbs {...args}>{children}</Breadcrumbs>
+);
 
 export const Basic = Template.bind({});
 Basic.args = {
@@ -28,30 +55,14 @@ Basic.args = {
 export const WithIcons = Template.bind({});
 WithIcons.args = {
   children: [
-    <Box key="box" display="flex" alignItems="center" gap={1}>
-      <HomeIcon fontSize="small" />
+    <Box key="box" display="flex" alignItems="center" gap={0.5}>
+      <House size="18" />
       Menu Item
     </Box>,
-    <Button key="7" variant="link">
+    <Button key="7" variant="text">
       Item
     </Button>,
-    <Button key="8" variant="link">
-      Item 2
-    </Button>,
-  ],
-};
-
-export const WithButtons = Template.bind({});
-WithButtons.args = {
-  separator: false,
-  children: [
-    <Button key="11" variant="text">
-      Menu Item
-    </Button>,
-    <Button key="12" variant="primary">
-      Item
-    </Button>,
-    <Button key="13" variant="secondary">
+    <Button key="8" variant="text">
       Item 2
     </Button>,
   ],
@@ -66,7 +77,7 @@ CustomStyles.args = {
     <Link key="20" color="textPrimary" href="/item">
       Item
     </Link>,
-    <Link key="30" color="textSecondary" href="/item2">
+    <Link key="30" color="primary" href="/item2">
       Item 2
     </Link>,
   ],
