@@ -9,4 +9,3 @@ export { Box } from './atoms/Box';
 export type { BoxProps } from './atoms/Box';
 
 export { Breadcrumbs } from './atoms/Breadcrumbs';
-export type { BreadcrumbsProps } from './atoms/Breadcrumbs';
