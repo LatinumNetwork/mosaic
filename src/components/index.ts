@@ -7,3 +7,5 @@ export type { ButtonProps } from './atoms/Button';
 
 export { Box } from './atoms/Box';
 export type { BoxProps } from './atoms/Box';
+
+export { Breadcrumbs } from './atoms/Breadcrumbs';
