@@ -1,5 +1,11 @@
 import { Box, Button, Typography } from './components';
-import type { BoxProps, ButtonProps, TypographyProps } from './components';
+import type {
+  BoxProps,
+  Breadcrumbs,
+  BreadcrumbsProps,
+  ButtonProps,
+  TypographyProps,
+} from './components';
 
 export * from './colors';
 export * from './typings';
@@ -14,4 +20,13 @@ export {
   styled,
 } from '@mui/material/styles';
 
-export { Box, BoxProps, Button, ButtonProps, Typography, TypographyProps };
+export {
+  Box,
+  BoxProps,
+  Button,
+  ButtonProps,
+  Typography,
+  TypographyProps,
+  Breadcrumbs,
+  BreadcrumbsProps,
+};
