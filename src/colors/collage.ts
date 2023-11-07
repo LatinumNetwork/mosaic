@@ -65,7 +65,7 @@ const collage = {
     900: '#153e44',
   },
   green: {
-    //parents-/7-kids-green
+    //parents-kids-green
     50: '#edf3ef',
     100: '#c6dbcc',
     200: '#aacab4',
