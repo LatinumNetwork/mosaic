@@ -20,6 +20,7 @@ declare module '@mui/material/styles' {
     collageOrange: CustomColorShades;
     collagePurple: CustomColorShades;
     collageTeal: CustomColorShades;
+    collageGreen: CustomColorShades;
     uiGray: CustomColorShades;
     uiCoolGray: CustomColorShades;
     uiWhite: CustomColorShades;
@@ -35,6 +36,7 @@ declare module '@mui/material/styles' {
     collageOrange?: CustomColorShades;
     collagePurple?: CustomColorShades;
     collageTeal?: CustomColorShades;
+    collageGreen?: CustomColorShades;
     uiGray?: CustomColorShades;
     uiCoolGray?: CustomColorShades;
     uiWhite?: CustomColorShades;
