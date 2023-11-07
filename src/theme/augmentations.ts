@@ -2,6 +2,10 @@
 import React from 'react';
 
 declare module '@mui/material/styles' {
+  interface DefaultColors {
+    black: string;
+  }
+
   interface CustomColorShades {
     '50'?: string;
     '100'?: string;
@@ -14,6 +18,7 @@ declare module '@mui/material/styles' {
     '800'?: string;
     '900'?: string;
   }
+
   interface CustomPalette {
     collageRed: CustomColorShades;
     collageYellow: CustomColorShades;
@@ -28,6 +33,7 @@ declare module '@mui/material/styles' {
     uiGreen: CustomColorShades;
     uiYellow: CustomColorShades;
     uiRed: CustomColorShades;
+    defaultColors: DefaultColors;
   }
 
   interface CustomPaletteOptions {
@@ -37,6 +43,22 @@ declare module '@mui/material/styles' {
     collagePurple?: CustomColorShades;
     collageTeal?: CustomColorShades;
     collageGreen?: CustomColorShades;
+    uiGray?: CustomColorShades;
+    uiCoolGray?: CustomColorShades;
+    uiWhite?: CustomColorShades;
+    uiBlue?: CustomColorShades;
+    uiGreen?: CustomColorShades;
+    uiYellow?: CustomColorShades;
+    uiRed?: CustomColorShades;
+    defaultColors?: DefaultColors;
+  }
+
+  interface CustomColors {
+    collageRed?: CustomColorShades;
+    collageYellow?: CustomColorShades;
+    collageOrange?: CustomColorShades;
+    collagePurple?: CustomColorShades;
+    collageTeal?: CustomColorShades;
     uiGray?: CustomColorShades;
     uiCoolGray?: CustomColorShades;
     uiWhite?: CustomColorShades;

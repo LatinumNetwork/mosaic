@@ -4,6 +4,7 @@ import '@fontsource/nunito-sans/700.css';
 import '@fontsource/nunito-sans/800.css';
 import {
   CustomColorShades,
+  CustomColors,
   CustomPaletteOptions,
   PaletteOptions,
   ThemeOptions,
@@ -26,9 +27,7 @@ const generatePalette = (
   const palette: CustomPaletteOptions = {};
 
   for (const color in swatch) {
-    const colorKey = `${name}${capitalize(
-      color
-    )}` as keyof CustomPaletteOptions;
+    const colorKey = `${name}${capitalize(color)}` as keyof CustomColors;
     palette[colorKey] = {
       ...swatch[color],
     };
@@ -45,6 +44,9 @@ export const palette: PaletteOptions = {
   ...themeColors,
   background: {
     default: ui.coolGray[50],
+  },
+  defaultColors: {
+    black: '#000',
   },
 };
 
