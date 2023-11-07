@@ -106,10 +106,12 @@ export const Colors: StoryFn = () => {
   return (
     <Box display="flex" justifyContent="space-around">
       <Button color={PaletteColors.uiGray}>uiGray</Button>
-      <Button color={PaletteColors.collageViolet}>collageViolet</Button>
+      <Button color={PaletteColors.collageRed}>collageRed</Button>
+      <Button color={PaletteColors.collagePurple}>collagePurple</Button>
       <Button color={PaletteColors.collageOrange}>collageOrange</Button>
       <Button color={PaletteColors.collageTeal}>collageTeal</Button>
       <Button color={PaletteColors.collageYellow}>collageYellow</Button>
+      <Button color={PaletteColors.collageGreen}>collageGreen</Button>
     </Box>
   );
 };
