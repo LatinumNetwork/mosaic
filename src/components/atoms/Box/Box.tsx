@@ -1,8 +1,8 @@
 import MuiBox, { BoxProps as MuiBoxProps } from '@mui/material/Box';
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 export type BoxProps = MuiBoxProps;
 
-export const Box = (props: BoxProps): React.JSX.Element => (
-  <MuiBox {...props} />
+export const Box = forwardRef(
+  (props: BoxProps, ref): React.JSX.Element => <MuiBox {...props} ref={ref} />
 );
