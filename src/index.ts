@@ -1,3 +1,5 @@
+import { hexToRgba } from 'src/utils';
+
 import { Box, Button, Typography } from './components';
 import type {
   BoxProps,
@@ -29,4 +31,5 @@ export {
   TypographyProps,
   Breadcrumbs,
   BreadcrumbsProps,
+  hexToRgba,
 };
