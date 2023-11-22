@@ -57,16 +57,11 @@ This function takes a hex color string and an opacity value, then returns the co
 Here are a couple of examples of using `hexToRgba` to create transparent colors:
 
 ```jsx
-// Assuming this function is defined in `utils.ts`
-import { hexToRgba } from './utils.ts';
+import { hexToRgba } from '@latinum-network/mosaic';
 
-// Example usage:
-const semiTransparentRed = hexToRgba('#FF0000', 45);
-const semiTransparentBlue = hexToRgba('#0000FF', 60);
-
-// Output:
-// semiTransparentRed is "rgba(255,0,0,0.45)"
-// semiTransparentBlue is "rgba(0,0,255,0.6)"
+const semiTransparentRed = hexToRgba(palette.uiRed[500], 45);
+const semiTransparentBlue = hexToRgba(palette.uiBlue[900], 60);
+const semiTransparentGreen = hexToRgba(palette.uiGreen[900], 60);
 ```
 
 <ColorPalette>
