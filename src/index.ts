@@ -12,6 +12,7 @@ import type {
 export * from './colors';
 export * from './typings';
 export * from './theme';
+export * as Icon from '@phosphor-icons/react';
 
 export * from '@mui/material';
 
