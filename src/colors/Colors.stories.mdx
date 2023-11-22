@@ -1,7 +1,11 @@
 import { ColorItem, ColorPalette, Meta } from '@storybook/blocks';
 
 import { collage, themeColors, ui } from './index';
-import { semiTransparentBlue, semiTransparentRed, semiTransparentGreen } from './transparencyColors';
+import {
+  semiTransparentBlue,
+  semiTransparentGreen,
+  semiTransparentRed,
+} from './transparencyColors';
 
 <Meta title="Colors" />
 
@@ -66,7 +70,19 @@ const semiTransparentBlue = hexToRgba('#0000FF', 60);
 ```
 
 <ColorPalette>
-  <ColorItem title="Semi-Transparent Red" subtitle="45% Opacity" colors={[semiTransparentRed]} />
-  <ColorItem title="Semi-Transparent Blue" subtitle="60% Opacity" colors={[semiTransparentBlue]} />
-    <ColorItem title="Semi-Transparent Green" subtitle="60% Opacity" colors={[semiTransparentGreen]} />
+  <ColorItem
+    title="Semi-Transparent Red"
+    subtitle="45% Opacity"
+    colors={[semiTransparentRed]}
+  />
+  <ColorItem
+    title="Semi-Transparent Blue"
+    subtitle="60% Opacity"
+    colors={[semiTransparentBlue]}
+  />
+  <ColorItem
+    title="Semi-Transparent Green"
+    subtitle="60% Opacity"
+    colors={[semiTransparentGreen]}
+  />
 </ColorPalette>
