@@ -1,6 +1,7 @@
 import { ColorItem, ColorPalette, Meta } from '@storybook/blocks';
 
-import { collage, themeColors, ui } from './index.ts';
+import { collage, themeColors, ui } from './index';
+import { semiTransparentBlue, semiTransparentRed, semiTransparentGreen } from './transparencyColors';
 
 <Meta title="Colors" />
 
@@ -41,4 +42,31 @@ import { collage, themeColors, ui } from './index.ts';
   <ColorItem title="Warning" colors={themeColors.warning} />
   <ColorItem title="Success" colors={themeColors.success} />
   <ColorItem title="Text" colors={themeColors.text} />
+</ColorPalette>
+
+# Transparency Colors
+
+Transparency in UI elements can be critical for overlaying information, creating hierarchy, and drawing attention to interactive states. The `hexToRgba` function lets us to transform hex color codes into RGBA format with a specified level of transparency.
+
+This function takes a hex color string and an opacity value, then returns the color as an RGBA string, which includes the transparency level.
+
+Here are a couple of examples of using `hexToRgba` to create transparent colors:
+
+```jsx
+// Assuming this function is defined in `utils.ts`
+import { hexToRgba } from './utils.ts';
+
+// Example usage:
+const semiTransparentRed = hexToRgba('#FF0000', 45);
+const semiTransparentBlue = hexToRgba('#0000FF', 60);
+
+// Output:
+// semiTransparentRed is "rgba(255,0,0,0.45)"
+// semiTransparentBlue is "rgba(0,0,255,0.6)"
+```
+
+<ColorPalette>
+  <ColorItem title="Semi-Transparent Red" subtitle="45% Opacity" colors={[semiTransparentRed]} />
+  <ColorItem title="Semi-Transparent Blue" subtitle="60% Opacity" colors={[semiTransparentBlue]} />
+    <ColorItem title="Semi-Transparent Green" subtitle="60% Opacity" colors={[semiTransparentGreen]} />
 </ColorPalette>
