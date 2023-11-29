@@ -1,9 +1,10 @@
 export enum PaletteColors {
   collageRed = 'collageRed',
-  collageViolet = 'collageViolet',
-  collageOrange = 'collageOrange',
-  collageTeal = 'collageTeal',
   collageYellow = 'collageYellow',
+  collageOrange = 'collageOrange',
+  collagePurple = 'collagePurple',
+  collageTeal = 'collageTeal',
+  collageGreen = 'collageGreen',
   uiBlue = 'uiBlue',
   uiCoolGray = 'uiCoolGray',
   uiWhite = 'uiWhite',

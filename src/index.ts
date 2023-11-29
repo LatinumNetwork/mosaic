@@ -1,9 +1,18 @@
+import { hexToRgba } from 'src/utils';
+
 import { Box, Button, Typography } from './components';
-import type { BoxProps, ButtonProps, TypographyProps } from './components';
+import type {
+  BoxProps,
+  Breadcrumbs,
+  BreadcrumbsProps,
+  ButtonProps,
+  TypographyProps,
+} from './components';
 
 export * from './colors';
 export * from './typings';
 export * from './theme';
+export * as Icon from '@phosphor-icons/react';
 
 export * from '@mui/material';
 
@@ -14,4 +23,14 @@ export {
   styled,
 } from '@mui/material/styles';
 
-export { Box, BoxProps, Button, ButtonProps, Typography, TypographyProps };
+export {
+  Box,
+  BoxProps,
+  Button,
+  ButtonProps,
+  Typography,
+  TypographyProps,
+  Breadcrumbs,
+  BreadcrumbsProps,
+  hexToRgba,
+};

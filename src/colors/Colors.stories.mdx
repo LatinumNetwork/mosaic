@@ -1,6 +1,11 @@
 import { ColorItem, ColorPalette, Meta } from '@storybook/blocks';
 
-import { collage, themeColors, ui } from './index.ts';
+import { collage, themeColors, ui } from './index';
+import {
+  semiTransparentBlue,
+  semiTransparentGreen,
+  semiTransparentRed,
+} from './transparencyColors';
 
 <Meta title="Colors" />
 
@@ -12,8 +17,9 @@ import { collage, themeColors, ui } from './index.ts';
   <ColorItem title="Collage Red" colors={collage.red} />
   <ColorItem title="Multicultural Yellow" colors={collage.yellow} />
   <ColorItem title="Generations Orange" colors={collage.orange} />
-  <ColorItem title="LGBTQ+ & Gender Violet" colors={collage.violet} />
-  <ColorItem title="Parents & Kids Teal" colors={collage.teal} />
+  <ColorItem title="LGBTQ+ Purple" colors={collage.purple} />
+  <ColorItem title="Gender Teal" colors={collage.teal} />
+  <ColorItem title="Parents & Kids Green" colors={collage.green} />
 </ColorPalette>
 
 # UI Palette
@@ -40,4 +46,38 @@ import { collage, themeColors, ui } from './index.ts';
   <ColorItem title="Warning" colors={themeColors.warning} />
   <ColorItem title="Success" colors={themeColors.success} />
   <ColorItem title="Text" colors={themeColors.text} />
+</ColorPalette>
+
+# Transparency Colors
+
+Transparency in UI elements can be critical for overlaying information, creating hierarchy, and drawing attention to interactive states. The `hexToRgba` function lets us to transform hex color codes into RGBA format with a specified level of transparency.
+
+This function takes a hex color string and an opacity value, then returns the color as an RGBA string, which includes the transparency level.
+
+Here are a couple of examples of using `hexToRgba` to create transparent colors:
+
+```jsx
+import { hexToRgba } from '@latinum-network/mosaic';
+
+const semiTransparentRed = hexToRgba(palette.uiRed[500], 45);
+const semiTransparentBlue = hexToRgba(palette.uiBlue[900], 60);
+const semiTransparentGreen = hexToRgba(palette.uiGreen[900], 60);
+```
+
+<ColorPalette>
+  <ColorItem
+    title="Semi-Transparent Red"
+    subtitle="45% Opacity"
+    colors={[semiTransparentRed]}
+  />
+  <ColorItem
+    title="Semi-Transparent Blue"
+    subtitle="60% Opacity"
+    colors={[semiTransparentBlue]}
+  />
+  <ColorItem
+    title="Semi-Transparent Green"
+    subtitle="60% Opacity"
+    colors={[semiTransparentGreen]}
+  />
 </ColorPalette>

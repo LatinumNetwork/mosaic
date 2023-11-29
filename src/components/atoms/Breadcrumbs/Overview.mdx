@@ -1,0 +1,52 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import { Breadcrumbs } from 'src/components';
+
+import * as Stories from './Breadcrumbs.stories';
+
+<Meta title="Components/Breadcrumbs" component={Breadcrumbs} of={Stories} />
+
+# Breadcrumbs
+
+The `Breadcrumbs` component serves as a navigational aid, indicating the user's current location within the application or website's hierarchical structures. Originally designed to handle simple text and links, it has evolved to support buttons, icons, and other custom components, offering flexibility in its use and presentation.
+
+## Usage
+
+The `Breadcrumbs` component is versatile, allowing developers to pass in text, links, buttons, or even custom components as children. This flexibility ensures that it can be tailored to the specific needs and aesthetics of any project.
+
+### Guidelines:
+
+- **Hierarchy**: Ensure that the breadcrumbs reflect the hierarchical structure of your content accurately.
+- **Clarity**: Each breadcrumb should be descriptive and provide clear context to the user.
+- **Clickable**: Typically, all breadcrumbs except the last one (current page) are clickable.
+
+## Basic Breadcrumbs
+
+A simple linear path, primarily using text to guide the user.
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Breadcrumbs with Icons
+
+Enhance breadcrumbs with icons to provide visual cues or to simply elevate the design.
+
+<Canvas>
+  <Story of={Stories.WithIcons} />
+</Canvas>
+
+## Breadcrumbs with Custom Styles
+
+Stylize the breadcrumbs to better align with your application's theme or to provide a unique user experience.
+
+<Canvas>
+  <Story of={Stories.CustomStyles} />
+</Canvas>
+
+## Collapsed Breadcrumbs
+
+For longer navigational paths, breadcrumbs can be collapsed to maintain a clean interface while still providing essential navigation.
+
+<Canvas>
+  <Story of={Stories.Collapsed} />
+</Canvas>

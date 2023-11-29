@@ -74,6 +74,9 @@ const ui = {
   white: {
     500: '#FFFFFF',
   },
+  black: {
+    500: '#000000',
+  },
 };
 
 export default ui;

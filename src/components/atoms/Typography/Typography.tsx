@@ -2,7 +2,7 @@ import MuiTypography, {
   TypographyProps as MuiTypographyProps,
 } from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-import React from 'react';
+import { forwardRef } from 'react';
 
 type FontWeightVariant = 'regular' | 'medium' | 'semiBold' | 'bold';
 
@@ -28,15 +28,19 @@ const TypographyRoot = styled(MuiTypography, {
   font-weight: ${({ weight }) =>
     weight ? fontWeightMapping[weight as FontWeightVariant] : 'inherit'};
 `;
-export const Typography = ({
-  children,
-  weight = 'regular',
-  component,
-  ...props
-}: TypographyProps): React.JSX.Element => {
-  return (
-    <TypographyRoot component={component} weight={weight} {...props}>
+
+export const Typography = forwardRef<HTMLElement, TypographyProps>(
+  (
+    { children, weight = 'regular', component, ...otherProps }: TypographyProps,
+    ref
+  ) => (
+    <TypographyRoot
+      component={component}
+      weight={weight}
+      ref={ref}
+      {...otherProps}
+    >
       {children}
     </TypographyRoot>
-  );
-};
+  )
+);

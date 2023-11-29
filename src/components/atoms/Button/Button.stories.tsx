@@ -1,5 +1,4 @@
-import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Plus, TrashSimple } from '@phosphor-icons/react';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 import { Box, Button } from 'src/components';
@@ -107,16 +106,18 @@ export const Colors: StoryFn = () => {
   return (
     <Box display="flex" justifyContent="space-around">
       <Button color={PaletteColors.uiGray}>uiGray</Button>
-      <Button color={PaletteColors.collageViolet}>collageViolet</Button>
+      <Button color={PaletteColors.collageRed}>collageRed</Button>
+      <Button color={PaletteColors.collagePurple}>collagePurple</Button>
       <Button color={PaletteColors.collageOrange}>collageOrange</Button>
       <Button color={PaletteColors.collageTeal}>collageTeal</Button>
       <Button color={PaletteColors.collageYellow}>collageYellow</Button>
+      <Button color={PaletteColors.collageGreen}>collageGreen</Button>
     </Box>
   );
 };
 
 export const WithIconStart: StoryFn<typeof Button> = (args) => (
-  <Button startIcon={<AddIcon />} {...args}>
+  <Button startIcon={<Plus size={18} />} {...args}>
     Button
   </Button>
 );
@@ -127,7 +128,7 @@ WithIconStart.args = {
 };
 
 export const WithIconEnd: StoryFn<typeof Button> = (args) => (
-  <Button endIcon={<DeleteIcon />} {...args}>
+  <Button endIcon={<TrashSimple size={20} />} {...args}>
     Button
   </Button>
 );
