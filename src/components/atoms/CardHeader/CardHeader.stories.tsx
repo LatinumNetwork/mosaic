@@ -1,23 +1,39 @@
+import { Question } from '@phosphor-icons/react';
 import { Meta, StoryFn } from '@storybook/react';
+import { BaseCard, Box, CardHeader } from 'src/components';
 
-import { CardHeader, CardHeaderProps } from './CardHeader';
-
-export default {
-  title: 'Components/CardHeader',
+const meta: Meta<typeof CardHeader> = {
+  title: 'Atoms/CardHeader',
   component: CardHeader,
-} as Meta;
+};
 
-const Template: StoryFn<CardHeaderProps> = (args) => <CardHeader {...args} />;
+export default meta;
+
+const Template: StoryFn<typeof CardHeader> = (args) => (
+  <BaseCard>
+    <CardHeader {...args} />
+  </BaseCard>
+);
 
 export const Default = Template.bind({});
 Default.args = {
-  title: 'Default CardHeader',
-  subheader: 'Subheader text',
+  title: 'Title',
+  description: 'Description content goes here.',
 };
 
-export const WithAvatar = Template.bind({});
-WithAvatar.args = {
-  title: 'CardHeader with Avatar',
-  subheader: 'Subheader text',
-  avatar: false,
+export const WithAdditionalContent = Template.bind({});
+WithAdditionalContent.args = {
+  title: 'Brand Awareness',
+  description: 'Percentege of consumers aware of your brand.',
+  children: (
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+      }}
+    >
+      <Question size={32} />
+    </Box>
+  ),
 };

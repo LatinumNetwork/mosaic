@@ -1,21 +1,40 @@
-// CardHeader.stories.mdx
-
-import { Canvas, Meta, Story } from '@storybook/blocks';
+import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
 import { CardHeader } from 'src/components';
 
-import * as Stories from './CardHeader.stories.tsx';
+import * as Stories from './CardHeader.stories';
 
 <Meta title="Components/CardHeader" component={CardHeader} of={Stories} />
 
 # CardHeader
 
-The `CardHeader` component is designed to display headers in card components. It provides a flexible way to display titles, subtitles, and avatars.
+The `CardHeader` component is designed to provide a consistent and customizable header section for card components. It can accommodate a wide range of content, including titles, icons, and action elements, offering flexibility and adaptability for various card designs.
 
 ## Usage
 
-You can pass titles, subtitles, and avatars to the `CardHeader` component.
+`CardHeader` can be used in any card component where you need to display a header. It supports custom children, allowing you to add text, buttons, icons, or any other elements that suit your design needs.
+
+### Guidelines:
+
+- **Consistency**: Maintain a consistent design across different cards using the `CardHeader`.
+- **Flexibility**: Utilize the ability to pass custom children to create diverse and dynamic header designs.
+- **Readability**: Ensure that the header content is clear and easily readable.
+
+## Basic Card Header
+
+A simple header displaying only a title.
 
 <Canvas>
   <Story of={Stories.Default} />
-  <Story of={Stories.WithAvatar} />
 </Canvas>
+
+## Card Header with Additional Content
+
+Showcase a header with both a title and additional content like a subtitle or a small description.
+
+<Canvas>
+  <Story of={Stories.WithAdditionalContent} />
+</Canvas>
+
+## Card Header with Actions
+
+Include interactive elements such as buttons or icons in the header for added functionality.
