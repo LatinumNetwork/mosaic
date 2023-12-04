@@ -19,8 +19,8 @@
         "dist"
     ],
     "engines": {
-        "node": ">=20.0.0",
-        "npm": ">=10.0.0"
+        "node": "20.10.0",
+        "npm": "10.2.3"
     },
     "peerDependencies": {
         "@emotion/react": "^11.11.1",
