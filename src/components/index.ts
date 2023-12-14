@@ -1,4 +1,4 @@
-// atoms and molecules
+// atoms
 export { Typography } from './atoms/Typography';
 export type { TypographyProps } from './atoms/Typography';
 
