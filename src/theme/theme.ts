@@ -135,6 +135,9 @@ const themeOptions: ThemeOptions = {
         body: {
           fontFamily: "'Nunito Sans', sans-serif",
         },
+        'svg text': {
+          fontFamily: "'Nunito Sans', sans-serif",
+        },
       },
     },
   },
