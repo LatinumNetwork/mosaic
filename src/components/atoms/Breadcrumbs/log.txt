@@ -1,0 +1,343 @@
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 436, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/applications.py", line 276, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/sessions.py", line 86, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    solved_result = await solve_dependencies(
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 622, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in get_brand_competitors_helper
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in <listcomp>
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for BrandLogoOut
+brand_name
+  none is not an allowed value (type=type_error.none.not_allowed)
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63204 - "GET /metrics/diff/327/monodemographic/?metrics=B-CFQ+v3.0 HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63203 - "GET /metrics/diff/327/monodemographic/?metrics=Awareness HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:63208 - "GET /metrics/sample/327/monodemographic/ HTTP/1.1" 200 OK
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63200 - "GET /metrics/diff/327/monodemographic/?metrics=Fit&metrics=Relevance&metrics=Trust&metrics=Memories&metrics=Advocacy&metrics=Values HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:63567 - "GET /brands/327/competitors HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 436, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/applications.py", line 276, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/sessions.py", line 86, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    solved_result = await solve_dependencies(
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 622, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in get_brand_competitors_helper
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in <listcomp>
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for BrandLogoOut
+brand_name
+  none is not an allowed value (type=type_error.none.not_allowed)
+INFO:     127.0.0.1:63574 - "GET /metrics/327/monodemographic/?metrics=Past+Purchase+Behavior&metrics=Momentum&metrics=Favorability&metrics=Purchase+Intent HTTP/1.1" 200 OK
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63569 - "GET /metrics/diff/327/monodemographic/?metrics=Awareness HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63575 - "GET /metrics/norm/327/monodemographic/?metrics=Past+Purchase+Behavior&metrics=Momentum&metrics=Favorability&metrics=Purchase+Intent HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63589 - "GET /metrics/analysis/brand-performance-matrix/327 HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63571 - "GET /metrics/diff/327/monodemographic/?metrics=Fit&metrics=Relevance&metrics=Trust&metrics=Memories&metrics=Advocacy&metrics=Values HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63565 - "GET /metrics/diff/327/monodemographic/?metrics=B-CFQ+v3.0 HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:63606 - "GET /brands/327/competitors HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 436, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/applications.py", line 276, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/sessions.py", line 86, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    solved_result = await solve_dependencies(
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 622, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in get_brand_competitors_helper
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in <listcomp>
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for BrandLogoOut
+brand_name
+  none is not an allowed value (type=type_error.none.not_allowed)
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63589 - "GET /metrics/norm/327/monodemographic/?metrics=Past+Purchase+Behavior&metrics=Momentum&metrics=Favorability&metrics=Purchase+Intent HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63575 - "GET /metrics/analysis/brand-performance-matrix/327 HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63569 - "GET /metrics/diff/327/monodemographic/?metrics=Awareness HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63659 - "GET /metrics/diff/327/monodemographic/?metrics=B-CFQ+v3.0 HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:63720 - "GET /taxonomies/brands/327 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63723 - "GET /metrics/327/monodemographic/?metrics=B-CFQ+v3.0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63726 - "GET /programs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63719 - "GET /brands/logo?brand_ids=327 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63714 - "GET /cas-auth/user-data HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63720 - "GET /brands/327/competitors HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 436, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/applications.py", line 276, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/sessions.py", line 86, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    solved_result = await solve_dependencies(
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 622, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in get_brand_competitors_helper
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in <listcomp>
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for BrandLogoOut
+brand_name
+  none is not an allowed value (type=type_error.none.not_allowed)
+INFO:     127.0.0.1:63714 - "GET /metrics/327/monodemographic/?metrics=Past+Purchase+Behavior&metrics=Momentum&metrics=Favorability&metrics=Purchase+Intent HTTP/1.1" 200 OK
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63724 - "GET /metrics/diff/327/monodemographic/?metrics=B-CFQ+v3.0 HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63719 - "GET /metrics/diff/327/monodemographic/?metrics=Fit&metrics=Relevance&metrics=Trust&metrics=Memories&metrics=Advocacy&metrics=Values HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:63724 - "GET /elevio/testfluenci%40collagegroup.com/hash/ HTTP/1.1" 200 OK
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63749 - "GET /metrics/norm/327/monodemographic/?metrics=Past+Purchase+Behavior&metrics=Momentum&metrics=Favorability&metrics=Purchase+Intent HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63726 - "GET /metrics/diff/327/monodemographic/?metrics=Awareness HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:63723 - "GET /metrics/sample/327/monodemographic/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63719 - "GET /brands/327/competitors HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 436, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/applications.py", line 276, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/sessions.py", line 86, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    solved_result = await solve_dependencies(
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 622, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in get_brand_competitors_helper
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in <listcomp>
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for BrandLogoOut
+brand_name
+  none is not an allowed value (type=type_error.none.not_allowed)
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63714 - "GET /metrics/analysis/brand-performance-matrix/327 HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63724 - "GET /metrics/diff/327/monodemographic/?metrics=B-CFQ+v3.0 HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63726 - "GET /metrics/norm/327/monodemographic/?metrics=Past+Purchase+Behavior&metrics=Momentum&metrics=Favorability&metrics=Purchase+Intent HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63723 - "GET /metrics/diff/327/monodemographic/?metrics=Awareness HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63749 - "GET /metrics/diff/327/monodemographic/?metrics=Fit&metrics=Relevance&metrics=Trust&metrics=Memories&metrics=Advocacy&metrics=Values HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:63819 - "GET /brands/327/competitors HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 436, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 78, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/applications.py", line 276, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/sessions.py", line 86, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 92, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/cors.py", line 147, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/routing.py", line 227, in app
+    solved_result = await solve_dependencies(
+  File "/Users/juan/.pyenv/versions/3.10.0/envs/datacore/lib/python3.10/site-packages/fastapi/dependencies/utils.py", line 622, in solve_dependencies
+    solved = await call(**sub_values)
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in get_brand_competitors_helper
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "/Users/juan/collage_group/datacore/core/utils/helpers.py", line 318, in <listcomp>
+    results_serialized = [BrandLogoOut(brand_id=res[0], brand_name=res[1], brand_logo_url=res[2]) for res in results]
+  File "pydantic/main.py", line 341, in pydantic.main.BaseModel.__init__
+pydantic.error_wrappers.ValidationError: 1 validation error for BrandLogoOut
+brand_name
+  none is not an allowed value (type=type_error.none.not_allowed)
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63821 - "GET /metrics/analysis/brand-performance-matrix/327 HTTP/1.1" 400 Bad Request
+OMG! An HTTP error!: HTTPException(status_code=400, detail='1 validation error for BrandLogoOut\nbrand_name\n  none is not an allowed value (type=type_error.none.not_allowed)')
+INFO:     127.0.0.1:63749 - "GET /metrics/diff/327/monodemographic/?metrics=B-CFQ+v3.0 HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:64341 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64341 - "GET /openapi.json HTTP/1.1" 200 OK
+OMG! An HTTP error!: HTTPException(status_code=404, detail='Not Found')
+INFO:     127.0.0.1:64371 - "GET / HTTP/1.1" 404 Not Found
+OMG! An HTTP error!: HTTPException(status_code=404, detail='Not Found')
+INFO:     127.0.0.1:64371 - "GET /favicon.ico HTTP/1.1" 404 Not Found
