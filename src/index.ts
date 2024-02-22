@@ -2,6 +2,8 @@ import { hexToRgba } from 'src/utils';
 
 import { Box, Button, Typography } from './components';
 import type {
+  BaseCard,
+  BaseCardProps,
   BoxProps,
   Breadcrumbs,
   BreadcrumbsProps,
@@ -33,4 +35,6 @@ export {
   Breadcrumbs,
   BreadcrumbsProps,
   hexToRgba,
+  BaseCard,
+  BaseCardProps,
 };
