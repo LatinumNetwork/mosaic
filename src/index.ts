@@ -8,6 +8,10 @@ import type {
   Breadcrumbs,
   BreadcrumbsProps,
   ButtonProps,
+  Page,
+  PageProps,
+  Row,
+  RowProps,
   TypographyProps,
 } from './components';
 
@@ -37,4 +41,8 @@ export {
   hexToRgba,
   BaseCard,
   BaseCardProps,
+  Page,
+  PageProps,
+  Row,
+  RowProps,
 };
