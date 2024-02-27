@@ -15,11 +15,16 @@ export type CardHeaderProps = {
   sx?: SxProps;
 };
 
+export type CardBodyProps = {
+  children: ReactNode;
+  sx?: SxProps;
+};
+
 type BaseCardComponent = ForwardRefExoticComponent<
   BaseCardProps & RefAttributes<HTMLDivElement>
 > & {
   Header: ComponentType<CardHeaderProps>;
-  Body: ComponentType<BaseCardProps>;
+  Body: ComponentType<CardBodyProps>;
 };
 
 const Wrapper = styled(Box)({
@@ -40,7 +45,7 @@ const HeaderStyled = styled(Box)(({ theme }) => ({
   minHeight: '48px',
 }));
 
-const Body = styled(Box)(({ theme }) => ({
+const BodyStyled = styled(Box)(({ theme }) => ({
   borderRadius: '0px 0px 4px 4px',
   display: 'flex',
   flexDirection: 'column',
@@ -64,6 +69,14 @@ const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
   )
 );
 
+const CardBody = forwardRef<HTMLDivElement, CardBodyProps>(
+  ({ sx, children, ...rest }, ref) => (
+    <BodyStyled ref={ref} sx={sx} {...rest}>
+      {children}
+    </BodyStyled>
+  )
+);
+
 export const BaseCard = forwardRef<HTMLDivElement, BaseCardProps>(
   ({ children, ...rest }, ref) => (
     <Wrapper ref={ref} {...rest}>
@@ -73,7 +86,7 @@ export const BaseCard = forwardRef<HTMLDivElement, BaseCardProps>(
 ) as BaseCardComponent;
 
 BaseCard.Header = CardHeader;
-BaseCard.Body = Body;
+BaseCard.Body = CardBody;
 BaseCard.displayName = 'BaseCard';
 
 export default BaseCard;
