@@ -3,7 +3,7 @@ name: Deploy to AWS SSM Parameter Store
 on:
   push:
     branches:
-      - BRAN-643-CI-push-mosaic-colors.ts-file-to-AWS-as-env-variable-BE-pull-Env-variables-to-hace-access-to-FE-colors
+      - dev
 
 jobs:
   deploy-dev:
@@ -21,8 +21,9 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: github-actions-SSM-deploy
 
       - name: Upload file to AWS SSM Parameter Store
         run: |
           CONTENT=$(cat src/colors/collage.ts)
-          aws ssm put-parameter --name "/config/collage" --type "String" --value "$CONTENT" --overwrite
+          aws ssm put-parameter --name "COLLAGE_COLORS" --type "String" --value "$CONTENT" --overwrite
