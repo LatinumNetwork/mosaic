@@ -1,0 +1,27 @@
+name: Deploy to AWS SSM Parameter Store
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy-dev:
+    runs-on: ubuntu-22.04
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Upload file to AWS SSM Parameter Store
+        run: |
+          CONTENT=$(cat src/colors/collage.ts)
+          aws ssm put-parameter --name "/config/collage" --type "String" --value "$CONTENT" --overwrite
