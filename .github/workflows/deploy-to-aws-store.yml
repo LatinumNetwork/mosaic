@@ -29,5 +29,5 @@ jobs:
           role-session-name: github-actions-SSM-deploy
       - name: Run script and upload to AWS SSM
         run: |
-          CONTENT=$(node -r ts-node/register scripts/combine-json.js)
+          CONTENT=$(node -r ts-node/register scripts/combine-json.ts)
           aws ssm put-parameter --name "/config/combinedConfig" --type "String" --value "$CONTENT" --overwrite
