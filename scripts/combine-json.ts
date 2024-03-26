@@ -1,5 +1,5 @@
-import collage from '../src/colors/collage.ts';
-import ui from '../src/colors/ui.ts';
+import collage from '../src/colors/collage';
+import ui from '../src/colors/ui';
 
 const combined = {
   collage,
