@@ -23,7 +23,6 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
           role-session-name: github-actions-SSM-deploy
-
       - name: Convert JS object to Plain text and upload to AWS SSM
         run: |
           COLLAGE_CONTENT=$(cat src/colors/collage.ts)
