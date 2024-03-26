@@ -19,7 +19,7 @@ jobs:
 
       - name: Install Node.js dependencies
         run: |
-          npm install -g ts-node
+          npm install
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
