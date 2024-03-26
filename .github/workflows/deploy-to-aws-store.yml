@@ -17,17 +17,16 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
 
-      - name: Install Node.js dependencies
-        run: |
-          npm install
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
           role-session-name: github-actions-SSM-deploy
-      - name: Run script and upload to AWS SSM
+
+      - name: Convert JS object to JSON and upload to AWS SSM
         run: |
-          CONTENT=$(npx ts-node scripts/combine-json.ts)
-          aws ssm put-parameter --name "/config/combinedConfig" --type "String" --value "$CONTENT" --overwrite
+          COLLAGE_CONTENT=$(cat src/colors/collage.ts)
+          UI_CONTENT=$(cat src/colors/ui.ts)
+          COMBINED_CONTENT="{\"collage\": $COLLAGE_CONTENT, \"ui\": $UI_CONTENT}"
+          aws ssm put-parameter --name "/config/colorsConfig" --type "String" --value "$COMBINED_CONTENT" --overwrite
