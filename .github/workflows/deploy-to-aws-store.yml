@@ -3,7 +3,7 @@ name: Deploy to AWS SSM Parameter Store
 on:
   push:
     branches:
-      - dev
+      - BRAN-643-CI-push-mosaic-colors.ts-file-to-AWS-as-env-variable-BE-pull-Env-variables-to-hace-access-to-FE-colors
 
 jobs:
   deploy-dev:
