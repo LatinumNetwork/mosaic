@@ -3,7 +3,7 @@ name: Deploy to AWS SSM Parameter Store
 on:
   push:
     branches:
-      - BRAN-643-CI-push-mosaic-colors.ts-file-to-AWS-as-env-variable-BE-pull-Env-variables-to-hace-access-to-FE-colors
+      - dev
 
 jobs:
   deploy-dev:
@@ -24,7 +24,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           role-session-name: github-actions-SSM-deploy
 
-      - name: Convert JS object to JSON and upload to AWS SSM
+      - name: Convert JS object to Plain text and upload to AWS SSM
         run: |
           COLLAGE_CONTENT=$(cat src/colors/collage.ts)
           UI_CONTENT=$(cat src/colors/ui.ts)
