@@ -22,11 +22,6 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
           role-session-name: github-actions-SSM-deploy
-      - name: Upload collage.ts to AWS SSM Parameter Store
+      - name: Combine and Upload JSON to AWS SSM
         run: |
-          CONTENT=$(cat src/colors/collage.ts)
-          aws ssm put-parameter --name "/config/COLLAGE_COLORS_CONFIG" --type "String" --value "$CONTENT" --overwrite
-      - name: Upload ui.ts to AWS SSM Parameter Store
-        run: |
-          CONTENT=$(cat src/colors/ui.ts)
-          aws ssm put-parameter --name "/config/UI_COLOR_CONFIG" --type "String" --value "$CONTENT" --overwrite
+          bash ./scripts/combine-json.sh
