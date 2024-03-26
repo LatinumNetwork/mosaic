@@ -22,6 +22,7 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ secrets.AWS_REGION }}
           role-session-name: github-actions-SSM-deploy
-      - name: Combine and Upload JSON to AWS SSM
+      - name: Run script and upload to AWS SSM
         run: |
-          bash ./scripts/combine-json.sh
+          CONTENT=$(node -r ts-node/register scripts/combine-json.js)
+          aws ssm put-parameter --name "/config/combinedConfig" --type "String" --value "$CONTENT" --overwrite
