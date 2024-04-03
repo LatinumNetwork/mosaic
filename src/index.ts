@@ -8,6 +8,8 @@ import type {
   Breadcrumbs,
   BreadcrumbsProps,
   ButtonProps,
+  StreamlineIcon,
+  StreamlineIconProps,
   TypographyProps,
 } from './components';
 
@@ -37,4 +39,6 @@ export {
   hexToRgba,
   BaseCard,
   BaseCardProps,
+  StreamlineIcon,
+  StreamlineIconProps,
 };

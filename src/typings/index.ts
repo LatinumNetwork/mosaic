@@ -13,3 +13,10 @@ export enum PaletteColors {
   uiYellow = 'uiYellow',
   uiRed = 'uiRed',
 }
+
+export enum StreamlineIcons {
+  Lightbulb = 'lightbulb',
+  PerformanceIncrease = 'performance_increase',
+  Like = 'like',
+  ShoppingBasket = 'shopping_basket',
+}
