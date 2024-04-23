@@ -4,6 +4,7 @@ import React from 'react';
 declare module '@mui/material/styles' {
   interface DefaultColors {
     black: string;
+    white: string;
   }
 
   interface CustomColorShades {
