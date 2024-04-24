@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import React from 'react';
 
+// NOTE: This file creates/adjusts types for our custom configuration and changes
 declare module '@mui/material/styles' {
   interface DefaultColors {
     black: string;
+    white: string;
   }
 
   interface CustomColorShades {
@@ -79,7 +81,6 @@ declare module '@mui/material/styles' {
     caption: React.CSSProperties;
   }
 
-  // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
     b1?: React.CSSProperties;
     b2?: React.CSSProperties;
@@ -106,7 +107,6 @@ declare module '@mui/material/styles' {
   }
 }
 
-// Update the Typography's variant prop options
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     b1: true;
