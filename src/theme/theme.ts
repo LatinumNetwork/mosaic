@@ -46,7 +46,8 @@ export const palette: PaletteOptions = {
     default: ui.coolGray[50],
   },
   defaultColors: {
-    black: '#000',
+    black: '#000000',
+    white: '#ffffff',
   },
 };
 

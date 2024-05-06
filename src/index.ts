@@ -12,6 +12,8 @@ import type {
   PageProps,
   Row,
   RowProps,
+  StreamlineIcon,
+  StreamlineIconProps,
   TypographyProps,
 } from './components';
 
@@ -45,4 +47,6 @@ export {
   PageProps,
   Row,
   RowProps,
+  StreamlineIcon,
+  StreamlineIconProps,
 };

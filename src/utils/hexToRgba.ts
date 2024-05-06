@@ -1,6 +1,4 @@
-type AllowedOpacity = 45 | 60;
-
-export default (hex: string, opacity: AllowedOpacity): string => {
+export default (hex: string, opacity: number): string => {
   hex = hex.replace(/^#/, '');
 
   if (hex.length !== 6) {
