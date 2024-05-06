@@ -16,3 +16,9 @@ export type { StreamlineIconProps } from './atoms/StreamlineIcon';
 
 export { BaseCard } from './molecules/BaseCard';
 export type { BaseCardProps, CardHeaderProps } from './molecules/BaseCard';
+
+export { Page } from './atoms/Page';
+export type { PageProps } from './atoms/Page';
+
+export { Row } from './atoms/Row';
+export type { RowProps } from './atoms/Row';
