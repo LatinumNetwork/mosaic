@@ -37,7 +37,7 @@ jobs:
 
       - name: Format PR list
         run: |
-          pr_list=$(echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <" + https://646227b52910551bc013d3ef-rplhylrpxw.chromatic.com + "|PR #" + (.number|tostring) + ">"')
+          pr_list=$(echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <" + "https://646227b52910551bc013d3ef-rplhylrpxw.chromatic.com" + "|PR #" + (.number|tostring) + ">"')
           echo "pr_list=$pr_list" >> $GITHUB_ENV
 
           echo "pr_list=$pr_list" >> $GITHUB_ENV
