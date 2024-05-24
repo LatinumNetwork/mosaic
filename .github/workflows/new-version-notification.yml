@@ -42,15 +42,15 @@ jobs:
       - name: Format PR list
         run: |
           pr_list=$(echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <google.com|PR #" + (.number|tostring) + ">"')
-          echo "pr_list<<EOF" >> $GITHUB_ENV
-          echo "$pr_list" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-          echo "pr_list=$pr_list" >> $GITHUB_ENV
-            if [ -z "$pr_list" ]; then
-            echo "header=" >> $GITHUB_ENV          
-          else
-            echo "header=Merged PRs:" >> $GITHUB_ENV
-          fi
+#          echo "pr_list<<EOF" >> $GITHUB_ENV
+#          echo "$pr_list" >> $GITHUB_ENV
+#          echo "EOF" >> $GITHUB_ENV
+#          echo "pr_list=$pr_list" >> $GITHUB_ENV
+#            if [ -z "$pr_list" ]; then
+#            echo "header=" >> $GITHUB_ENV
+#          else
+#            echo "header=Merged PRs:" >> $GITHUB_ENV
+#          fi
 
       - name: Send Slack Notification
         uses: slackapi/slack-github-action@v1
