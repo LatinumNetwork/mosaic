@@ -28,8 +28,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repo: ${{ github.repository }}
-          current_tag: ${{ env.current_commit }}
-          previous_tag: ${{ env.previous_commit }}
+          current_tag: ${{ env.current_tag }}
+          previous_tag: ${{ env.previous_tag }}
           return_type: 'all'
 
       - name: Format PR list
