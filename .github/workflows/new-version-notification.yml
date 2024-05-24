@@ -2,7 +2,7 @@ name: New Version Notification
 
 on:
   push:
-    branches: ['test-branch']
+    branches: ['test-branch', 'BRAN-393-when-releasing-mosaic-show-what-tickets-got-merged-with-a-release-log']
   workflow_dispatch:
 
 jobs:
