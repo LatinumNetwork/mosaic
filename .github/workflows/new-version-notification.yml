@@ -37,12 +37,14 @@ jobs:
           current_tag: 02cd291362e0209ed9b84f5a7670e50850e108fb
           previous_tag: 959555b4497e60d8ccdef12e28e60e9dfb8abfff
           return_type: 'all'
+#          echo "pr_list=$pr_list" >> $GITHUB_ENV
 
       - name: Format PR list
         run: |
           pr_list=$(echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <google.com|PR #" + (.number|tostring) + ">"')
-          echo "pr_list=$pr_list" >> $GITHUB_ENV
-
+          echo "pr_list<<EOF" >> $GITHUB_ENV
+          echo "$pr_list" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
           echo "pr_list=$pr_list" >> $GITHUB_ENV
             if [ -z "$pr_list" ]; then
             echo "header=" >> $GITHUB_ENV          
