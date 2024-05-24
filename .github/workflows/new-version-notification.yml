@@ -37,7 +37,7 @@ jobs:
 
       - name: Format PR list
         run: |
-          pr_list=$(echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <" + .html_url + "|PR #" + (.number|tostring) + ": " + .title + ">"')
+          pr_list=$(echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <" + .html_url + "|PR #" + (.number|tostring) + "">"')
           echo "pr_list=$pr_list" >> $GITHUB_ENV
             if [ -z "$pr_list" ]; then
             echo "header=" >> $GITHUB_ENV          
