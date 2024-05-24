@@ -2,6 +2,7 @@ name: New Version Notification
 
 on:
   push:
+#    branches: ['dev', 'stage', 'prod']
     branches: ['test-branch', 'BRAN-393-when-releasing-mosaic-show-what-tickets-got-merged-with-a-release-log']
   workflow_dispatch:
 
@@ -21,8 +22,6 @@ jobs:
           previous_tag=$(git describe --tags --abbrev=0 `git rev-list --tags --skip=1 --max-count=1`)
           current_commit=$(git rev-list -n 1 $current_tag)
           previous_commit=$(git rev-list -n 1 $previous_tag)
-          echo "current_tag=$current_tag" >> $GITHUB_ENV
-          echo "previous_tag=$previous_tag" >> $GITHUB_ENV
           echo "current_commit=$current_commit" >> $GITHUB_ENV
           echo "previous_commit=$previous_commit" >> $GITHUB_ENV
 
