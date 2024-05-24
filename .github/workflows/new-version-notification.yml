@@ -1,10 +1,9 @@
 name: New Version Notification
 
 on:
+  push:
+    branches: ['test-branch']
   workflow_dispatch:
-    push:
-#    tags:
-#      - 'v*'
 
 jobs:
   compare_tags:
@@ -38,7 +37,7 @@ jobs:
           if [ -z "$pr_list" ]; then
             echo "header=" >> $GITHUB_ENV          
           else
-            echo "header=*Merged PRs:*" >> $GITHUB_ENV
+            echo "header=Merged PRs:" >> $GITHUB_ENV
           fi
 
       - name: Send Slack Notification
