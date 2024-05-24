@@ -1,9 +1,10 @@
 name: New Version Notification
 
 on:
-  push:
-    branches: ['dev', 'stage', 'prod']
   workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   compare_tags:
