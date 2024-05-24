@@ -18,7 +18,7 @@ jobs:
         id: get_tags
         run: |
           current_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
-          previous_tag=$(git describe --tags `git rev-list --tags --skip=1 --max-count=1`)
+          previous_tag=$(git describe --tags --abbrev=0 `git rev-list --tags --skip=1 --max-count=1`)
           current_commit=$(git rev-list -n 1 $current_tag)
           previous_commit=$(git rev-list -n 1 $previous_tag)
           echo "current_tag=$current_tag" >> $GITHUB_ENV
