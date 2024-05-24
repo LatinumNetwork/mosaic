@@ -1,13 +1,10 @@
-# Workflow name
 name: 'Chromatic'
 
 on: push
 
 jobs:
     chromatic-deployment:
-        # Operating System
         runs-on: ubuntu-latest
-        # Job steps
         steps:
             - uses: actions/checkout@v1
             - name: Install dependencies
