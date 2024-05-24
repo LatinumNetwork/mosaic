@@ -38,6 +38,8 @@ jobs:
       - name: Format PR list
         run: |
           pr_list=$(echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <" + .html_url + "|PR #" + (.number|tostring) + ": " + .title')
+          pr_list=$(echo "$pr_list" | sed ':a;N;$!ba;s/\n/\\n/g') # Escaping new lines
+          pr_list=$(echo "$pr_list" | sed 's/|/%7C/g') # Encoding the vertical bar
           echo "pr_list=$pr_list" >> $GITHUB_ENV
 
           echo "pr_list=$pr_list" >> $GITHUB_ENV
@@ -48,7 +50,7 @@ jobs:
           fi
 
       - name: Send Slack Notification
-        uses: slackapi/slack-github-action@v1.23.0
+        uses: slackapi/slack-github-action@v1
         with:
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           slack-message: |
