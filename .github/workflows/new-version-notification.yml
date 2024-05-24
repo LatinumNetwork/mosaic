@@ -40,7 +40,7 @@ jobs:
       - name: Format PR list
         run: |
           echo 'pr_list<<EOF' >> $GITHUB_ENV
-          echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <" + .html_url + "|PR #" + (.number|tostring) + ": " + .title + ">"' >> $GITHUB_ENV
+          echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <" + .html_url + "|" + .title + ">"' >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
             if [ -z "$pr_list" ]; then
             echo "header=" >> $GITHUB_ENV
