@@ -44,19 +44,19 @@ jobs:
           echo 'pr_list<<EOF' >> $GITHUB_ENV
           echo '${{ steps.merged_prs.outputs.pull_requests }}' | jq -r '.[] | "- <" + .html_url + "|PR #" + (.number|tostring) + ": " + .title + ">"' >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
-#            if [ -z "$pr_list" ]; then
-#            echo "header=" >> $GITHUB_ENV
-#          else
-#            echo "header=Merged PRs:" >> $GITHUB_ENV
-#          fi
+            if [ -z "$pr_list" ]; then
+            echo "header=" >> $GITHUB_ENV
+          else
+            echo "header=Merged PRs:" >> $GITHUB_ENV
+          fi
 
-#      - name: Send Slack Notification
-#        uses: slackapi/slack-github-action@v1
-#        with:
-#          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
-#          slack-message: |
-#            <https://646227b52910551bc013d3ef-rplhylrpxw.chromatic.com|Successfully released mosaic version ${{ env. current_tag }} :books:.>
-#            ${{ env.header }}
-#            ${{ env.pr_list }}
-#        env:
-#          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      - name: Send Slack Notification
+        uses: slackapi/slack-github-action@v1
+        with:
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+          slack-message: |
+            <https://646227b52910551bc013d3ef-rplhylrpxw.chromatic.com|Successfully released mosaic version ${{ env. current_tag }} :books:.>
+            ${{ env.header }}
+            ${{ env.pr_list }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
