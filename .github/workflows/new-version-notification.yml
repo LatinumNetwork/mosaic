@@ -53,7 +53,7 @@ jobs:
         with:
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           slack-message: |
-            <https://646227b52910551bc013d3ef-rplhylrpxw.chromatic.com|Successfully released mosaic version ${{ env. current_tag }} :books:.>
+            <https://646227b52910551bc013d3ef-rplhylrpxw.chromatic.com|Successfully released mosaic version ${{ env.current_tag }} :books:.>
             ${{ env.header }}
             ${{ env.pr_list }}
         env:
