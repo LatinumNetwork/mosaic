@@ -1,0 +1,62 @@
+name: New Version Notification
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  compare_tags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get current and previous tags
+        id: get_tags
+        run: |
+          current_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+          previous_tag=$(git describe --tags --abbrev=0 `git rev-list --tags --skip=1 --max-count=1`)
+          current_commit=$(git rev-list -n 1 $current_tag)
+          previous_commit=$(git rev-list -n 1 $previous_tag)
+          echo "current_tag=$current_tag" >> $GITHUB_ENV
+          echo "current_commit=$current_commit" >> $GITHUB_ENV
+          echo "previous_commit=$previous_commit" >> $GITHUB_ENV
+
+      - name: Get merged pull requests
+        id: merged_prs
+        uses: VanOns/get-merged-pull-requests-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repo: ${{ github.repository }}
+          current_tag: ${{ env.current_commit }}
+          previous_tag: ${{ env.previous_commit }}
+          return_type: 'all'
+          apply_commit_is_pull_request_regex: true
+
+      - name: Format PR list
+        run: |
+          echo 'pr_list<<EOF' >> $GITHUB_ENV
+          echo $PULL_REQUESTS | jq -r '.[] | "- <" + .html_url + "|" + .title + ">"' >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+            if [ -z "$pr_list" ]; then
+            echo "header=" >> $GITHUB_ENV
+          else
+            echo "header=Merged PRs:" >> $GITHUB_ENV
+          fi
+        env:
+          PULL_REQUESTS: ${{ steps.merged_prs.outputs.pull_requests }}
+
+      - name: Send Slack Notification
+        uses: slackapi/slack-github-action@v1
+        with:
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+          slack-message: |
+            <https://646227b52910551bc013d3ef-rplhylrpxw.chromatic.com|Successfully released mosaic version ${{ env.current_tag }} :books:.>
+            ${{ env.header }}
+            ${{ env.pr_list }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
