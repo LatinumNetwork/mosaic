@@ -17,7 +17,8 @@
     "setup-proj": "rm -rf dist && rm -rf .yalc",
     "setup-watch": "npm run rollup && yalc add @latinum-network/mosaic",
     "start-watch": "nodemon --watch src --ext '*' --exec 'npm run rollup && yalc push --changed --update --replace --sig'",
-    "auto-rollup-watch": "npm run setup-proj && npm run setup-watch && npm run start-watch"
+    "auto-rollup-watch": "npm run setup-proj && npm run setup-watch && npm run start-watch",
+    "mosaic-unlink": "yalc remove @latinum-network/mosaic && rm -rf package-lock.json && rm -rf node_modules && npm install"
   },
   "files": [
     "dist"
@@ -123,7 +124,5 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {
-    "@latinum-network/mosaic": "file:.yalc/@latinum-network/mosaic"
-  }
+  "dependencies": {}
 }
