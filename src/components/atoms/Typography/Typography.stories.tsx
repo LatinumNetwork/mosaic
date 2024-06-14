@@ -1,6 +1,6 @@
 import { StoryObj } from '@storybook/react';
 import React from 'react';
-import { Typography, TypographyProps } from 'src/components';
+import { Typography } from 'src/components';
 
 const argTypes = {
   variant: {
