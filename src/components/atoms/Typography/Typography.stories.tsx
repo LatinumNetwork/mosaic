@@ -1,4 +1,4 @@
-import { StoryFn } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import React from 'react';
 import { Typography, TypographyProps } from 'src/components';
 
@@ -37,25 +37,30 @@ export default {
   },
 };
 
-const Template: StoryFn<typeof Typography> = ({
-  children,
-  ...args
-}: TypographyProps): React.JSX.Element => (
-  <Typography {...args}> {children} </Typography>
-);
-
-export const Header = Template.bind({});
-Header.args = {
-  variant: 'h1',
-  weight: 'semiBold',
+const Template: StoryObj<typeof Typography> = {
+  render: ({ children, ...args }) => (
+    <Typography {...args}> {children} </Typography>
+  ),
 };
 
-export const Caption = Template.bind({});
-Caption.args = {
-  variant: 'caption',
+export const Header = {
+  ...Template,
+  args: {
+    variant: 'h1',
+    weight: 'semiBold',
+  },
 };
 
-export const Body = Template.bind({});
-Body.args = {
-  variant: 'b1',
+export const Caption = {
+  ...Template,
+  args: {
+    variant: 'caption',
+  },
+};
+
+export const Body = {
+  ...Template,
+  args: {
+    variant: 'b1',
+  },
 };

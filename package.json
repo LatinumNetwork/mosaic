@@ -124,7 +124,5 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {
-    "@latinum-network/mosaic": "file:.yalc/@latinum-network/mosaic"
-  }
+  "dependencies": {}
 }

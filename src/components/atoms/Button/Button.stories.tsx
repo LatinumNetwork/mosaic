@@ -4,42 +4,41 @@ import React from 'react';
 import { Box, Button } from 'src/components';
 import { PaletteColors } from 'src/typings';
 
-const argTypes = {
-  variant: {
-    control: { type: 'select' },
-    options: [
-      'primary',
-      'secondary',
-      'tertiary',
-      'link',
-      'nav',
-      'outlined',
-      'text',
-      'contained',
-    ],
-    table: {
-      defaultValue: {
-        summary: 'primary',
-      },
-    },
-  },
-  size: {
-    control: { type: 'select' },
-    options: ['small', 'medium', 'large'],
-    table: {
-      defaultValue: {
-        summary: 'small',
-      },
-    },
-  },
-};
-
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
   component: Button,
-  argTypes,
+  argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+        options: [
+          'primary',
+          'secondary',
+          'tertiary',
+          'link',
+          'nav',
+          'outlined',
+          'text',
+          'contained',
+        ],
+      },
+      table: {
+        defaultValue: {
+          summary: 'primary',
+        },
+      },
+    },
+    size: {
+      control: { type: 'select', options: ['small', 'medium', 'large'] },
+      table: {
+        defaultValue: {
+          summary: 'small',
+        },
+      },
+    },
+  },
   parameters: {
-    controls: { include: Object.keys(argTypes) },
+    controls: { include: ['variant', 'size'] },
   },
 };
 
