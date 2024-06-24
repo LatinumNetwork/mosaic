@@ -11,6 +11,8 @@
 
 # testing
 /coverage
+.yalc
+yalc.lock
 
 # production
 /build
