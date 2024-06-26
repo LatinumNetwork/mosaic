@@ -1,6 +1,18 @@
+import '@fontsource/merriweather/300-italic.css';
+import '@fontsource/merriweather/300.css';
+import '@fontsource/merriweather/400.css';
+import '@fontsource/merriweather/700-italic.css';
+import '@fontsource/merriweather/700.css';
+import '@fontsource/merriweather/900-italic.css';
+import '@fontsource/merriweather/900.css';
+import '@fontsource/nunito-sans/400-italic.css';
 import '@fontsource/nunito-sans/400.css';
+import '@fontsource/nunito-sans/600-italic.css';
 import '@fontsource/nunito-sans/600.css';
+import '@fontsource/nunito-sans/700-italic.css';
 import '@fontsource/nunito-sans/700.css';
+import '@fontsource/nunito-sans/700.css';
+import '@fontsource/nunito-sans/800-italic.css';
 import '@fontsource/nunito-sans/800.css';
 import {
   CustomColorShades,
@@ -55,9 +67,9 @@ const themeOptions: ThemeOptions = {
   palette,
   typography: {
     allVariants: {
-      fontFamily: "'Nunito Sans', sans-serif",
+      fontFamily: "'Nunito Sans', 'Merriweather', sans-serif",
     },
-    fontFamily: "'Nunito Sans', sans-serif",
+    fontFamily: "'Nunito Sans', 'Merriweather', sans-serif",
     fontSize: 16,
     h4: undefined,
     h5: undefined,
