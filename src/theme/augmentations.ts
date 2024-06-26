@@ -107,7 +107,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-declare module '@mui/material/Typography' {
+declare module '@mui/material/Typography/Typography' {
   interface TypographyPropsVariantOverrides {
     b1: true;
     b2: true;
@@ -126,7 +126,7 @@ declare module '@mui/material/Typography' {
   }
 }
 
-declare module '@mui/material/Button' {
+declare module '@mui/material/Button/Button' {
   interface ButtonPropsVariantOverrides {
     primary: true;
     secondary: true;
