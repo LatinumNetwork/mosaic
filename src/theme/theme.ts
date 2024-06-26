@@ -117,7 +117,7 @@ const themeOptions: ThemeOptions = {
         },
       },
       defaultProps: {
-        fontFamily: "'Nunito Sans', sans-serif",
+        fontFamily: "'Nunito Sans', 'Merriweather', sans-serif",
         // NOTE: by default, new variants will render as span
         variantMapping: {
           b1: 'p',
@@ -152,6 +152,16 @@ const themeOptions: ThemeOptions = {
           fontFamily: "'Nunito Sans', sans-serif",
         },
       },
+    },
+  },
+  breakpoints: {
+    values: {
+      // NOTE: xs and sm are the default MUI values. md, lg, and xl are customized.
+      xs: 0,
+      sm: 600,
+      md: 800,
+      lg: 1280,
+      xl: 1950,
     },
   },
 };
