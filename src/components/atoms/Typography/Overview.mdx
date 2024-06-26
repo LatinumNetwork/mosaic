@@ -9,8 +9,7 @@ The `Typography` component is an enhanced version of the Material UI Button. It 
 
 export const typography = {
   type: {
-    nunito: '"Nunito Sans", sans-serif',
-    merriweather: '"Merriweather", serif',
+    primary: '"Nunito Sans", sans-serif',
   },
   weight: {
     regular: '400',
@@ -35,8 +34,8 @@ export const SampleText = 'Mosaic by Collage Group.';
 
 # Typography
 
-## Nunito Sans
 **Font:** Nunito Sans
+
 **Weights:** 400(regular), 600(medium), 700(semiBold), 800(bold)
 
 <Typeset
@@ -51,28 +50,7 @@ export const SampleText = 'Mosaic by Collage Group.';
     Number(typography.size.l2),
     Number(typography.size.l3),
   ]}
-  fontWeight={typography.weight.bold}
+  fontWeight={typography.weight.black}
   sampleText={SampleText}
-  fontFamily={typography.type.nunito}
-/>
-
-## Merriweather
-**Font:** Merriweather
-**Weights:** 400(regular), 600(medium), 700(semiBold), 800(bold)
-
-<Typeset
-  fontSizes={[
-    Number(typography.size.s1),
-    Number(typography.size.s2),
-    Number(typography.size.s3),
-    Number(typography.size.m1),
-    Number(typography.size.m2),
-    Number(typography.size.m3),
-    Number(typography.size.l1),
-    Number(typography.size.l2),
-    Number(typography.size.l3),
-  ]}
-  fontWeight={typography.weight.bold}
-  sampleText={SampleText}
-  fontFamily={typography.type.merriweather}
+  fontFamily={typography.type.primary}
 />
