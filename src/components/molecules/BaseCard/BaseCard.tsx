@@ -9,10 +9,11 @@ export type BaseCardProps = {
 };
 
 export type CardHeaderProps = {
-  title: string;
+  title?: string;
   description?: string;
   actions?: ReactNode;
   sx?: SxProps;
+  children?: ReactNode;
 };
 
 export type CardBodyProps = {
@@ -54,17 +55,20 @@ const BodyStyled = styled(Box)(({ theme }) => ({
 }));
 
 const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
-  ({ title, description, actions, sx, ...rest }, ref) => (
+  ({ title, description, actions, sx, children, ...rest }, ref) => (
     <HeaderStyled ref={ref} sx={sx} {...rest}>
-      <Box>
-        <Typography variant="h1">{title}</Typography>
-        {description && (
-          <Typography variant="b1" color="textSecondary">
-            {description}
-          </Typography>
-        )}
-      </Box>
+      {title && (
+        <Box>
+          <Typography variant="h1">{title}</Typography>
+          {description && (
+            <Typography variant="b1" color="textSecondary">
+              {description}
+            </Typography>
+          )}
+        </Box>
+      )}
       {actions && <Box>{actions}</Box>}
+      {children}
     </HeaderStyled>
   )
 );
