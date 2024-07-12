@@ -1,9 +1,4 @@
-import {
-  Box,
-  Typography,
-  TypographyProps,
-  styled,
-} from '@latinum-network/mosaic';
+import { Box, Typography, TypographyProps, styled } from '@mui/material';
 
 export const Container = styled(Box)({
   display: 'flex',

@@ -1,4 +1,4 @@
-import { Theme } from '@latinum-network/mosaic';
+import { Theme } from '@mui/material';
 import { CSSProperties } from 'react';
 
 import { ArrowPosition, xPosition, yPosition } from './GraphTooltips';
