@@ -1,4 +1,4 @@
-import { Box, BoxProps, SxProps, Theme, styled } from '@latinum-network/mosaic';
+import { Box, BoxProps, SxProps, Theme, styled } from '@mui/material';
 
 import {
   Container,
