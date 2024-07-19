@@ -1,4 +1,5 @@
 import { Box, Typography, TypographyProps, styled } from '@mui/material';
+import { hexToRgba } from 'src/utils';
 
 export const Container = styled(Box)({
   display: 'flex',
@@ -25,8 +26,9 @@ export const Label = styled(
     shouldForwardProp: (propName) => propName !== 'isSingleItem',
   }
 )(({ isSingleItem, theme }) => ({
-  // TODO: Replace color with transparency colors in Mosaic
-  color: isSingleItem ? theme.palette.common.white : 'rgba(255, 255, 255, 0.8)',
+  color: isSingleItem
+    ? theme.palette.common.white
+    : hexToRgba(theme.palette.common.white, 0.8),
   textAlign: 'left',
 }));
 
