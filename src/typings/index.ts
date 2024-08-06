@@ -1,17 +1,20 @@
 export enum PaletteColors {
-  collageRed = 'collageRed',
-  collageYellow = 'collageYellow',
-  collageOrange = 'collageOrange',
-  collagePurple = 'collagePurple',
+  collageRaspberry = 'collageRaspberry',
   collageTeal = 'collageTeal',
-  collageGreen = 'collageGreen',
+  collageCitron = 'collageCitron',
+  audienceMulticulturalYellow = 'audienceMulticulturalYellow',
+  audienceGenerationsOrange = 'audienceGenerationsOrange',
+  audienceLgtbqPurple = 'audienceLgtbqPurple',
+  audienceGenderTeal = 'audienceGenderTeal',
+  audienceParentsAndKidsGreen = 'audienceParentsAndKidsGreen',
+  audienceKidsGreen = 'audienceKidsGreen',
   uiBlue = 'uiBlue',
-  uiCoolGray = 'uiCoolGray',
-  uiWhite = 'uiWhite',
-  uiGray = 'uiGray',
   uiGreen = 'uiGreen',
   uiYellow = 'uiYellow',
   uiRed = 'uiRed',
+  uiGray = 'uiGray',
+  uiCoolGray = 'uiCoolGray',
+  uiWhite = 'uiWhite',
 }
 
 export enum StreamlineIcons {

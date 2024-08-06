@@ -103,14 +103,25 @@ export const Disabled: StoryFn = () => {
 
 export const Colors: StoryFn = () => {
   return (
-    <Box display="flex" justifyContent="space-around">
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
       <Button color={PaletteColors.uiGray}>uiGray</Button>
-      <Button color={PaletteColors.collageRed}>collageRed</Button>
-      <Button color={PaletteColors.collagePurple}>collagePurple</Button>
-      <Button color={PaletteColors.collageOrange}>collageOrange</Button>
+      <Button color={PaletteColors.collageRaspberry}>collageRaspberry</Button>
       <Button color={PaletteColors.collageTeal}>collageTeal</Button>
-      <Button color={PaletteColors.collageYellow}>collageYellow</Button>
-      <Button color={PaletteColors.collageGreen}>collageGreen</Button>
+      <Button color={PaletteColors.collageCitron}>collageCitron</Button>
+      <Button color={PaletteColors.audienceMulticulturalYellow}>
+        audienceMulticulturalYellow
+      </Button>
+      <Button color={PaletteColors.audienceGenerationsOrange}>
+        audienceGenerationsOrange
+      </Button>
+      <Button color={PaletteColors.audienceLgtbqPurple}>
+        audienceLgtbqPurple
+      </Button>
+      <Button color={PaletteColors.collageTeal}>collageTeal</Button>
+      <Button color={PaletteColors.audienceParentsAndKidsGreen}>
+        audienceParentsAndKidsGreen
+      </Button>
+      <Button color={PaletteColors.audienceKidsGreen}>audiencekidsGreen</Button>
     </Box>
   );
 };
@@ -123,7 +134,7 @@ export const WithIconStart: StoryFn<typeof Button> = (args) => (
 
 WithIconStart.args = {
   variant: 'primary',
-  color: PaletteColors.collageRed,
+  color: PaletteColors.collageRaspberry,
 };
 
 export const WithIconEnd: StoryFn<typeof Button> = (args) => (
@@ -134,5 +145,5 @@ export const WithIconEnd: StoryFn<typeof Button> = (args) => (
 
 WithIconEnd.args = {
   variant: 'primary',
-  color: PaletteColors.collageRed,
+  color: PaletteColors.collageRaspberry,
 };
