@@ -22,7 +22,7 @@ import {
   ThemeOptions,
   createTheme,
 } from '@mui/material';
-import { collage, themeColors, ui } from 'src/colors';
+import { audience, collage, themeColors, ui } from 'src/colors';
 
 import './augmentations';
 
@@ -52,8 +52,9 @@ const generatePalette = (
 export const palette: PaletteOptions = {
   ...generatePalette(ui, 'ui'),
   ...generatePalette(collage, 'collage'),
-  mode: 'light',
+  ...generatePalette(audience, 'audience'),
   ...themeColors,
+  mode: 'light',
   background: {
     default: ui.coolGray[50],
   },

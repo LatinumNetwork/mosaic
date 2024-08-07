@@ -1,6 +1,6 @@
 import { ColorItem, ColorPalette, Meta } from '@storybook/blocks';
 
-import { collage, themeColors, ui } from './index';
+import { audience, collage, themeColors, ui } from './index';
 import {
   semiTransparentBlue,
   semiTransparentGreen,
@@ -14,17 +14,28 @@ import {
 <br />
 
 <ColorPalette>
-    <ColorItem title="Collage Red" colors={collage.red} />
+    <ColorItem title="Collage Raspberry" colors={collage.raspberry} />
 
-    <ColorItem title="Multicultural Yellow" colors={collage.yellow} />
+    <ColorItem title="Collage Teal" colors={collage.teal} />
 
-    <ColorItem title="Generations Orange" colors={collage.orange} />
+    <ColorItem title="Collage Citron" colors={collage.citron} />
 
-    <ColorItem title="LGBTQ+ Purple" colors={collage.purple} />
+</ColorPalette>
 
-    <ColorItem title="Gender Teal" colors={collage.teal} />
+# Audience Palette
 
-    <ColorItem title="Parents & Kids Green" colors={collage.green} />
+<ColorPalette>
+    <ColorItem title="Audience Multicultural Yellow" colors={audience.multiculturalYellow} />
+
+    <ColorItem title="Audience Generations Orange" colors={audience.generationsOrange} />
+
+    <ColorItem title="Audience LGBTQ+ Purple" colors={audience.lgtbqPurple} />
+
+    <ColorItem title="Audience Gender Teal" colors={audience.genderTeal} />
+
+    <ColorItem title="Audience Parents & Kids Green" colors={audience.parentsAndKidsGreen} />
+
+    <ColorItem title="Audience Kids Green" colors={audience.kidsGreen} />
 
 </ColorPalette>
 

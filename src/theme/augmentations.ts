@@ -22,52 +22,62 @@ declare module '@mui/material/styles' {
   }
 
   interface CustomPalette {
-    collageRed: CustomColorShades;
-    collageYellow: CustomColorShades;
-    collageOrange: CustomColorShades;
-    collagePurple: CustomColorShades;
+    collageRaspberry: CustomColorShades;
     collageTeal: CustomColorShades;
-    collageGreen: CustomColorShades;
-    uiGray: CustomColorShades;
-    uiCoolGray: CustomColorShades;
-    uiWhite: CustomColorShades;
+    collageCitron: CustomColorShades;
+    audienceMulticulturalYellow: CustomColorShades;
+    audienceGenerationsOrange: CustomColorShades;
+    audienceLgtbqPurple: CustomColorShades;
+    audienceGenderTeal: CustomColorShades;
+    audienceParentsAndKidsGreen: CustomColorShades;
+    audienceKidsGreen: CustomColorShades;
     uiBlue: CustomColorShades;
     uiGreen: CustomColorShades;
     uiYellow: CustomColorShades;
     uiRed: CustomColorShades;
+    uiGray: CustomColorShades;
+    uiCoolGray: CustomColorShades;
+    uiWhite: CustomColorShades;
     defaultColors: DefaultColors;
   }
 
   interface CustomPaletteOptions {
-    collageRed?: CustomColorShades;
-    collageYellow?: CustomColorShades;
-    collageOrange?: CustomColorShades;
-    collagePurple?: CustomColorShades;
+    collageRaspberry?: CustomColorShades;
     collageTeal?: CustomColorShades;
-    collageGreen?: CustomColorShades;
-    uiGray?: CustomColorShades;
-    uiCoolGray?: CustomColorShades;
-    uiWhite?: CustomColorShades;
+    collageCitron?: CustomColorShades;
+    audienceMulticulturalYellow?: CustomColorShades;
+    audienceGenerationsOrange?: CustomColorShades;
+    audienceLgtbqPurple?: CustomColorShades;
+    audienceGenderTeal?: CustomColorShades;
+    audienceParentsAndKidsGreen?: CustomColorShades;
+    audienceKidsGreen?: CustomColorShades;
     uiBlue?: CustomColorShades;
     uiGreen?: CustomColorShades;
     uiYellow?: CustomColorShades;
     uiRed?: CustomColorShades;
+    uiGray?: CustomColorShades;
+    uiCoolGray?: CustomColorShades;
+    uiWhite?: CustomColorShades;
     defaultColors?: DefaultColors;
   }
 
   interface CustomColors {
-    collageRed?: CustomColorShades;
-    collageYellow?: CustomColorShades;
-    collageOrange?: CustomColorShades;
-    collagePurple?: CustomColorShades;
+    collageRaspberry?: CustomColorShades;
     collageTeal?: CustomColorShades;
-    uiGray?: CustomColorShades;
-    uiCoolGray?: CustomColorShades;
-    uiWhite?: CustomColorShades;
+    collageCitron?: CustomColorShades;
+    audienceMulticulturalYellow?: CustomColorShades;
+    audienceGenerationsOrange?: CustomColorShades;
+    audienceLgtbqPurple?: CustomColorShades;
+    audienceGenderTeal?: CustomColorShades;
+    audienceParentsAndKidsGreen?: CustomColorShades;
+    audienceKidsGreen?: CustomColorShades;
     uiBlue?: CustomColorShades;
     uiGreen?: CustomColorShades;
     uiYellow?: CustomColorShades;
     uiRed?: CustomColorShades;
+    uiGray?: CustomColorShades;
+    uiCoolGray?: CustomColorShades;
+    uiWhite?: CustomColorShades;
   }
 
   interface PaletteOptions extends CustomPaletteOptions {}

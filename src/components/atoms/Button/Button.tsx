@@ -37,7 +37,7 @@ const getDefaultColor = (variant: Variant | undefined) => {
   switch (variant) {
     case 'primary':
     case 'secondary':
-      return PaletteColors.collageRed;
+      return PaletteColors.collageRaspberry;
     case 'tertiary':
     case 'text':
     case 'nav':
@@ -45,7 +45,7 @@ const getDefaultColor = (variant: Variant | undefined) => {
     case 'link':
       return PaletteColors.uiBlue;
     default:
-      return PaletteColors.collageRed;
+      return PaletteColors.collageRaspberry;
   }
 };
 
@@ -61,8 +61,8 @@ const ButtonForwardRef = React.forwardRef(
 );
 const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
   ({ theme, customVariant, size, customColor }) => {
-    const mainColor: MainColor = customColor ?? getDefaultColor(customVariant);
-
+    const mainColor: MainColor =
+      (customColor as MainColor) ?? getDefaultColor(customVariant);
     return {
       display: 'flex',
       fontSize: 16,
@@ -125,7 +125,7 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         '&:hover': {
           background: 'none',
           border: 'none',
-          color: theme.palette.collageRed[600],
+          color: theme.palette.collageRaspberry[600],
         },
       }),
       ...(customVariant === 'link' && {
@@ -164,8 +164,8 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
           backgroundColor: theme.palette.uiCoolGray[50],
         },
         '&:active': {
-          color: theme.palette.collageRed[500],
-          backgroundColor: theme.palette.collageRed[50],
+          color: theme.palette.collageRaspberry[500],
+          backgroundColor: theme.palette.collageRaspberry[50],
         },
       }),
 
