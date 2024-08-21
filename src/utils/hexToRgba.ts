@@ -1,7 +1,7 @@
 export default (hex: string, opacity: number): string => {
   hex = hex.replace(/^#/, '');
 
-  if (hex.length !== 6) {
+  if (hex.length !== 6 && hex.length !== 3) {
     throw new Error('Invalid hex color format');
   }
 
