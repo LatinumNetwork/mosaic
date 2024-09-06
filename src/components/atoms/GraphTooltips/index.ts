@@ -3,4 +3,5 @@ export type {
   GraphTooltipData,
   ShowTooltipArgs,
   TooltipParams,
+  GraphTooltipPositionProps,
 } from './GraphTooltips';
