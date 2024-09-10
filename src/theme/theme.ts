@@ -16,13 +16,13 @@ import '@fontsource/nunito-sans/800-italic.css';
 import '@fontsource/nunito-sans/800.css';
 import {
   CustomColorShades,
-  CustomColors,
   CustomPaletteOptions,
   PaletteOptions,
   ThemeOptions,
   createTheme,
 } from '@mui/material';
 import { audience, collage, themeColors, ui } from 'src/colors';
+import { CustomColors } from 'src/typings';
 
 import './augmentations';
 

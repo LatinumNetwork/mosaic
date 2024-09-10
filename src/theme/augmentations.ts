@@ -1,7 +1,30 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-import React from 'react';
+import { CustomPaletteOptions } from '@mui/material';
+import { CustomColorShades, DefaultColors } from '@mui/material/styles';
+import { CSSProperties } from 'react';
 
 // NOTE: This file creates/adjusts types for our custom configuration and changes
+
+interface CustomPalette {
+  collageRaspberry: CustomColorShades;
+  collageTeal: CustomColorShades;
+  collageCitron: CustomColorShades;
+  audienceMulticulturalYellow: CustomColorShades;
+  audienceGenerationsOrange: CustomColorShades;
+  audienceLgtbqPurple: CustomColorShades;
+  audienceGenderTeal: CustomColorShades;
+  audienceParentsAndKidsGreen: CustomColorShades;
+  audienceKidsGreen: CustomColorShades;
+  uiBlue: CustomColorShades;
+  uiGreen: CustomColorShades;
+  uiYellow: CustomColorShades;
+  uiRed: CustomColorShades;
+  uiGray: CustomColorShades;
+  uiCoolGray: CustomColorShades;
+  uiWhite: CustomColorShades;
+  defaultColors: DefaultColors;
+}
+
 declare module '@mui/material/styles' {
   interface DefaultColors {
     black: string;
@@ -19,26 +42,6 @@ declare module '@mui/material/styles' {
     '700'?: string;
     '800'?: string;
     '900'?: string;
-  }
-
-  interface CustomPalette {
-    collageRaspberry: CustomColorShades;
-    collageTeal: CustomColorShades;
-    collageCitron: CustomColorShades;
-    audienceMulticulturalYellow: CustomColorShades;
-    audienceGenerationsOrange: CustomColorShades;
-    audienceLgtbqPurple: CustomColorShades;
-    audienceGenderTeal: CustomColorShades;
-    audienceParentsAndKidsGreen: CustomColorShades;
-    audienceKidsGreen: CustomColorShades;
-    uiBlue: CustomColorShades;
-    uiGreen: CustomColorShades;
-    uiYellow: CustomColorShades;
-    uiRed: CustomColorShades;
-    uiGray: CustomColorShades;
-    uiCoolGray: CustomColorShades;
-    uiWhite: CustomColorShades;
-    defaultColors: DefaultColors;
   }
 
   interface CustomPaletteOptions {
@@ -61,41 +64,30 @@ declare module '@mui/material/styles' {
     defaultColors?: DefaultColors;
   }
 
-  interface CustomColors {
-    collageRaspberry?: CustomColorShades;
-    collageTeal?: CustomColorShades;
-    collageCitron?: CustomColorShades;
-    audienceMulticulturalYellow?: CustomColorShades;
-    audienceGenerationsOrange?: CustomColorShades;
-    audienceLgtbqPurple?: CustomColorShades;
-    audienceGenderTeal?: CustomColorShades;
-    audienceParentsAndKidsGreen?: CustomColorShades;
-    audienceKidsGreen?: CustomColorShades;
-    uiBlue?: CustomColorShades;
-    uiGreen?: CustomColorShades;
-    uiYellow?: CustomColorShades;
-    uiRed?: CustomColorShades;
-    uiGray?: CustomColorShades;
-    uiCoolGray?: CustomColorShades;
-    uiWhite?: CustomColorShades;
-  }
-
   interface PaletteOptions extends CustomPaletteOptions {}
 
   interface Palette extends CustomPalette {}
 
+  interface Theme {
+    customPalette: CustomPalette;
+  }
+
+  interface ThemeOptions {
+    customPalette?: CustomPaletteOptions;
+  }
+
   interface TypographyVariants {
-    b1: React.CSSProperties;
-    b2: React.CSSProperties;
-    b3: React.CSSProperties;
-    caption: React.CSSProperties;
+    b1: CSSProperties;
+    b2: CSSProperties;
+    b3: CSSProperties;
+    caption: CSSProperties;
   }
 
   interface TypographyVariantsOptions {
-    b1?: React.CSSProperties;
-    b2?: React.CSSProperties;
-    b3?: React.CSSProperties;
-    caption?: React.CSSProperties;
+    b1?: CSSProperties;
+    b2?: CSSProperties;
+    b3?: CSSProperties;
+    caption?: CSSProperties;
   }
 
   export interface ButtonVariants {
@@ -108,13 +100,31 @@ declare module '@mui/material/styles' {
   }
 
   interface ButtonPropsVariantOverrides {
-    primary: string;
-    secondary: string;
-    tertiary: string;
-    link: string;
-    nav: string;
-    text: string;
+    primary: true;
+    secondary: true;
+    tertiary: true;
+    link: true;
+    nav: true;
+    text: true;
+    filled: false;
+    contained: false;
   }
+}
+
+// Override createTheme and createPalette to recognize the custom properties
+declare module '@mui/material/styles/createTheme' {
+  interface Theme {
+    customPalette: CustomPalette;
+  }
+
+  interface ThemeOptions {
+    customPalette?: CustomPaletteOptions;
+  }
+}
+
+declare module '@mui/material/styles/createPalette' {
+  interface Palette extends CustomPalette {}
+  interface PaletteOptions extends CustomPaletteOptions {}
 }
 
 declare module '@mui/material/Typography/Typography' {
@@ -140,9 +150,12 @@ declare module '@mui/material/Button/Button' {
   interface ButtonPropsVariantOverrides {
     primary: true;
     secondary: true;
+    tertiary: true;
+    link: true;
+    nav: true;
+    text: true;
     filled: false;
     contained: false;
-    text: true;
   }
 
   interface ButtonPropsColorOverrides {
