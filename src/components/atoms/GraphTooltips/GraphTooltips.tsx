@@ -32,21 +32,27 @@ export interface TooltipParams<T> {
   unitMeasurement?: string;
 }
 
-export type GraphTooltipData = { label?: string; value?: string | number }[];
+export type GraphTooltipData = {
+  data: { label?: string; value?: string | number }[];
+  graphProps?: GraphTooltipPositionProps;
+};
 
-interface GraphTooltipProps {
-  rows: { label?: string; value?: string | number }[];
-  unitMeasurement?: string;
-  top?: number;
-  left?: number;
-  right?: number;
-  width?: number | 'auto';
-  height?: number | 'auto';
-  className?: string;
-  sx?: SxProps<Theme>;
+export interface GraphTooltipPositionProps {
   arrowPosition?: ArrowPosition;
   xPosition?: xPosition;
   yPosition?: yPosition;
+  width?: number | 'auto';
+  height?: number | 'auto';
+  top?: number;
+  left?: number;
+  right?: number;
+  unitMeasurement?: string;
+  sx?: SxProps<Theme>;
+}
+
+interface GraphTooltipProps extends GraphTooltipPositionProps {
+  rows: { label?: string; value?: string | number }[];
+  className?: string;
   open?: boolean;
 }
 
@@ -66,7 +72,7 @@ const StyledGraphTooltip = styled(Box, {
   color: theme.palette.common.white,
   borderRadius: '2px',
   fontSize: '12px',
-  zIndex: 6,
+  zIndex: theme.zIndex.tooltip,
   textWrap: 'nowrap',
   '&:after': getArrowStyles(theme, arrowPosition),
   pointerEvents: 'none',

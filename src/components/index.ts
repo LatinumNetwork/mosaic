@@ -13,6 +13,7 @@ export type {
   GraphTooltipData,
   ShowTooltipArgs,
   TooltipParams,
+  GraphTooltipPositionProps,
 } from './atoms/GraphTooltips';
 
 export { Page } from './atoms/Page';
