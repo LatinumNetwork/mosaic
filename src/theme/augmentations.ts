@@ -111,7 +111,6 @@ declare module '@mui/material/styles' {
   }
 }
 
-// Override createTheme and createPalette to recognize the custom properties
 declare module '@mui/material/styles/createTheme' {
   interface Theme {
     customPalette: CustomPalette;
