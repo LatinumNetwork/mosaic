@@ -22,7 +22,7 @@ import {
   createTheme,
 } from '@mui/material';
 import { audience, collage, themeColors, ui } from 'src/colors';
-import { CustomColors } from 'src/typings';
+import { CustomColors } from 'src/types';
 
 import './augmentations';
 

@@ -1,7 +1,7 @@
 import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import React from 'react';
-import { PaletteColors } from 'src/typings';
+import { PaletteColors } from 'src/types';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'nav';
 type MuiVariant = MuiButtonProps['variant'];

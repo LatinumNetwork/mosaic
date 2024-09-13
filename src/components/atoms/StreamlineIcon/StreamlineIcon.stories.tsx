@@ -1,5 +1,5 @@
 import { StoryFn } from '@storybook/react';
-import { StreamlineIcons } from 'src/typings';
+import { StreamlineIcons } from 'src/types';
 
 import { StreamlineIcon, StreamlineIconProps } from './StreamlineIcon';
 

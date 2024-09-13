@@ -1,4 +1,4 @@
-import { StreamlineIcons } from 'src/typings';
+import { StreamlineIcons } from 'src/types';
 
 export type StreamlineIconProps = {
   name: StreamlineIcons;
