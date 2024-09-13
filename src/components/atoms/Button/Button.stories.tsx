@@ -2,7 +2,7 @@ import { Plus, TrashSimple } from '@phosphor-icons/react';
 import { Meta, StoryFn } from '@storybook/react';
 import React from 'react';
 import { Box, Button } from 'src/components';
-import { PaletteColors } from 'src/typings';
+import { PaletteColors } from 'src/types';
 
 const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',

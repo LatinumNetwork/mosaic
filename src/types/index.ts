@@ -1,3 +1,5 @@
+import { CustomColorShades } from '@mui/material/styles';
+
 export enum PaletteColors {
   collageRaspberry = 'collageRaspberry',
   collageTeal = 'collageTeal',
@@ -22,4 +24,23 @@ export enum StreamlineIcons {
   PerformanceIncrease = 'performance_increase',
   Like = 'like',
   ShoppingBasket = 'shopping_basket',
+}
+
+export interface CustomColors {
+  collageRaspberry?: CustomColorShades;
+  collageTeal?: CustomColorShades;
+  collageCitron?: CustomColorShades;
+  audienceMulticulturalYellow?: CustomColorShades;
+  audienceGenerationsOrange?: CustomColorShades;
+  audienceLgtbqPurple?: CustomColorShades;
+  audienceGenderTeal?: CustomColorShades;
+  audienceParentsAndKidsGreen?: CustomColorShades;
+  audienceKidsGreen?: CustomColorShades;
+  uiBlue?: CustomColorShades;
+  uiGreen?: CustomColorShades;
+  uiYellow?: CustomColorShades;
+  uiRed?: CustomColorShades;
+  uiGray?: CustomColorShades;
+  uiCoolGray?: CustomColorShades;
+  uiWhite?: CustomColorShades;
 }

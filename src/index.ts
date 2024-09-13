@@ -21,7 +21,7 @@ import type {
 } from './components';
 
 export * from './colors';
-export * from './typings';
+export * from './types';
 export * from './theme';
 export * as Icon from '@phosphor-icons/react';
 
