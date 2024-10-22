@@ -21,6 +21,7 @@ import {
   ThemeOptions,
   createTheme,
 } from '@mui/material';
+import { Warning } from '@phosphor-icons/react';
 import { audience, collage, themeColors, ui } from 'src/colors';
 import { CustomColors } from 'src/types';
 
@@ -111,6 +112,19 @@ const themeOptions: ThemeOptions = {
     },
   },
   components: {
+    MuiAlert: {
+      defaultProps: {
+        iconMapping: {
+          warning: <Warning size={22} />,
+        },
+      },
+      styleOverrides: {
+        standardWarning: {
+          backgroundColor: ui.yellow[50],
+          border: `1px solid ${ui.yellow[500]}`,
+        },
+      },
+    },
     MuiTypography: {
       styleOverrides: {
         root: {

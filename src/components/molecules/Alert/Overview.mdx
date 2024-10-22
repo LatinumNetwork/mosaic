@@ -1,0 +1,68 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import * as Stories from './Alert.stories';
+
+<Meta title="Molecules/Alert" of={Stories} />
+
+# Alert
+
+The `Alert` component is used to display feedback messages to users. It comes in different severities and variants to provide more information:
+
+- **Severities**: `error`, `warning`, `info`, `success`
+- **Variants**: `standard`, `filled`, `outlined`
+
+## Standard Alerts
+
+## Standard Alerts
+
+### Info
+
+<Canvas of={Stories.StandardInfoAlert} />
+
+### Success
+
+<Canvas of={Stories.StandardSuccessAlert} />
+
+### Warning
+
+<Canvas of={Stories.StandardWarningAlert} />
+
+### Error
+
+<Canvas of={Stories.StandardErrorAlert} />
+
+## Filled Alerts
+
+### Info
+
+<Canvas of={Stories.FilledInfoAlert} />
+
+### Success
+
+<Canvas of={Stories.FilledSuccessAlert} />
+
+### Warning
+
+<Canvas of={Stories.FilledWarningAlert} />
+
+### Error
+
+<Canvas of={Stories.FilledErrorAlert} />
+
+## Outlined Alerts
+
+### Info
+
+<Canvas of={Stories.OutlinedInfoAlert} />
+
+### Success
+
+<Canvas of={Stories.OutlinedSuccessAlert} />
+
+### Warning
+
+<Canvas of={Stories.OutlinedWarningAlert} />
+
+### Error
+
+<Canvas of={Stories.OutlinedErrorAlert} />
