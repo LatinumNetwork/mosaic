@@ -123,6 +123,18 @@ const themeOptions: ThemeOptions = {
           backgroundColor: ui.yellow[50],
           border: `1px solid ${ui.yellow[500]}`,
         },
+        standardError: {
+          backgroundColor: ui.red[50],
+          border: `1px solid ${ui.red[500]}`,
+        },
+        standardInfo: {
+          backgroundColor: ui.blue[50],
+          border: `1px solid ${ui.blue[500]}`,
+        },
+        standardSuccess: {
+          backgroundColor: ui.green[50],
+          border: `1px solid ${ui.green[500]}`,
+        },
       },
     },
     MuiTypography: {
