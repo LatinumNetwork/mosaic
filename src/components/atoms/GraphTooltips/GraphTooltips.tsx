@@ -124,7 +124,11 @@ export const GraphTooltip = ({
             key={`tooltip-row-${row.label}-${row.value || 0}`}
             sx={{ gap: '8px' }}
           >
-            {row.label && <Label isSingleItem={!row.value}>{row.label}</Label>}
+            {row.label && (
+              <Label weight="medium" isSingleItem={!row.value}>
+                {row.label}
+              </Label>
+            )}
             {row.value && (
               <Value>
                 {row.value}
