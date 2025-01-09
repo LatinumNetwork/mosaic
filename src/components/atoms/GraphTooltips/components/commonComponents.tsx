@@ -31,6 +31,9 @@ export const Label = styled(
     ? theme.palette.common.white
     : hexToRgba(theme.palette.common.white, 0.8),
   textAlign: 'left',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 }));
 
 export const Value = styled((props: TypographyProps) => (
