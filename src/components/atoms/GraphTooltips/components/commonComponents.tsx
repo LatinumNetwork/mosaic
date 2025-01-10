@@ -1,4 +1,5 @@
-import { Box, Typography, TypographyProps, styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
+import { Typography, TypographyProps } from 'src/components';
 import { hexToRgba } from 'src/utils';
 
 export const Container = styled(Box)({
@@ -30,6 +31,9 @@ export const Label = styled(
     ? theme.palette.common.white
     : hexToRgba(theme.palette.common.white, 0.8),
   textAlign: 'left',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 }));
 
 export const Value = styled((props: TypographyProps) => (
