@@ -118,7 +118,6 @@ export const Colors: StoryFn = () => {
       <Button color={PaletteColors.audienceLgtbqPurple}>
         audienceLgtbqPurple
       </Button>
-      <Button color={PaletteColors.collageTeal}>collageTeal</Button>
       <Button color={PaletteColors.audienceParentsAndKidsGreen}>
         audienceParentsAndKidsGreen
       </Button>
