@@ -9,6 +9,7 @@ interface CustomPalette {
   collageRaspberry: CustomColorShades;
   collageTeal: CustomColorShades;
   collageCitron: CustomColorShades;
+  collageNavy: CustomColorShades;
   audienceMulticulturalYellow: CustomColorShades;
   audienceGenerationsOrange: CustomColorShades;
   audienceLgtbqPurple: CustomColorShades;
