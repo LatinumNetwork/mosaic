@@ -9,6 +9,7 @@ interface CustomPalette {
   collageRaspberry: CustomColorShades;
   collageTeal: CustomColorShades;
   collageCitron: CustomColorShades;
+  collageNavy: CustomColorShades;
   audienceMulticulturalYellow: CustomColorShades;
   audienceGenerationsOrange: CustomColorShades;
   audienceLgtbqPurple: CustomColorShades;
@@ -48,6 +49,7 @@ declare module '@mui/material/styles' {
     collageRaspberry?: CustomColorShades;
     collageTeal?: CustomColorShades;
     collageCitron?: CustomColorShades;
+    collageNavy?: CustomColorShades;
     audienceMulticulturalYellow?: CustomColorShades;
     audienceGenerationsOrange?: CustomColorShades;
     audienceLgtbqPurple?: CustomColorShades;

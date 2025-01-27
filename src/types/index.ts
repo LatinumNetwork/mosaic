@@ -4,6 +4,7 @@ export enum PaletteColors {
   collageRaspberry = 'collageRaspberry',
   collageTeal = 'collageTeal',
   collageCitron = 'collageCitron',
+  collageNavy = 'collageNavy',
   audienceMulticulturalYellow = 'audienceMulticulturalYellow',
   audienceGenerationsOrange = 'audienceGenerationsOrange',
   audienceLgtbqPurple = 'audienceLgtbqPurple',
@@ -30,6 +31,7 @@ export interface CustomColors {
   collageRaspberry?: CustomColorShades;
   collageTeal?: CustomColorShades;
   collageCitron?: CustomColorShades;
+  collageNavy?: CustomColorShades;
   audienceMulticulturalYellow?: CustomColorShades;
   audienceGenerationsOrange?: CustomColorShades;
   audienceLgtbqPurple?: CustomColorShades;

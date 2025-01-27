@@ -108,6 +108,7 @@ export const Colors: StoryFn = () => {
       <Button color={PaletteColors.collageRaspberry}>collageRaspberry</Button>
       <Button color={PaletteColors.collageTeal}>collageTeal</Button>
       <Button color={PaletteColors.collageCitron}>collageCitron</Button>
+      <Button color={PaletteColors.collageNavy}>collageNavy</Button>
       <Button color={PaletteColors.audienceMulticulturalYellow}>
         audienceMulticulturalYellow
       </Button>
@@ -117,7 +118,6 @@ export const Colors: StoryFn = () => {
       <Button color={PaletteColors.audienceLgtbqPurple}>
         audienceLgtbqPurple
       </Button>
-      <Button color={PaletteColors.collageTeal}>collageTeal</Button>
       <Button color={PaletteColors.audienceParentsAndKidsGreen}>
         audienceParentsAndKidsGreen
       </Button>
