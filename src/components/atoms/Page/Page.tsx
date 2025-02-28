@@ -1,5 +1,5 @@
+import { Box, BoxProps } from '@mui/material';
 import { forwardRef } from 'react';
-import { Box, BoxProps } from 'src/components';
 
 export interface PageProps extends BoxProps {
   withHeader?: boolean;

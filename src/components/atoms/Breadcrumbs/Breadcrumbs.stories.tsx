@@ -1,7 +1,7 @@
-import Link from '@mui/material/Link';
+import { Box, Link } from '@mui/material';
 import { House } from '@phosphor-icons/react';
 import { Meta, StoryFn } from '@storybook/react';
-import { Box, Breadcrumbs, Button } from 'src/components';
+import { Breadcrumbs, Button } from 'src/components';
 
 const argTypes = {
   maxItems: {

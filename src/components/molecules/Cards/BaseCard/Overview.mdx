@@ -1,8 +1,8 @@
 import { Question } from '@phosphor-icons/react';
 import { Canvas, Meta, Story } from '@storybook/addon-docs/blocks';
-import { BaseCard, Box } from 'src/components';
 
-import * as Stories from './BaseCard.stories';
+import { BaseCard } from './BaseCard/BaseCard';
+import * as Stories from './BaseCard/BaseCard.stories';
 
 <Meta title="Components/BaseCard" component={BaseCard} of={Stories} />
 
@@ -24,22 +24,4 @@ The `BaseCard` component is designed to provide a flexible and customizable cont
 
 Demonstrate a simple card with minimal content to showcase the basic layout and styling capabilities.
 
-<Canvas>
-  <Story of={Stories.Default} />
-</Canvas>
-
-## BaseCard with Header and Icon
-
-Illustrate how an icon, such as a question mark, can be included in the header for additional context or functionality.
-
-<Canvas>
-  <Story of={Stories.WithHeaderAndIcon} />
-</Canvas>
-
-## Custom Styled BaseCard
-
-Illustrate how the `BaseCard` can be customized using the `sx` prop for specific styling needs.
-
-<Canvas>
-  <Story of={Stories.CustomStyled} />
-</Canvas>
+<Canvas of={Stories.WithContent} />

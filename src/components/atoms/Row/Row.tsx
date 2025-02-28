@@ -1,7 +1,6 @@
-import { styled } from '@mui/material/styles';
-import { Box, BoxProps as MosaicBoxProps } from 'src/components';
+import { Box, BoxProps, styled } from '@mui/material';
 
-export type RowProps = MosaicBoxProps;
+export type RowProps = BoxProps;
 
 export const Row = styled(Box)<RowProps>`
   display: flex;
