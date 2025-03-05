@@ -5,6 +5,7 @@ import { Skeleton, Typography } from 'src/components';
 import { BaseCard } from '../BaseCard/BaseCard';
 
 export type SecondaryCardProps = {
+  id?: string;
   isLoading?: boolean;
   title?: { text: string; endIcon?: ReactNode };
   cardActions?: ReactNode[];
@@ -17,6 +18,7 @@ export type SecondaryCardProps = {
 };
 
 export const SecondaryCard = ({
+  id,
   isLoading,
   title,
   cardActions,
@@ -51,7 +53,7 @@ export const SecondaryCard = ({
     );
   }
   return (
-    <BaseCard sx={{ gap: '4px', ...customStyles?.container }}>
+    <BaseCard id={id} sx={{ gap: '4px', ...customStyles?.container }}>
       <BaseCard.Header
         hideSeparator
         sx={{ paddingBottom: 0, ...customStyles?.header }}

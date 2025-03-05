@@ -5,6 +5,7 @@ import { Typography } from 'src/components';
 import { BaseCard } from '../BaseCard/BaseCard';
 
 export interface PrimaryCardProps {
+  id?: string;
   title: string;
   description?: string;
   children?: ReactNode;
@@ -17,6 +18,7 @@ export interface PrimaryCardProps {
 }
 
 export const PrimaryCard = ({
+  id,
   title,
   description,
   children,
@@ -24,7 +26,7 @@ export const PrimaryCard = ({
   customStyles,
 }: PrimaryCardProps) => {
   return (
-    <BaseCard sx={{ flex: 1, ...customStyles?.container }}>
+    <BaseCard id={id} sx={{ flex: 1, ...customStyles?.container }}>
       <BaseCard.Header sx={{ minHeight: '48px', ...customStyles?.header }}>
         <Stack>
           <Typography variant="h3" weight="medium">
