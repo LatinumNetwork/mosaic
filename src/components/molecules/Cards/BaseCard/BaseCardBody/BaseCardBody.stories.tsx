@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { Typography } from 'src/components';
 
-import { Typography } from '../../../../atoms/Typography';
 import { BaseCardBody } from './BaseCardBody';
 
 const meta: Meta<typeof BaseCardBody> = {
