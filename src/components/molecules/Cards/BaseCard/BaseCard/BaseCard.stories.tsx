@@ -7,6 +7,9 @@ import BaseCard from './BaseCard';
 const meta: Meta<typeof BaseCard> = {
   title: 'Components/Cards/BaseCard/BaseCard',
   component: BaseCard,
+  parameters: {
+    controls: { include: [] },
+  },
 };
 
 export default meta;
@@ -14,8 +17,8 @@ export default meta;
 type Story = StoryObj<typeof BaseCard>;
 
 export const Default: Story = {
-  render: () => (
-    <BaseCard>
+  render: (args) => (
+    <BaseCard {...args}>
       <Typography>Empty content.</Typography>
     </BaseCard>
   ),
