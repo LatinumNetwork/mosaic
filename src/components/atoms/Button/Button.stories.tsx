@@ -9,7 +9,7 @@ const meta: Meta<typeof Button> = {
     variant: {
       control: {
         type: 'select',
-        options: ['primary', 'secondary', 'tertiary', 'link', 'nav', 'text'],
+        options: ['primary', 'secondary', 'tertiary', 'link', 'nav', 'tesxt'],
       },
     },
     size: {
