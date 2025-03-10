@@ -5,16 +5,15 @@ import { PaletteColors } from 'src/types';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'nav';
 type MuiVariant = MuiButtonProps['variant'];
-type OmitMuiButtonWrapperProps = Omit<MuiButtonProps, 'color' | 'variant'>;
+type OmitMuiButtonWrapperProps = Omit<MuiButtonProps, 'variant'>;
 type MainColor = keyof typeof PaletteColors;
 
 export interface ButtonWrapperProps extends OmitMuiButtonWrapperProps {
   variant?: Variant;
-  color?: PaletteColors;
 }
+
 export interface ButtonProps extends MuiButtonProps {
   customVariant?: Variant;
-  customColor?: PaletteColors;
 }
 
 const mapVariantToMui = (variant: Variant | undefined): MuiVariant => {
@@ -51,18 +50,15 @@ const getDefaultColor = (variant: Variant | undefined) => {
 
 const ButtonForwardRef = React.forwardRef(
   (
-    {
-      customVariant: _customVariant,
-      customColor: _customColor,
-      ...props
-    }: ButtonProps,
+    { customVariant: _customVariant, ...props }: ButtonProps,
     ref: React.ForwardedRef<HTMLButtonElement>
   ) => <MuiButton ref={ref} {...props} />
 );
+
 const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
-  ({ theme, customVariant, size, customColor }) => {
-    const mainColor: MainColor =
-      (customColor as MainColor) ?? getDefaultColor(customVariant);
+  ({ theme, customVariant, size }) => {
+    const mainColor: MainColor = getDefaultColor(customVariant);
+
     return {
       display: 'flex',
       fontSize: 16,
@@ -88,13 +84,12 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         fontSize: '18px',
         padding: '12px 20px',
       }),
-
       ...(customVariant === 'primary' && {
         color: theme.palette.uiWhite[500],
-        backgroundColor: theme.palette[mainColor][400],
+        backgroundColor: theme.palette[mainColor][500],
         height: '40px',
         '&:hover': {
-          backgroundColor: theme.palette[mainColor][500],
+          backgroundColor: theme.palette[mainColor][600],
         },
       }),
       ...(customVariant === 'secondary' && {
@@ -196,7 +191,6 @@ export const Button = React.forwardRef(
       children,
       variant = 'primary',
       size = 'medium',
-      color,
       ...props
     }: ButtonWrapperProps,
     ref?: React.ForwardedRef<HTMLButtonElement>
@@ -208,7 +202,6 @@ export const Button = React.forwardRef(
         ref={ref}
         variant={muiVariant}
         customVariant={variant}
-        customColor={color}
         size={size}
         {...props}
       >
