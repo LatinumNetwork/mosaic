@@ -75,7 +75,7 @@ export const LoadingSnackbar: Story = {
     type: 'loading',
     message: 'Loading, please wait...',
     ...sharedArgs,
-    showClose: false, // Override sharedArgs for loading if needed
+    showClose: false,
   },
   ...sharedRender,
 };

@@ -22,7 +22,6 @@ const config: StorybookConfig = {
     options: {},
   },
   async viteFinal(config) {
-    // Add your configuration here
     return config;
   },
   docs: {},
