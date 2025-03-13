@@ -86,10 +86,6 @@ const setStyles = (
   return { actionColor, icon };
 };
 
-const StyledButton = styled(IconButton)({
-  marginLeft: '4px',
-});
-
 export function Snackbar({
   id,
   type,
