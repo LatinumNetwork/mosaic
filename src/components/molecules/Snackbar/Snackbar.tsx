@@ -4,74 +4,108 @@ import {
   CircularProgress,
   IconButton,
   Snackbar as MUISnackbar,
+  Palette,
   SxProps,
   Theme,
 } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
 import { X as CloseIcon } from '@phosphor-icons/react';
 import { ReactNode } from 'react';
 import { Typography } from 'src/components';
 
-interface ActionButtonProps {
+export interface ActionButtonProps {
   label: string;
   onClick: () => void;
 }
 
-interface CustomStyles {
+export interface CustomStyles {
   alert?: SxProps<Theme>;
   snackbar?: SxProps<Theme>;
   button?: SxProps<Theme>;
 }
 
-type SnackbarType = 'info' | 'success' | 'alert' | 'warning' | 'loading';
+export type SnackbarType = 'info' | 'success' | 'alert' | 'warning' | 'loading';
 
 export interface SnackbarProps {
   id?: string;
   type: SnackbarType;
   message: string;
   customStyles?: CustomStyles;
+  customIcon?: ReactNode;
   showClose?: boolean;
+  showCancel?: boolean;
   actionButton?: ActionButtonProps;
   open: boolean;
   onClose: () => void;
+  onCancel: () => void;
 }
 
-function LoadingSpinner() {
-  return <CircularProgress size={20} />;
-}
+const mapTypeToSeverity = (type: SnackbarType) => {
+  switch (type) {
+    case 'info':
+      return 'info';
+    case 'success':
+      return 'success';
+    case 'alert':
+      return 'error';
+    case 'warning':
+      return 'warning';
+    case 'loading':
+      return 'info';
+    default:
+      return 'info';
+  }
+};
+
+const setStyles = (
+  palette: Palette,
+  type: SnackbarType,
+  customIcon: ReactNode
+) => {
+  let actionColor;
+  let icon = null;
+
+  switch (type) {
+    case 'success':
+    case 'alert':
+    case 'info':
+    case 'loading':
+      actionColor = palette.uiWhite[500];
+      break;
+    case 'warning':
+      actionColor = palette.uiGray[800];
+      break;
+    default:
+      actionColor = palette.uiGray[800];
+  }
+
+  if (customIcon) icon = customIcon;
+  if (type === 'loading')
+    icon = <CircularProgress size={20} sx={{ color: actionColor }} />;
+
+  return { actionColor, icon };
+};
+
+const StyledButton = styled(IconButton)({
+  marginLeft: '4px',
+});
 
 export function Snackbar({
   id,
   type,
   message,
   customStyles,
+  customIcon,
   showClose = false,
+  showCancel = false,
   actionButton,
   open,
   onClose,
+  onCancel,
 }: SnackbarProps) {
-  let severity: 'info' | 'success' | 'error' | 'warning' | undefined;
-  let icon: ReactNode = null;
-
-  switch (type) {
-    case 'info':
-      severity = 'info';
-      break;
-    case 'success':
-      severity = 'success';
-      break;
-    case 'alert':
-      severity = 'error';
-      break;
-    case 'warning':
-      severity = 'warning';
-      break;
-    case 'loading':
-      severity = 'info';
-      icon = <LoadingSpinner />;
-      break;
-    default:
-      severity = 'info';
-  }
+  const { palette } = useTheme();
+  const severity = mapTypeToSeverity(type);
+  const { actionColor, icon } = setStyles(palette, type, customIcon);
 
   return (
     <MUISnackbar
@@ -84,17 +118,51 @@ export function Snackbar({
       <Alert
         severity={severity}
         icon={icon}
-        sx={customStyles?.alert}
+        sx={{
+          borderColor: '10px solid blue',
+          display: 'flex',
+          padding: '4px 12px 4px 8px',
+          alignItems: 'center',
+          '.MuiAlert-action': {
+            display: 'flex',
+            alignItems: 'center',
+            padding: 0,
+          },
+          color: actionColor,
+          ...customStyles?.alert,
+        }}
         action={
           <>
             {actionButton && (
-              <Button sx={customStyles?.button} onClick={actionButton.onClick}>
-                {actionButton.label}
+              <Button
+                sx={{
+                  color: actionColor,
+                  marginLeft: '24px',
+                  padding: 0,
+                  ...customStyles?.button,
+                }}
+                onClick={actionButton.onClick}
+              >
+                <Typography variant="b2" weight="medium">
+                  {actionButton.label}
+                </Typography>
               </Button>
             )}
             {showClose && (
               <IconButton onClick={onClose} size="small">
-                <CloseIcon fontSize="small" />
+                <CloseIcon weight="bold" size={16} color={actionColor} />
+              </IconButton>
+            )}
+            {(showCancel || type === 'loading') && (
+              <IconButton onClick={onCancel} size="small">
+                <Typography
+                  sx={{ marginRight: '4px', marginLeft: '32px' }}
+                  weight="medium"
+                  variant="b2"
+                  color={actionColor}
+                >
+                  Cancel
+                </Typography>
               </IconButton>
             )}
           </>

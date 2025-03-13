@@ -24,6 +24,10 @@ const sharedArgs = {
   open: true,
   showClose: true,
   onClose: () => console.log('Snackbar closed'),
+  actionButton: {
+    label: 'Button',
+    onClick: () => console.log('Action'),
+  },
 };
 
 const sharedRender = {
@@ -39,6 +43,9 @@ export const Default: Story = {
     type: 'info',
     message: 'This is an info snackbar',
     ...sharedArgs,
+    actionButton: undefined,
+    showCancel: true,
+    showClose: false,
   },
   ...sharedRender,
 };
@@ -76,6 +83,7 @@ export const LoadingSnackbar: Story = {
     message: 'Loading, please wait...',
     ...sharedArgs,
     showClose: false,
+    actionButton: undefined,
   },
   ...sharedRender,
 };
