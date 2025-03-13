@@ -6,7 +6,7 @@ import { Icon } from 'src/index';
 import { PrimaryCard } from './PrimaryCard';
 
 const meta: Meta<typeof PrimaryCard> = {
-  title: 'Components/Cards/PrimaryCard',
+  title: 'Molecules/Cards/PrimaryCard',
   component: PrimaryCard,
   argTypes: {
     title: { control: 'text' },

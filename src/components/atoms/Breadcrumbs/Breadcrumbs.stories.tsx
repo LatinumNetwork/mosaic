@@ -25,7 +25,7 @@ const argTypes = {
 };
 
 export default {
-  title: 'Components/Breadcrumbs',
+  title: 'Molecules/Breadcrumbs',
   component: Breadcrumbs,
   argTypes,
   parameters: {

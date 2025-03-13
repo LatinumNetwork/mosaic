@@ -4,7 +4,7 @@ import { Typography } from 'src/components';
 import { BaseCardBody } from './BaseCardBody';
 
 const meta: Meta<typeof BaseCardBody> = {
-  title: 'Components/Cards/BaseCard/BaseCardBody',
+  title: 'Molecules/Cards/BaseCard/BaseCardBody',
   component: BaseCardBody,
 };
 

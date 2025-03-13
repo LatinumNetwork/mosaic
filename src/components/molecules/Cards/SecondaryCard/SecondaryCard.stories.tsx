@@ -5,7 +5,7 @@ import { Button, Icon } from 'src/index';
 import { SecondaryCard } from './SecondaryCard';
 
 const meta: Meta<typeof SecondaryCard> = {
-  title: 'Components/Cards/SecondaryCard',
+  title: 'Molecules/Cards/SecondaryCard',
   component: SecondaryCard,
 };
 

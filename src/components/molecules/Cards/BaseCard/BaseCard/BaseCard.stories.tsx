@@ -5,7 +5,7 @@ import { Typography } from 'src/components';
 import BaseCard from './BaseCard';
 
 const meta: Meta<typeof BaseCard> = {
-  title: 'Components/Cards/BaseCard/BaseCard',
+  title: 'Molecules/Cards/BaseCard/BaseCard',
   component: BaseCard,
   parameters: {
     controls: { include: [] },

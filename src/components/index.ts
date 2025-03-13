@@ -43,3 +43,6 @@ export type { PrimaryCardProps } from './molecules/Cards/PrimaryCard';
 
 export { SecondaryCard } from './molecules/Cards/SecondaryCard';
 export type { SecondaryCardProps } from './molecules/Cards/SecondaryCard';
+
+export { Snackbar } from './molecules/Snackbar';
+export type { SnackbarProps } from './molecules/Snackbar';
