@@ -8,7 +8,7 @@ import {
   SxProps,
   Theme,
 } from '@mui/material';
-import { styled, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import { X as CloseIcon } from '@phosphor-icons/react';
 import { ReactNode } from 'react';
 import { Typography } from 'src/components';
