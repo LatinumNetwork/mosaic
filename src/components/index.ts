@@ -46,3 +46,6 @@ export type { SecondaryCardProps } from './molecules/Cards/SecondaryCard';
 
 export { Snackbar } from './molecules/Snackbar';
 export type { SnackbarProps } from './molecules/Snackbar';
+
+export { GenericModal } from './molecules/GenericModal';
+export type { GenericModalProps } from './molecules/GenericModal';
