@@ -43,9 +43,6 @@ export const Default: Story = {
     type: 'info',
     message: 'This is an info snackbar',
     ...sharedArgs,
-    actionButton: undefined,
-    showCancel: true,
-    showClose: false,
   },
   ...sharedRender,
 };
@@ -53,7 +50,7 @@ export const Default: Story = {
 export const SuccessSnackbar: Story = {
   args: {
     type: 'success',
-    message: 'Operation was successful!',
+    message: 'Operation was successful',
     ...sharedArgs,
   },
   ...sharedRender,
@@ -62,7 +59,7 @@ export const SuccessSnackbar: Story = {
 export const AlertSnackbar: Story = {
   args: {
     type: 'alert',
-    message: 'An error occurred.',
+    message: 'An error occurred',
     ...sharedArgs,
   },
   ...sharedRender,
@@ -71,7 +68,7 @@ export const AlertSnackbar: Story = {
 export const WarningSnackbar: Story = {
   args: {
     type: 'warning',
-    message: 'This is a warning.',
+    message: 'This is a warning',
     ...sharedArgs,
   },
   ...sharedRender,
@@ -83,7 +80,10 @@ export const LoadingSnackbar: Story = {
     message: 'Loading, please wait...',
     ...sharedArgs,
     showClose: false,
-    actionButton: undefined,
+    actionButton: {
+      label: 'Cancel',
+      onClick: () => console.log('Action'),
+    },
   },
   ...sharedRender,
 };

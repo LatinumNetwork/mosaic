@@ -33,11 +33,9 @@ export interface SnackbarProps {
   customStyles?: CustomStyles;
   customIcon?: ReactNode;
   showClose?: boolean;
-  showCancel?: boolean;
   actionButton?: ActionButtonProps;
   open: boolean;
   onClose: () => void;
-  onCancel: () => void;
 }
 
 const mapTypeToSeverity = (type: SnackbarType) => {
@@ -81,7 +79,12 @@ const setStyles = (
 
   if (customIcon) icon = customIcon;
   if (type === 'loading')
-    icon = <CircularProgress size={20} sx={{ color: actionColor }} />;
+    icon = (
+      <CircularProgress
+        size={20}
+        sx={{ color: actionColor, margin: '0px 4px 0px 8px' }}
+      />
+    );
 
   return { actionColor, icon };
 };
@@ -93,11 +96,9 @@ export function Snackbar({
   customStyles,
   customIcon,
   showClose = false,
-  showCancel = false,
   actionButton,
   open,
   onClose,
-  onCancel,
 }: SnackbarProps) {
   const { palette } = useTheme();
   const severity = mapTypeToSeverity(type);
@@ -122,7 +123,11 @@ export function Snackbar({
           '.MuiAlert-action': {
             display: 'flex',
             alignItems: 'center',
-            padding: 0,
+            padding: '4px 0',
+            marginLeft: '24px',
+          },
+          '.MuiAlert-icon': {
+            marginRight: '8px',
           },
           color: actionColor,
           ...customStyles?.alert,
@@ -133,7 +138,6 @@ export function Snackbar({
               <Button
                 sx={{
                   color: actionColor,
-                  marginLeft: '24px',
                   padding: 0,
                   ...customStyles?.button,
                 }}
@@ -147,18 +151,6 @@ export function Snackbar({
             {showClose && (
               <IconButton onClick={onClose} size="small">
                 <CloseIcon weight="bold" size={16} color={actionColor} />
-              </IconButton>
-            )}
-            {(showCancel || type === 'loading') && (
-              <IconButton onClick={onCancel} size="small">
-                <Typography
-                  sx={{ marginRight: '4px', marginLeft: '32px' }}
-                  weight="medium"
-                  variant="b2"
-                  color={actionColor}
-                >
-                  Cancel
-                </Typography>
               </IconButton>
             )}
           </>
