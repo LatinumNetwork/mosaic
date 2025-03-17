@@ -1,4 +1,5 @@
 import { Box } from '@mui/material';
+import { Check } from '@phosphor-icons/react';
 import { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import {
@@ -54,6 +55,7 @@ export const WithTagAndIcon: Story = {
     tag: 'Example Tag',
     title: {
       text: 'Modal with Tag',
+      endIcon: <Check size={20} />,
     },
     children: (
       <Typography>
