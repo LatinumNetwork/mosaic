@@ -50,13 +50,13 @@ export interface GraphTooltipPositionProps {
   sx?: SxProps<Theme>;
 }
 
-interface GraphTooltipProps extends GraphTooltipPositionProps {
+export interface GraphTooltipProps extends GraphTooltipPositionProps {
   rows: { label?: string; value?: string | number }[];
   className?: string;
   open?: boolean;
 }
 
-interface StyledGraphTooltipProps extends BoxProps {
+export interface StyledGraphTooltipProps extends BoxProps {
   arrowPosition: ArrowPosition;
 }
 

@@ -11,14 +11,6 @@ export type { BreadcrumbsProps } from './atoms/Breadcrumbs';
 export { Button } from './atoms/Button';
 export type { ButtonProps } from './atoms/Button';
 
-export { GraphTooltip } from './atoms/GraphTooltips';
-export type {
-  GraphTooltipData,
-  ShowTooltipArgs,
-  TooltipParams,
-  GraphTooltipPositionProps,
-} from './atoms/GraphTooltips';
-
 export { Page } from './atoms/Page';
 export type { PageProps } from './atoms/Page';
 
@@ -43,3 +35,13 @@ export type { PrimaryCardProps } from './molecules/Cards/PrimaryCard';
 
 export { SecondaryCard } from './molecules/Cards/SecondaryCard';
 export type { SecondaryCardProps } from './molecules/Cards/SecondaryCard';
+
+export { GraphTooltip } from './molecules/GraphTooltips';
+export type {
+  GraphTooltipData,
+  ShowTooltipArgs,
+  TooltipParams,
+  GraphTooltipPositionProps,
+  GraphTooltipProps,
+  StyledGraphTooltipProps,
+} from './molecules/GraphTooltips';
