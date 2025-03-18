@@ -4,7 +4,7 @@ import MuiTypography, {
 import { styled } from '@mui/material/styles';
 import { forwardRef } from 'react';
 
-type FontWeightVariant = 'regular' | 'medium' | 'semiBold' | 'bold';
+export type FontWeightVariant = 'regular' | 'medium' | 'semiBold' | 'bold';
 
 export const fontWeightMapping: Record<FontWeightVariant, number> = {
   regular: 400,

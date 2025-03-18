@@ -33,8 +33,9 @@ const sharedArgs: Partial<GraphTooltipProps> = {
   left: 150,
   arrowPosition: 'bottom',
   rows: [
-    { label: 'Label One', value: 'Value One' },
-    { label: 'Label Two', value: 'Value Two' },
+    { label: 'Chips and/or Crackers' },
+    { label: 'Population', value: 'High' },
+    { label: 'Growth', value: 'Low' },
   ],
 };
 
