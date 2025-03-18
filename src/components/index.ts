@@ -1,4 +1,4 @@
-// atoms
+// NOTE: Atoms
 export { BaseCardBody } from './molecules/Cards/BaseCard/BaseCardBody';
 export type { BaseCardBodyProps } from './molecules/Cards/BaseCard/BaseCardBody';
 
@@ -34,7 +34,7 @@ export type { StreamlineIconProps } from './atoms/StreamlineIcon';
 export { Typography } from './atoms/Typography';
 export type { TypographyProps } from './atoms/Typography';
 
-// molecules
+// NOTE: Molecules
 export { BaseCard } from './molecules/Cards/BaseCard/BaseCard';
 export type { BaseCardProps } from './molecules/Cards/BaseCard/BaseCard';
 
@@ -43,3 +43,9 @@ export type { PrimaryCardProps } from './molecules/Cards/PrimaryCard';
 
 export { SecondaryCard } from './molecules/Cards/SecondaryCard';
 export type { SecondaryCardProps } from './molecules/Cards/SecondaryCard';
+
+export { Snackbar } from './molecules/Snackbar';
+export type { SnackbarProps } from './molecules/Snackbar';
+
+export { GenericModal } from './molecules/GenericModal';
+export type { GenericModalProps } from './molecules/GenericModal';

@@ -6,6 +6,8 @@ export type {
   SkeletonProps,
   StreamlineIconProps,
   TypographyProps,
+  Snackbar,
+  SnackbarProps,
 } from './components';
 
 export {

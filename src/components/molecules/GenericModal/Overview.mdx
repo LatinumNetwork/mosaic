@@ -1,0 +1,24 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import { GenericModal } from 'src/components';
+
+import * as Stories from './GenericModal.stories';
+
+<Meta title="Molecules/GenericModal" component={GenericModal} of={Stories} />
+
+# Generic Modal
+
+The `GenericModal` component is a flexible modal dialog built with Material UI's Dialog components. It displays a title (with an optional tag and end icon) and renders custom content. The modal width can be adjusted, and it includes a built-in close button.
+
+## Examples
+
+### Default Modal
+
+A simple modal with a title and basic content.
+
+<Canvas of={Stories.Default} />
+
+### Modal with Tag and Icon
+
+A modal that displays an additional tag and an icon alongside the title.
+
+<Canvas of={Stories.WithTagAndIcon} />

@@ -1,0 +1,58 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import { Snackbar } from 'src/components';
+
+import * as Stories from './Snackbar.stories';
+
+<Meta title="Molecules/Snackbar" component={Snackbar} of={Stories} />
+
+# Snackbar
+
+The `Snackbar` component provides a flexible and customizable notification interface built on top of Material UI's Snackbar and Alert components.
+It is designed to display brief messages to the user, anchored at the top-right of the screen with a maximum width of 800px.
+
+## Usage
+
+The `Snackbar` component supports several types:
+
+- **info:** For general information messages.
+- **success:** For confirmations or successful operations.
+- **alert:** To indicate errors or critical issues.
+- **warning:** For cautionary messages.
+- **loading:** To signal that an action is in progress (typically displaying a loading spinner).
+
+### Key Points
+
+- **Optional Buttons:** You can include a close button, cancel button or an action button for extra options.
+- **Fixed Position:** The Snackbar always appears in the top-right corner for consistency.
+
+## Examples
+
+### Basic Snackbar
+
+A basic Snackbar using the default `info` type.
+
+<Canvas of={Stories.Default} />
+
+### Success Snackbar
+
+Display a Snackbar with a success message.
+
+<Canvas of={Stories.SuccessSnackbar} />
+
+### Alert Snackbar
+
+Show a Snackbar styled as an alert (error).
+
+<Canvas of={Stories.AlertSnackbar} />
+
+### Warning Snackbar
+
+Present a Snackbar with a warning message.
+
+<Canvas of={Stories.WarningSnackbar} />
+
+### Loading Snackbar
+
+Indicate that an operation is in progress using a loading indicator.
+
+<Canvas of={Stories.LoadingSnackbar} />

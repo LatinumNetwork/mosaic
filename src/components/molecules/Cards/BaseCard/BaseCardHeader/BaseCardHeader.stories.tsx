@@ -4,7 +4,7 @@ import { Typography } from 'src/components';
 import { BaseCardHeader } from './BaseCardHeader';
 
 const meta: Meta<typeof BaseCardHeader> = {
-  title: 'Components/Cards/BaseCard/BaseCardHeader',
+  title: 'Molecules/Cards/BaseCard/BaseCardHeader',
   component: BaseCardHeader,
 };
 
