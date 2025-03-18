@@ -3,7 +3,7 @@ import { Breadcrumbs } from 'src/components';
 
 import * as Stories from './Breadcrumbs.stories';
 
-<Meta title="Components/Breadcrumbs" component={Breadcrumbs} of={Stories} />
+<Meta title="Molecules/Breadcrumbs" component={Breadcrumbs} of={Stories} />
 
 # Breadcrumbs
 
@@ -23,30 +23,22 @@ The `Breadcrumbs` component is versatile, allowing developers to pass in text, l
 
 A simple linear path, primarily using text to guide the user.
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Canvas of={Stories.Basic} />
 
 ## Breadcrumbs with Icons
 
 Enhance breadcrumbs with icons to provide visual cues or to simply elevate the design.
 
-<Canvas>
-  <Story of={Stories.WithIcons} />
-</Canvas>
+<Canvas of={Stories.WithIcons} />
 
 ## Breadcrumbs with Custom Styles
 
 Stylize the breadcrumbs to better align with your application's theme or to provide a unique user experience.
 
-<Canvas>
-  <Story of={Stories.CustomStyles} />
-</Canvas>
+<Canvas of={Stories.CustomStyles} />
 
 ## Collapsed Breadcrumbs
 
 For longer navigational paths, breadcrumbs can be collapsed to maintain a clean interface while still providing essential navigation.
 
-<Canvas>
-  <Story of={Stories.Collapsed} />
-</Canvas>
+<Canvas of={Stories.Collapsed} />

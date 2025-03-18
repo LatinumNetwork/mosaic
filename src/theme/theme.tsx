@@ -21,6 +21,7 @@ import {
   ThemeOptions,
   createTheme,
 } from '@mui/material';
+import { Check, Warning, WarningOctagon } from '@phosphor-icons/react';
 import { audience, collage, themeColors, ui } from 'src/colors';
 import { CustomColors } from 'src/types';
 
@@ -151,6 +152,32 @@ const themeOptions: ThemeOptions = {
         },
         'svg text': {
           fontFamily: "'Nunito Sans', sans-serif",
+        },
+      },
+    },
+    MuiAlert: {
+      defaultProps: {
+        iconMapping: {
+          info: <></>,
+          success: <Check size={24} color={ui.white['500']} />,
+          warning: <Warning size={24} color={ui.coolGray['900']} />,
+          error: <WarningOctagon size={24} color={ui.white['500']} />,
+        },
+      },
+      styleOverrides: {
+        root: {
+          '&.MuiAlert-colorSuccess': {
+            backgroundColor: ui.green['600'],
+          },
+          '&.MuiAlert-colorWarning': {
+            backgroundColor: ui.yellow['400'],
+          },
+          '&.MuiAlert-colorInfo': {
+            backgroundColor: ui.coolGray[900],
+          },
+          '&.MuiAlert-colorError': {
+            backgroundColor: ui.red[600],
+          },
         },
       },
     },
