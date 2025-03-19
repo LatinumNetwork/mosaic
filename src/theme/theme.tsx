@@ -136,6 +136,7 @@ const themeOptions: ThemeOptions = {
     MuiButton: {
       styleOverrides: {
         root: {
+          fontFamily: "'Nunito Sans', 'Merriweather', sans-serif",
           '&:hover': {
             boxShadow: 'none',
           },
