@@ -4,4 +4,6 @@ export type {
   ShowTooltipArgs,
   TooltipParams,
   GraphTooltipPositionProps,
+  GraphTooltipProps,
+  StyledGraphTooltipProps,
 } from './GraphTooltips';

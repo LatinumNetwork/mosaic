@@ -1,5 +1,6 @@
 import { Box, styled } from '@mui/material';
 import { Typography, TypographyProps } from 'src/components';
+import { fontWeightMapping } from 'src/components/atoms/Typography/Typography';
 import { hexToRgba } from 'src/utils';
 
 export const Container = styled(Box)({
@@ -29,11 +30,14 @@ export const Label = styled(
 )(({ isSingleItem, theme }) => ({
   color: isSingleItem
     ? theme.palette.common.white
-    : hexToRgba(theme.palette.common.white, 0.8),
+    : hexToRgba(theme.palette.defaultColors.white, 80),
   textAlign: 'left',
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
+  fontWeight: isSingleItem
+    ? fontWeightMapping.medium
+    : fontWeightMapping.regular,
 }));
 
 export const Value = styled((props: TypographyProps) => (
