@@ -18,6 +18,7 @@ const HeaderStyled = styled(Box, {
     borderBottom: hideSeparator
       ? 'none'
       : `1px solid ${theme.palette.uiCoolGray[200]}`,
+    gap: '8px',
   })
 );
 

@@ -44,7 +44,7 @@ export const PrimaryCard = ({
             </Typography>
           )}
         </Stack>
-        <Stack direction="row" gap={'16px'}>
+        <Stack direction="row" gap={'16px'} flexShrink={0}>
           {cardActions?.map((action, index) => (
             <Fragment key={index}>{action}</Fragment>
           ))}
