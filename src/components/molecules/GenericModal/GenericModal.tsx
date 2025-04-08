@@ -16,6 +16,7 @@ export interface GenericModalProps {
   children: React.ReactNode;
   open: boolean;
   onClose: () => void;
+  onExited?: () => void;
   width?: number;
 }
 
@@ -25,15 +26,20 @@ export const GenericModal = ({
   children,
   open,
   onClose,
+  onExited,
   width = 688,
 }: GenericModalProps) => {
   const { palette } = useTheme();
 
   return (
     <Dialog
+      closeAfterTransition={false}
       onClose={onClose}
       open={open}
       maxWidth="md"
+      TransitionProps={{
+        onExited: onExited,
+      }}
       PaperProps={{
         sx: {
           bgcolor: palette.uiCoolGray[50],
