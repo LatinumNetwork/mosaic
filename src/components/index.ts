@@ -47,7 +47,7 @@ export type {
 } from './molecules/GraphTooltips';
 
 export { Snackbar } from './molecules/Snackbar';
-export type { SnackbarProps } from './molecules/Snackbar';
+export type { SnackbarProps, SnackbarType } from './molecules/Snackbar';
 
 export { GenericModal } from './molecules/GenericModal';
 export type { GenericModalProps } from './molecules/GenericModal';

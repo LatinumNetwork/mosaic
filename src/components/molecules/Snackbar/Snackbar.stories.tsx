@@ -11,7 +11,6 @@ const meta: Meta<typeof Snackbar> = {
       options: ['info', 'success', 'alert', 'warning', 'loading', 'custom'],
     },
     message: { control: 'text' },
-    open: { control: 'boolean' },
     showClose: { control: 'boolean' },
   },
 };
@@ -21,7 +20,6 @@ export default meta;
 type Story = StoryObj<typeof Snackbar>;
 
 const sharedArgs = {
-  open: true,
   showClose: true,
   onClose: () => console.log('Snackbar closed'),
   actionButton: {

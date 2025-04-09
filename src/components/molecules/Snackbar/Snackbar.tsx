@@ -1,9 +1,9 @@
 import {
   Alert,
+  Box,
   Button,
   CircularProgress,
   IconButton,
-  Snackbar as MUISnackbar,
   Palette,
   SxProps,
   Theme,
@@ -34,8 +34,7 @@ export interface SnackbarProps {
   customIcon?: ReactNode;
   showClose?: boolean;
   actionButton?: ActionButtonProps;
-  open: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 const mapTypeToSeverity = (type: SnackbarType) => {
@@ -97,7 +96,6 @@ export function Snackbar({
   customIcon,
   showClose = false,
   actionButton,
-  open,
   onClose,
 }: SnackbarProps) {
   const { palette } = useTheme();
@@ -105,12 +103,9 @@ export function Snackbar({
   const { actionColor, icon } = setStyles(palette, type, customIcon);
 
   return (
-    <MUISnackbar
+    <Box
       id={id}
-      open={open}
-      onClose={onClose}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      sx={{ maxWidth: 800, ...customStyles?.snackbar }}
+      sx={{ display: 'flex', maxWidth: 800, ...customStyles?.snackbar }}
     >
       <Alert
         severity={severity}
@@ -158,6 +153,6 @@ export function Snackbar({
       >
         <Typography>{message}</Typography>
       </Alert>
-    </MUISnackbar>
+    </Box>
   );
 }
