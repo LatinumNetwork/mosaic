@@ -14,7 +14,9 @@ export interface PrimaryCardProps {
     container?: SxProps;
     header?: SxProps;
     body?: SxProps;
+    footer?: SxProps;
   };
+  footer?: ReactNode;
 }
 
 export const PrimaryCard = ({
@@ -24,6 +26,7 @@ export const PrimaryCard = ({
   children,
   cardActions,
   customStyles,
+  footer,
 }: PrimaryCardProps) => {
   return (
     <BaseCard id={id} sx={{ flex: 1, ...customStyles?.container }}>
@@ -51,6 +54,9 @@ export const PrimaryCard = ({
         </Stack>
       </BaseCard.Header>
       <BaseCard.Body sx={customStyles?.body}>{children}</BaseCard.Body>
+      {footer && (
+        <BaseCard.Footer sx={customStyles?.footer}>{footer}</BaseCard.Footer>
+      )}
     </BaseCard>
   );
 };

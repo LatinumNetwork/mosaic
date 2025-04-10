@@ -9,6 +9,8 @@ import {
 import {
   BaseCardBody,
   BaseCardBodyProps,
+  BaseCardFooter,
+  BaseCardFooterProps,
   BaseCardHeader,
   BaseCardHeaderProps,
 } from 'src/components';
@@ -22,6 +24,7 @@ type BaseCardComponent = ForwardRefExoticComponent<
 > & {
   Header: ComponentType<BaseCardHeaderProps>;
   Body: ComponentType<BaseCardBodyProps>;
+  Footer: ComponentType<BaseCardFooterProps>;
 };
 
 const CardStyled = styled(Box)(({ theme }) => ({
@@ -42,5 +45,6 @@ export const BaseCard = forwardRef<HTMLDivElement, BaseCardProps>(
 
 BaseCard.Header = BaseCardHeader;
 BaseCard.Body = BaseCardBody;
+BaseCard.Footer = BaseCardFooter;
 
 export default BaseCard;

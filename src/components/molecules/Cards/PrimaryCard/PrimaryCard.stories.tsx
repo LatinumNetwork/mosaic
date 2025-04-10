@@ -23,6 +23,7 @@ export const Default: Story = {
     title: 'This is a title',
     description: 'This is a description',
     children: <Typography>This is the card body</Typography>,
+    footer: <Typography>This is a card footer</Typography>,
   },
   render: (args) => <PrimaryCard {...args} />,
 };
@@ -31,11 +32,28 @@ export const NoDescription: Story = {
   args: {
     title: 'This is a title',
     children: <Typography>This is the card body</Typography>,
+    footer: <Typography>This is a card footer</Typography>,
   },
   render: (args) => <PrimaryCard {...args} />,
 };
 
 export const CardActions: Story = {
+  args: {
+    title: 'This is a title',
+    description: 'This is a description',
+    footer: <Typography>This is a card footer</Typography>,
+    cardActions: [
+      <Button key="1">Action 1</Button>,
+      <IconButton key="2">
+        <Icon.DotsThree />
+      </IconButton>,
+    ],
+    children: <Typography>This is the card body</Typography>,
+  },
+  render: (args) => <PrimaryCard {...args} />,
+};
+
+export const NoFooter: Story = {
   args: {
     title: 'This is a title',
     description: 'This is a description',
