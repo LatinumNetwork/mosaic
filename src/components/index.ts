@@ -5,6 +5,9 @@ export type { BaseCardBodyProps } from './molecules/Cards/BaseCard/BaseCardBody'
 export { BaseCardHeader } from './molecules/Cards/BaseCard/BaseCardHeader';
 export type { BaseCardHeaderProps } from './molecules/Cards/BaseCard/BaseCardHeader';
 
+export { BaseCardFooter } from './molecules/Cards/BaseCard/BaseCardFooter';
+export type { BaseCardFooterProps } from './molecules/Cards/BaseCard/BaseCardFooter';
+
 export { Breadcrumbs } from './atoms/Breadcrumbs';
 export type { BreadcrumbsProps } from './atoms/Breadcrumbs';
 
