@@ -16,6 +16,7 @@ const FooterStyled = styled(Box, {
     borderTop: hideSeparator
       ? 'none'
       : `1px solid ${theme.palette.uiCoolGray[100]}`,
+    flexShrink: 0,
   })
 );
 
