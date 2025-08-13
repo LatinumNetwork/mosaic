@@ -182,6 +182,15 @@ const themeOptions: ThemeOptions = {
         },
       },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: ui.blue[500],
+          },
+        },
+      },
+    },
   },
   breakpoints: {
     values: {
