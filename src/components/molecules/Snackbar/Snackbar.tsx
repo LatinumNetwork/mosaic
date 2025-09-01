@@ -9,7 +9,7 @@ import {
   Theme,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { X as CloseIcon } from '@phosphor-icons/react';
+import { XIcon as CloseIcon } from '@phosphor-icons/react';
 import { ReactNode } from 'react';
 import { Typography } from 'src/components';
 
@@ -110,6 +110,7 @@ export function Snackbar({
       <Alert
         severity={severity}
         icon={icon}
+        variant="filled"
         sx={{
           borderColor: '10px solid blue',
           display: 'flex',
@@ -123,6 +124,18 @@ export function Snackbar({
           },
           '.MuiAlert-icon': {
             marginRight: '8px',
+          },
+          '&.MuiAlert-colorSuccess': {
+            backgroundColor: palette.uiGreen['600'],
+          },
+          '&.MuiAlert-colorInfo': {
+            backgroundColor: palette.uiCoolGray[900],
+          },
+          '&.MuiAlert-colorError': {
+            backgroundColor: palette.uiRed[600],
+          },
+          '&.MuiAlert-colorWarning': {
+            backgroundColor: palette.uiYellow[400],
           },
           color: actionColor,
           ...customStyles?.alert,
