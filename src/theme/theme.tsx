@@ -185,8 +185,16 @@ const themeOptions: ThemeOptions = {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: ui.coolGray[200],
+            transition: 'all 0.3s ease',
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: ui.blue[400],
+          },
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: ui.blue[500],
+            borderColor: ui.blue[400],
+            boxShadow: `0 0 4px 0 ${ui.blue[400]}`,
           },
         },
       },
