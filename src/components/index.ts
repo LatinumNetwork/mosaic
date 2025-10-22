@@ -26,6 +26,9 @@ export type { SkeletonProps } from './atoms/Skeleton';
 export { StreamlineIcon } from './atoms/StreamlineIcon';
 export type { StreamlineIconProps } from './atoms/StreamlineIcon';
 
+export { Switch } from './atoms/Switch';
+export type { SwitchProps } from './atoms/Switch';
+
 export { Typography } from './atoms/Typography';
 export type { TypographyProps } from './atoms/Typography';
 

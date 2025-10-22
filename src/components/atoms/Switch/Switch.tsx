@@ -1,9 +1,13 @@
-import { Switch as MuiSwitch, styled } from '@mui/material';
+import {
+  Switch as MuiSwitch,
+  SwitchProps as MuiSwitchProps,
+  styled,
+} from '@mui/material';
 import { hexToRgba } from 'src/utils';
 
 type SwitchSize = 'small' | 'medium' | 'large';
 
-interface SwitchProps {
+export interface SwitchProps extends MuiSwitchProps {
   switchSize: SwitchSize;
 }
 
