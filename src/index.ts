@@ -8,6 +8,7 @@ export type {
   TypographyProps,
   Snackbar,
   SnackbarProps,
+  SwitchProps,
 } from './components';
 
 export {
@@ -16,6 +17,7 @@ export {
   Skeleton,
   StreamlineIcon,
   Typography,
+  Switch,
 } from './components';
 
 export * from './components';
