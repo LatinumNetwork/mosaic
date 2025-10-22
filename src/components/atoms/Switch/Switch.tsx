@@ -76,9 +76,15 @@ export const Switch = styled(MuiSwitch, {
       '&.Mui-checked': {
         transform: `translateX(${switchBaseTransform}px)`,
         color: theme.palette.defaultColors.white,
+        '&.Mui-disabled': {
+          color: theme.palette.defaultColors.white,
+        },
         '& + .MuiSwitch-track': {
           opacity: 1,
           backgroundColor: theme.palette.uiBlue[400],
+        },
+        '&.Mui-disabled + .MuiSwitch-track': {
+          backgroundColor: theme.palette.uiBlue[100],
         },
       },
     },
