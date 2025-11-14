@@ -65,7 +65,7 @@ export const Default: Story = {
 export const WithUnitMeasurement: Story = {
   args: {
     ...sharedArgs,
-    unitMeasurement: '%',
+    valueAdornments: { suffix: '%' },
     rows: [
       { label: 'Population', value: '45' },
       { label: 'Growth', value: '3.2' },
