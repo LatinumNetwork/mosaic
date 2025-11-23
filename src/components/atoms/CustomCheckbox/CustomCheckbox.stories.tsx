@@ -1,5 +1,6 @@
 import { CheckboxProps } from '@mui/material';
 import { ArgTypes, Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 
 import { CustomCheckbox } from './CustomCheckbox';
 
@@ -30,7 +31,14 @@ type Story = StoryObj<typeof CustomCheckbox>;
 export const Primary: Story = {
   render: (args) => {
     function CustomCheckboxWithState(props: typeof args) {
-      return <CustomCheckbox {...props} />;
+      const [checked, setChecked] = useState(!!props.checked);
+      return (
+        <CustomCheckbox
+          {...props}
+          checked={checked}
+          onClick={() => setChecked(!checked)}
+        />
+      );
     }
     return <CustomCheckboxWithState {...args} />;
   },
