@@ -14,6 +14,12 @@ export type { BreadcrumbsProps } from './atoms/Breadcrumbs';
 export { Button } from './atoms/Button';
 export type { ButtonProps } from './atoms/Button';
 
+export { CustomCheckbox } from './atoms/CustomCheckbox';
+export type { CustomCheckboxProps } from './atoms/CustomCheckbox';
+
+export { NumberInput } from './atoms/NumberInput';
+export type { NumberInputProps } from './atoms/NumberInput';
+
 export { Page } from './atoms/Page';
 export type { PageProps } from './atoms/Page';
 
