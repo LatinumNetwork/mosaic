@@ -6,7 +6,7 @@ import {
   IconButton,
   useTheme,
 } from '@mui/material';
-import { X } from '@phosphor-icons/react';
+import { XIcon } from '@phosphor-icons/react';
 import React from 'react';
 import { Typography } from 'src/components';
 
@@ -81,7 +81,7 @@ export const GenericModal = ({
             color: palette.uiGray[800],
           }}
         >
-          <X color={palette.uiGray[800]} opacity={0.8} size={32} />
+          <XIcon color={palette.uiGray[800]} opacity={0.8} size={32} />
         </IconButton>
       </DialogTitle>
       <DialogContent sx={{ padding: '32px' }}>{children}</DialogContent>

@@ -188,10 +188,10 @@ const themeOptions: ThemeOptions = {
             transition: 'all 0.3s ease',
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: ui.blue[400],
+            border: `1px solid ${ui.blue[400]}`,
           },
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: ui.blue[400],
+            border: `1px solid ${ui.blue[400]}`,
             boxShadow: `0 0 4px 0 ${ui.blue[400]}`,
           },
         },

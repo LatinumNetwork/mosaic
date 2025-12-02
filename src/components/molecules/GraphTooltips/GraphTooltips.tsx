@@ -29,7 +29,7 @@ export interface TooltipParams<T> {
   arrowPosition?: ArrowPosition | undefined;
   xPosition?: xPosition;
   yPosition?: yPosition;
-  unitMeasurement?: string;
+  valueAdornments?: { prefix?: string; suffix?: string };
 }
 
 export type GraphTooltipData = {
@@ -46,7 +46,7 @@ export interface GraphTooltipPositionProps {
   top?: number;
   left?: number;
   right?: number;
-  unitMeasurement?: string;
+  valueAdornments?: { prefix?: string; suffix?: string };
   sx?: SxProps<Theme>;
 }
 
@@ -82,7 +82,7 @@ export const GraphTooltip = ({
   className,
   sx,
   rows,
-  unitMeasurement,
+  valueAdornments,
   top = 0,
   left,
   right,
@@ -127,9 +127,12 @@ export const GraphTooltip = ({
             {row.label && <Label isSingleItem={!row.value}>{row.label}</Label>}
             {row.value && (
               <Value>
+                {valueAdornments && valueAdornments.prefix && (
+                  <UnitMeasurement>{valueAdornments.prefix}</UnitMeasurement>
+                )}
                 {row.value}
-                {unitMeasurement && (
-                  <UnitMeasurement>{unitMeasurement}</UnitMeasurement>
+                {valueAdornments && valueAdornments.suffix && (
+                  <UnitMeasurement>{valueAdornments.suffix}</UnitMeasurement>
                 )}
               </Value>
             )}
