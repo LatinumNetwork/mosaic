@@ -71,12 +71,6 @@ const ui = {
     800: '#454c55',
     900: '#353a41',
   },
-  white: {
-    500: '#FFFFFF',
-  },
-  black: {
-    500: '#000000',
-  },
 };
 
 export default ui;

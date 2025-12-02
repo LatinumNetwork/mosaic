@@ -67,7 +67,7 @@ const setStyles = (
     case 'alert':
     case 'info':
     case 'loading':
-      actionColor = palette.uiWhite[500];
+      actionColor = palette.common.white;
       break;
     case 'warning':
       actionColor = palette.uiGray[800];
