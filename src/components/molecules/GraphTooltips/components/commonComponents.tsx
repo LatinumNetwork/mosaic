@@ -43,7 +43,7 @@ export const Label = styled(
 export const Value = styled((props: TypographyProps) => (
   <Typography variant="b2" {...props} />
 ))(({ theme }) => ({
-  color: theme.palette.uiWhite[500],
+  color: theme.palette.common.white,
   minWidth: '30px',
 }));
 

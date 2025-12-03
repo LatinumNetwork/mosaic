@@ -31,7 +31,7 @@ const CardStyled = styled(Box)(({ theme }) => ({
   borderRadius: '4px',
   display: 'flex',
   flexDirection: 'column',
-  backgroundColor: theme.palette.uiWhite[500],
+  backgroundColor: theme.palette.common.white,
   textAlign: 'left',
 }));
 

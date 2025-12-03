@@ -85,7 +85,7 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         padding: '12px 20px',
       }),
       ...(customVariant === 'primary' && {
-        color: theme.palette.uiWhite[500],
+        color: theme.palette.common.white,
         backgroundColor: theme.palette[mainColor][500],
         height: '40px',
         '&:hover': {
@@ -96,7 +96,7 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         color: theme.palette[mainColor][500],
         border: '1px solid',
         borderColor: theme.palette[mainColor][200],
-        backgroundColor: theme.palette.uiWhite[500],
+        backgroundColor: theme.palette.common.white,
         height: '40px',
         '&:hover': {
           backgroundColor: theme.palette[mainColor][50],
@@ -107,7 +107,7 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         color: theme.palette[mainColor][800],
         border: '1px solid',
         borderColor: theme.palette[mainColor][200],
-        backgroundColor: theme.palette.uiWhite[500],
+        backgroundColor: theme.palette.common.white,
         height: '40px',
         '&:hover': {
           backgroundColor: theme.palette.uiCoolGray[50],

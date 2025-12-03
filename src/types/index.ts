@@ -17,7 +17,6 @@ export enum PaletteColors {
   uiRed = 'uiRed',
   uiGray = 'uiGray',
   uiCoolGray = 'uiCoolGray',
-  uiWhite = 'uiWhite',
 }
 
 export enum StreamlineIcons {
@@ -44,5 +43,4 @@ export interface CustomColors {
   uiRed?: CustomColorShades;
   uiGray?: CustomColorShades;
   uiCoolGray?: CustomColorShades;
-  uiWhite?: CustomColorShades;
 }
