@@ -96,7 +96,7 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         color: theme.palette[mainColor][500],
         border: '1px solid',
         borderColor: theme.palette[mainColor][200],
-        backgroundColor: theme.palette.defaultColors.white,
+        backgroundColor: theme.palette.common.white,
         height: '40px',
         '&:hover': {
           backgroundColor: theme.palette[mainColor][50],
