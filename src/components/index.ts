@@ -17,6 +17,9 @@ export type { ButtonProps } from './atoms/Button';
 export { CustomCheckbox } from './atoms/CustomCheckbox';
 export type { CustomCheckboxProps } from './atoms/CustomCheckbox';
 
+export { CustomSelect } from './atoms/CustomSelect';
+export type { CustomSelectProps } from './atoms/CustomSelect';
+
 export { NumberInput } from './atoms/NumberInput';
 export type { NumberInputProps } from './atoms/NumberInput';
 
@@ -25,6 +28,9 @@ export type { PageProps } from './atoms/Page';
 
 export { Row } from './atoms/Row';
 export type { RowProps } from './atoms/Row';
+
+export { SearchBox } from './atoms/SearchBox';
+export type { SearchBoxProps } from './atoms/SearchBox';
 
 export { Skeleton } from './atoms/Skeleton';
 export type { SkeletonProps } from './atoms/Skeleton';
@@ -42,11 +48,8 @@ export type { TypographyProps } from './atoms/Typography';
 export { BaseCard } from './molecules/Cards/BaseCard/BaseCard';
 export type { BaseCardProps } from './molecules/Cards/BaseCard/BaseCard';
 
-export { PrimaryCard } from './molecules/Cards/PrimaryCard';
-export type { PrimaryCardProps } from './molecules/Cards/PrimaryCard';
-
-export { SecondaryCard } from './molecules/Cards/SecondaryCard';
-export type { SecondaryCardProps } from './molecules/Cards/SecondaryCard';
+export { GenericModal } from './molecules/GenericModal';
+export type { GenericModalProps } from './molecules/GenericModal';
 
 export { GraphTooltip } from './molecules/GraphTooltips';
 export type {
@@ -58,8 +61,14 @@ export type {
   StyledGraphTooltipProps,
 } from './molecules/GraphTooltips';
 
+export { PrimaryCard } from './molecules/Cards/PrimaryCard';
+export type { PrimaryCardProps } from './molecules/Cards/PrimaryCard';
+
+export { RangeSlider } from './molecules/RangeSlider';
+export type { RangeSliderProps } from './molecules/RangeSlider';
+
+export { SecondaryCard } from './molecules/Cards/SecondaryCard';
+export type { SecondaryCardProps } from './molecules/Cards/SecondaryCard';
+
 export { Snackbar } from './molecules/Snackbar';
 export type { SnackbarProps, SnackbarType } from './molecules/Snackbar';
-
-export { GenericModal } from './molecules/GenericModal';
-export type { GenericModalProps } from './molecules/GenericModal';
