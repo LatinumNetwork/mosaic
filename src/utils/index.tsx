@@ -1,1 +1,1 @@
-export { default as hexToRgba } from './hexToRgba';
+export { hexToRgba } from './hexToRgba';

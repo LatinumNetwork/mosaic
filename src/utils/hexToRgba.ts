@@ -1,4 +1,10 @@
-export default (hex: string, opacity: number): string => {
+/**
+ * Convert hex color to rgba format
+ * @param hex Hex color code (e.g., #RRGGBB or #RGB)
+ * @param opacity Opacity value as a percentage (0-100)
+ * @returns RGBA color string
+ */
+export const hexToRgba = (hex: string, opacity: number): string => {
   hex = hex.replace(/^#/, '');
 
   if (hex.length !== 6 && hex.length !== 3) {

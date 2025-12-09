@@ -27,4 +27,4 @@ export * from './types';
 export * from './theme';
 export * as Icon from '@phosphor-icons/react';
 
-export { hexToRgba } from 'src/utils';
+export * from './utils';
