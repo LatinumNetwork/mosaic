@@ -138,6 +138,9 @@ const themeOptions: ThemeOptions = {
       },
     },
     MuiButton: {
+      defaultProps: {
+        disableRipple: true,
+      },
       styleOverrides: {
         root: {
           fontFamily: "'Nunito Sans', 'Merriweather', sans-serif",
