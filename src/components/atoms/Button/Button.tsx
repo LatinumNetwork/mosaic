@@ -2,6 +2,7 @@ import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import React from 'react';
 import { PaletteColors } from 'src/types';
+import { hexToRgba } from 'src/utils';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'link' | 'nav';
 type MuiVariant = MuiButtonProps['variant'];
@@ -71,7 +72,11 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
       justifyContent: 'center',
       minHeight: 0,
       whiteSpace: 'nowrap',
-
+      '&:focus-visible': {
+        outline: `1px solid #D39CBA`,
+        outlineOffset: '2px',
+        boxShadow: `0 0 4px 0 #D39CBA`,
+      },
       ...(size === 'small' && {
         fontSize: '14px',
         padding: '4px 12px',
@@ -86,32 +91,37 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
       }),
       ...(customVariant === 'primary' && {
         color: theme.palette.common.white,
-        backgroundColor: theme.palette[mainColor][500],
+        backgroundColor: theme.palette.collageRaspberry[500],
         height: '40px',
         '&:hover': {
-          backgroundColor: theme.palette[mainColor][600],
+          backgroundColor: theme.palette.collageRaspberry[600],
+        },
+        '&:active': {
+          backgroundColor: theme.palette.collageRaspberry[700],
         },
       }),
       ...(customVariant === 'secondary' && {
-        color: theme.palette[mainColor][500],
-        border: '1px solid',
-        borderColor: theme.palette[mainColor][200],
+        color: theme.palette.collageRaspberry[600],
+        border: '1px solid #D39CBA',
         backgroundColor: theme.palette.common.white,
         height: '40px',
-        '&:hover': {
-          backgroundColor: theme.palette[mainColor][50],
-          borderColor: theme.palette[mainColor][500],
+        '&:hover,  &:focus-visible, &:active': {
+          backgroundColor: hexToRgba(theme.palette.collageRaspberry[500], 10),
+          borderColor: theme.palette.collageRaspberry[500],
         },
       }),
       ...(customVariant === 'tertiary' && {
-        color: theme.palette[mainColor][800],
-        border: '1px solid',
-        borderColor: theme.palette[mainColor][200],
+        color: theme.palette.uiCoolGray[800],
+        border: `1px solid ${theme.palette.uiCoolGray[200]}`,
         backgroundColor: theme.palette.common.white,
         height: '40px',
-        '&:hover': {
-          backgroundColor: theme.palette.uiCoolGray[50],
-          borderColor: theme.palette[mainColor][500],
+        '&:hover, &:focus-visible': {
+          backgroundColor: hexToRgba(theme.palette.uiCoolGray[50], 50),
+          borderColor: theme.palette.uiCoolGray[500],
+        },
+        '&:active': {
+          backgroundColor: hexToRgba(theme.palette.uiCoolGray[100], 50),
+          borderColor: theme.palette.uiCoolGray[700],
         },
       }),
       ...(customVariant === 'text' && {
@@ -124,43 +134,38 @@ const ButtonRoot = styled(ButtonForwardRef)<ButtonProps>(
         },
       }),
       ...(customVariant === 'link' && {
-        color: theme.palette[mainColor][600],
+        color: theme.palette.uiBlue[500],
         background: 'none',
-        padding: '2px 4px',
-        borderRadius: 0,
+        padding: '2px',
+        borderRadius: 2,
         minWidth: 0,
-        '&:hover': {
+        '&:hover, &:focus-visible': {
           ':after': {
             content: '""',
-            background: theme.palette[mainColor][600],
+            background: theme.palette.uiBlue[500],
             position: 'absolute',
-            bottom: -2,
-            left: '0',
+            bottom: '2px',
+            left: '2px',
+            right: '2px',
             height: '1px',
-            width: '100%',
           },
           background: 'none',
         },
-        '&:active': {
-          background: 'none',
-          border: 'none',
-          borderRadius: '4px',
-          ':after': {
-            content: '""',
-            background: 'none',
-          },
+        '&:focus-visible': {
+          outline: `1px solid ${theme.palette.uiBlue[300]}`,
+          boxShadow: `0 0 4px 0 ${theme.palette.uiBlue[300]}`,
         },
       }),
       ...(customVariant === 'nav' && {
-        color: theme.palette[mainColor][800],
+        color: theme.palette.uiGray[800],
         background: 'none',
-        padding: '2px 4px',
-        '&:hover': {
+        padding: '8px 12px',
+        '&:hover, &:focus-visible': {
           backgroundColor: theme.palette.uiCoolGray[50],
         },
         '&:active': {
           color: theme.palette.collageRaspberry[500],
-          backgroundColor: theme.palette.collageRaspberry[50],
+          backgroundColor: '#F6EAF0',
         },
       }),
 

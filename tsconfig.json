@@ -1,32 +1,32 @@
 {
-    "compilerOptions": {
-        "outDir": "dist",
-        "rootDir": "src",
-        "allowJs": false,
-        "skipLibCheck": true,
-        "target": "ESNext",
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "types": ["vite/client", "node"],
-        "jsx": "react-jsx",
-        "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "sourceMap": true,
-        "module": "ESNext",
-        "moduleResolution": "Node",
-        "declaration": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": false,
-        "baseUrl": ".",
-        "esModuleInterop": true,
-        "paths": {
-            "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"],
-            "src/*": ["./src/*"]
-        }
-    },
-    "include": ["./src/*", "./globals.d.ts", "**/*.tsx"],
-    "typeRoots": ["./src/theme"],
-    "exclude": ["node_modules"],
-    "references": [{ "path": "./tsconfig.vite.json" }]
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "allowJs": false,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client", "node"],
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "sourceMap": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "paths": {
+      "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"],
+      "src/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/*", "./globals.d.ts", "**/*.tsx"],
+  "typeRoots": ["./src/theme"],
+  "exclude": ["node_modules", "dist"],
+  "references": [{ "path": "./tsconfig.vite.json" }]
 }
