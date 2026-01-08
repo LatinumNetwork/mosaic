@@ -29,6 +29,8 @@ jobs:
       - name: Remove npm token
         run: rm -f ~/.npmrc
 
+      - run: npm config list
+
       - name: Build with Rollup
         run: npm run rollup
 
