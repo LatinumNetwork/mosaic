@@ -6,9 +6,9 @@ on:
     tags:
       - 'v*'
 
-  permissions:
-    id-token: write  # Required for OIDC
-    contents: read
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
 
 jobs:
   build-and-publish:
@@ -30,6 +30,4 @@ jobs:
         run: npm run rollup
 
       - name: Publish to npm
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public
