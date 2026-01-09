@@ -1,11 +1,14 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
+import fs from 'fs';
 import dts from 'rollup-plugin-dts';
+import css from 'rollup-plugin-import-css';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import css from "rollup-plugin-import-css";
 
-import packageJson from './package.json' assert { type: 'json' };
+const packageJson = JSON.parse(
+  fs.readFileSync(new URL('./package.json', import.meta.url))
+);
 
 const globals = [...Object.keys(packageJson.peerDependencies || {})];
 
@@ -26,7 +29,7 @@ export default [
         requireReturnsDefault: 'namespace',
       }),
       typescript({ tsconfig: './tsconfig.json' }),
-      css() 
+      css(),
     ],
   },
   {
