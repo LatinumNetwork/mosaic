@@ -1,6 +1,6 @@
 {
   "name": "@latinum-network/mosaic",
-  "version": "1.36.0",
+  "version": "1.33.0",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
@@ -24,8 +24,8 @@
     "dist"
   ],
   "engines": {
-    "node": "20.10.0",
-    "npm": "10.2.3"
+    "node": "24.x",
+    "npm": "11.x"
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.4",
