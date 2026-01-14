@@ -1,5 +1,7 @@
-import { Box, OutlinedInput, SxProps, useTheme } from '@mui/material';
-import { Icon } from 'src/index';
+import { Box, OutlinedInput, SxProps, Tooltip, useTheme } from '@mui/material';
+import { Icon, hexToRgba } from 'src/index';
+
+import { CustomTooltip } from '../CustomTooltip';
 
 export interface SearchBoxProps {
   value: string;
@@ -20,14 +22,9 @@ export const SearchBox = ({
   iconColor,
   iconSize = 22,
 }: SearchBoxProps) => {
-  const {
-    palette: {
-      uiCoolGray,
-      common: { white },
-    },
-  } = useTheme();
+  const { palette } = useTheme();
 
-  const resolvedIconColor = iconColor || uiCoolGray[400];
+  const resolvedIconColor = iconColor || palette.uiGray[400];
 
   return (
     <Box
@@ -36,7 +33,7 @@ export const SearchBox = ({
         padding: '4px',
         height: '48px',
         minHeight: '48px',
-        backgroundColor: white,
+        backgroundColor: palette.common.white,
         ...sxSearchBox,
       }}
     >
@@ -45,44 +42,44 @@ export const SearchBox = ({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         fullWidth
-        sx={{ paddingRight: 0 }}
-        endAdornment={
+        sx={{ padding: '8px 12px' }}
+        startAdornment={
           <Box
             sx={{
               display: 'flex',
-              height: '100%',
               alignItems: 'center',
-              flexShrink: 0,
+              paddingRight: '8px',
+              height: '100%',
+              color: resolvedIconColor,
+              '.MuiOutlinedInput-root:focus-within &': {
+                color: palette.uiBlue[400],
+              },
+              ...sxIconContainer,
             }}
           >
-            {value && (
-              <Icon.XCircleIcon
-                onClick={() => onChange('')}
-                size={iconSize}
-                color={resolvedIconColor}
-                style={{
-                  cursor: 'pointer',
-                  marginRight: '12px',
-                }}
-                data-testid="reset-search"
-              />
-            )}
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                paddingX: '8px',
-                height: '100%',
-                borderLeft: `1px solid ${uiCoolGray[200]}`,
-                ...sxIconContainer,
-              }}
-            >
-              <Icon.MagnifyingGlassIcon
-                size={iconSize}
-                color={resolvedIconColor}
-              />
-            </Box>
+            <Icon.MagnifyingGlassIcon size={iconSize} weight="bold" />
           </Box>
+        }
+        endAdornment={
+          value && (
+            <CustomTooltip title="Clear" arrow>
+              <Box
+                component={'span'}
+                onClick={() => onChange('')}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexShrink: 0,
+                  cursor: 'pointer',
+                  marginLeft: '8px',
+                  color: iconColor || hexToRgba(palette.uiGray[800], 65),
+                  '&:hover': { color: palette.uiGray[800], background: 'none' },
+                }}
+              >
+                <Icon.XCircleIcon size={iconSize} weight="bold" />
+              </Box>
+            </CustomTooltip>
+          )
         }
       />
     </Box>

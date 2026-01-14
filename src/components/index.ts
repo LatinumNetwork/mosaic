@@ -20,6 +20,9 @@ export type { CustomCheckboxProps } from './atoms/CustomCheckbox';
 export { CustomSelect } from './atoms/CustomSelect';
 export type { CustomSelectProps } from './atoms/CustomSelect';
 
+export { CustomTooltip } from './atoms/CustomTooltip';
+export type { CustomTooltipProps } from './atoms/CustomTooltip';
+
 export { NumberInput } from './atoms/NumberInput';
 export type { NumberInputProps } from './atoms/NumberInput';
 
