@@ -6,7 +6,7 @@ import {
   tooltipClasses,
 } from '@mui/material';
 
-export interface CustomTooltipProps extends TooltipProps {}
+export type { TooltipProps as CustomTooltipProps } from '@mui/material';
 
 const StyledTooltip = styled(
   ({ children, className, ...props }: TooltipProps) => (

@@ -1,4 +1,4 @@
-import { Box, OutlinedInput, SxProps, Tooltip, useTheme } from '@mui/material';
+import { Box, OutlinedInput, SxProps, useTheme } from '@mui/material';
 import { Icon, hexToRgba } from 'src/index';
 
 import { CustomTooltip } from '../CustomTooltip';
