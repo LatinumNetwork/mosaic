@@ -39,7 +39,7 @@ export default meta;
 
 type Story = StoryObj<typeof CustomTooltip>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: { title: 'This is a custom tooltip' },
   render: (args) => {
     console.log(args);
