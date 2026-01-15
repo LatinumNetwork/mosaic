@@ -1,6 +1,5 @@
 import { RadioProps } from '@mui/material';
 import { ArgTypes, Meta, StoryObj } from '@storybook/react';
-import { useState } from 'react';
 
 import { CustomRadio } from './CustomRadio';
 
