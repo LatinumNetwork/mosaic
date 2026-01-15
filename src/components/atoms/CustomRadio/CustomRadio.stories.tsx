@@ -19,18 +19,4 @@ export default meta;
 
 type Story = StoryObj<typeof CustomRadio>;
 
-export const Primary: Story = {
-  render: (args) => {
-    function CustomCheckboxWithState(props: typeof args) {
-      const [checked, setChecked] = useState(!!props.checked);
-      return (
-        <CustomRadio
-          {...props}
-          checked={checked}
-          onClick={() => setChecked(!checked)}
-        />
-      );
-    }
-    return <CustomCheckboxWithState {...args} />;
-  },
-};
+export const Default: Story = {};
