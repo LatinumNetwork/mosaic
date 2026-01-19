@@ -17,6 +17,9 @@ export type { ButtonProps } from './atoms/Button';
 export { CustomCheckbox } from './atoms/CustomCheckbox';
 export type { CustomCheckboxProps } from './atoms/CustomCheckbox';
 
+export { CustomRadio } from './atoms/CustomRadio';
+export type { CustomRadioProps } from './atoms/CustomRadio';
+
 export { CustomSelect } from './atoms/CustomSelect';
 export type { CustomSelectProps } from './atoms/CustomSelect';
 
