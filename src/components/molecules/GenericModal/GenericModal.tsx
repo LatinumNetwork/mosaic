@@ -9,6 +9,7 @@ import {
 import { XIcon } from '@phosphor-icons/react';
 import React from 'react';
 import { Typography } from 'src/components';
+import { hexToRgba } from 'src/index';
 
 export interface GenericModalProps {
   tag?: string;
@@ -78,10 +79,11 @@ export const GenericModal = ({
             position: 'absolute',
             right: 8,
             top: 8,
-            color: palette.uiGray[800],
+            color: hexToRgba(palette.uiGray[800], 65),
+            '&:hover': { color: palette.uiGray[800], background: 'none' },
           }}
         >
-          <XIcon color={palette.uiGray[800]} opacity={0.8} size={32} />
+          <XIcon size={32} />
         </IconButton>
       </DialogTitle>
       <DialogContent sx={{ padding: '32px' }}>{children}</DialogContent>
