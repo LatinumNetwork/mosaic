@@ -111,7 +111,11 @@ export const GraphTooltip = ({
                 gap: '4px',
               }}
             >
-              <Label isSingleItem={!row.value}>{row.label}</Label>
+              <Label isSingleItem={!row.value}>
+                {row.label && row.label.length > 20
+                  ? row.label.slice(0, 20) + '…'
+                  : row.label}
+              </Label>
               {row.value && (
                 <Value>
                   {valueAdornments && valueAdornments.prefix && (
