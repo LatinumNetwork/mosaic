@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import { Meta, StoryObj } from '@storybook/react';
-import { useCallback, useState } from 'react';
 
 import { GraphTooltip, GraphTooltipProps } from './GraphTooltip';
 

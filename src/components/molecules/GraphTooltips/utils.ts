@@ -104,7 +104,7 @@ export const getArrowStyles = (arrowColor: string, position: ArrowPosition) => {
 export const getTooltipPositionStyles = (
   position: TooltipPosition
 ): CSSProperties => {
-  let styles: CSSProperties = {};
+  const styles: CSSProperties = {};
 
   if (position === 'top-start') {
     return {

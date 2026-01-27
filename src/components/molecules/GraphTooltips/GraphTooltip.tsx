@@ -50,7 +50,7 @@ export const GraphTooltip = ({
       }
       setShouldInvertPosition(false);
     }
-  }, [tooltipRef]);
+  }, [tooltipRef, position]);
 
   if (!open) return null;
 
