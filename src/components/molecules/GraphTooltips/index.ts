@@ -1,9 +1,11 @@
-export { GraphTooltip } from './GraphTooltips';
+export { GraphTooltip } from './GraphTooltip';
+export type { GraphTooltipProps } from './GraphTooltip';
+
 export type {
+  GraphTooltipPositionProps,
   GraphTooltipData,
   ShowTooltipArgs,
   TooltipParams,
-  GraphTooltipPositionProps,
-  GraphTooltipProps,
-  StyledGraphTooltipProps,
-} from './GraphTooltips';
+} from './utils';
+
+export type { StyledGraphTooltipProps } from './components/commonComponents';

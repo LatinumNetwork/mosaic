@@ -1,7 +1,7 @@
 import { Canvas, Meta } from '@storybook/blocks';
 import { GraphTooltip } from 'src/components';
 
-import * as Stories from './GraphTooltips.stories';
+import * as Stories from './GraphTooltip.stories';
 
 <Meta title="Molecules/Graph Tooltip" component={GraphTooltip} of={Stories} />
 
@@ -9,15 +9,19 @@ import * as Stories from './GraphTooltips.stories';
 
 The `GraphTooltip` component provides an informative tooltip for graphs. It displays rows of data with labels and values, supports optional unit measurements, and can be positioned flexibly.
 
+It is **absolutely positioned** with x, y coordinates. By default it is attached to the body of the document, though it can be disabled.
+
+The tooltip ONLY inverts left if it doesn't fit to the right of the screen. The measure is calculated against the Body element.
+
 ## Usage
 
 The `GraphTooltip` component accepts the following props:
 
 - **rows:** An array of objects containing `label` and `value` properties to display.
 - **unitMeasurement:** An optional string appended to each value.
-- **top, left, right:** Positioning properties to place the tooltip.
+- **top, left:** Positioning properties to place the tooltip.
 - **arrowPosition:** Position of the tooltip's arrow (`top`, `bottom`, `left`, or `right`).
-- **xPosition, yPosition:** Alignment options for more refined positioning.
+- **position:** Position of the tooltip around the given coordinates.
 - **open:** A boolean to control whether the tooltip is visible.
 
 ## Examples
@@ -26,16 +30,10 @@ The `GraphTooltip` component accepts the following props:
 
 A default tooltip displaying two rows of data.
 
-<Canvas of={Stories.Default} />
+<Canvas of={Stories.PortalDisabled} />
 
 ### Tooltip with Unit Measurement
 
 A tooltip that displays data with a unit measurement appended.
 
 <Canvas of={Stories.WithUnitMeasurement} />
-
-### Tooltip with Custom Positioning
-
-A tooltip with custom position and arrow configuration.
-
-<Canvas of={Stories.CustomPosition} />
