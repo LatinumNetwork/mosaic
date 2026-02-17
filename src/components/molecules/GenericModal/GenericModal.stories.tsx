@@ -75,7 +75,7 @@ export const WithLeftPaneIcon: Story = {
     leftPaneIcon: <Check size={32} />,
     children: (
       <Typography>
-        This modal has a tag and an end icon on the title.
+        This modal has an icon on the left pane and a title without an end icon.
       </Typography>
     ),
     width: 600,
