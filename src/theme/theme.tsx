@@ -23,6 +23,7 @@ import {
 } from '@mui/material';
 import {
   CheckIcon,
+  InfoIcon,
   WarningIcon,
   WarningOctagonIcon,
 } from '@phosphor-icons/react';
@@ -166,7 +167,7 @@ const themeOptions: ThemeOptions = {
     MuiAlert: {
       defaultProps: {
         iconMapping: {
-          info: <></>,
+          info: <InfoIcon size={24} />,
           success: <CheckIcon size={24} />,
           warning: <WarningIcon size={24} />,
           error: <WarningOctagonIcon size={24} />,

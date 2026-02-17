@@ -76,5 +76,5 @@ export type { RangeSliderProps } from './molecules/RangeSlider';
 export { SecondaryCard } from './molecules/Cards/SecondaryCard';
 export type { SecondaryCardProps } from './molecules/Cards/SecondaryCard';
 
-export { Snackbar } from './molecules/Snackbar';
-export type { SnackbarProps, SnackbarType } from './molecules/Snackbar';
+export { Snackbar, SnackbarType } from './molecules/Snackbar';
+export type { SnackbarProps } from './molecules/Snackbar';
