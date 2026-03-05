@@ -1,12 +1,4 @@
-import {
-  Box,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  Stack,
-  useTheme,
-} from '@mui/material';
+import { Box, Dialog, IconButton, Stack, useTheme } from '@mui/material';
 import { XIcon } from '@phosphor-icons/react';
 import React from 'react';
 import { Typography } from 'src/components';
