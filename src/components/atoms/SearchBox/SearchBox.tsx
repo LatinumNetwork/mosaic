@@ -27,61 +27,55 @@ export const SearchBox = ({
   const resolvedIconColor = iconColor || palette.uiGray[400];
 
   return (
-    <Box
+    <OutlinedInput
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder={placeholder}
+      fullWidth
       sx={{
-        display: 'flex',
-        padding: '4px',
-        height: '48px',
-        minHeight: '48px',
+        padding: '8px 12px',
+        height: '40px',
         backgroundColor: palette.common.white,
         ...sxSearchBox,
       }}
-    >
-      <OutlinedInput
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        fullWidth
-        sx={{ padding: '8px 12px' }}
-        startAdornment={
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              paddingRight: '8px',
-              height: '100%',
-              color: resolvedIconColor,
-              '.MuiOutlinedInput-root:focus-within &': {
-                color: palette.uiBlue[400],
-              },
-              ...sxIconContainer,
-            }}
-          >
-            <Icon.MagnifyingGlassIcon size={iconSize} weight="bold" />
-          </Box>
-        }
-        endAdornment={
-          value && (
-            <CustomTooltip title="Clear" arrow>
-              <Box
-                component={'span'}
-                onClick={() => onChange('')}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  flexShrink: 0,
-                  cursor: 'pointer',
-                  marginLeft: '8px',
-                  color: iconColor || hexToRgba(palette.uiGray[800], 65),
-                  '&:hover': { color: palette.uiGray[800], background: 'none' },
-                }}
-              >
-                <Icon.XCircleIcon size={iconSize} weight="bold" />
-              </Box>
-            </CustomTooltip>
-          )
-        }
-      />
-    </Box>
+      startAdornment={
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            paddingRight: '8px',
+            height: '100%',
+            color: resolvedIconColor,
+            '.MuiOutlinedInput-root:focus-within &': {
+              color: palette.uiBlue[400],
+            },
+            ...sxIconContainer,
+          }}
+        >
+          <Icon.MagnifyingGlassIcon size={iconSize} weight="bold" />
+        </Box>
+      }
+      endAdornment={
+        value && (
+          <CustomTooltip title="Clear" arrow>
+            <Box
+              component={'span'}
+              onClick={() => onChange('')}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                flexShrink: 0,
+                cursor: 'pointer',
+                marginLeft: '8px',
+                color: iconColor || hexToRgba(palette.uiGray[800], 65),
+                '&:hover': { color: palette.uiGray[800], background: 'none' },
+              }}
+            >
+              <Icon.XCircleIcon size={iconSize} weight="bold" />
+            </Box>
+          </CustomTooltip>
+        )
+      }
+    />
   );
 };
