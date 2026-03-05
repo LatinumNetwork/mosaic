@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { Meta, StoryObj } from '@storybook/react';
-import { Snackbar, SnackbarProps } from 'src/components';
+import { Snackbar, SnackbarProps, SnackbarType } from 'src/components';
 
 const meta: Meta<typeof Snackbar> = {
   title: 'Molecules/Snackbar',
@@ -38,7 +38,16 @@ const sharedRender = {
 
 export const Default: Story = {
   args: {
-    type: 'info',
+    type: SnackbarType.Default,
+    message: 'This is the default snackbar',
+    ...sharedArgs,
+  },
+  ...sharedRender,
+};
+
+export const Info: Story = {
+  args: {
+    type: SnackbarType.Info,
     message: 'This is an info snackbar',
     ...sharedArgs,
   },
@@ -47,7 +56,7 @@ export const Default: Story = {
 
 export const SuccessSnackbar: Story = {
   args: {
-    type: 'success',
+    type: SnackbarType.Success,
     message: 'Operation was successful',
     ...sharedArgs,
   },
@@ -56,7 +65,7 @@ export const SuccessSnackbar: Story = {
 
 export const AlertSnackbar: Story = {
   args: {
-    type: 'alert',
+    type: SnackbarType.Alert,
     message: 'An error occurred',
     ...sharedArgs,
   },
@@ -65,7 +74,7 @@ export const AlertSnackbar: Story = {
 
 export const WarningSnackbar: Story = {
   args: {
-    type: 'warning',
+    type: SnackbarType.Warning,
     message: 'This is a warning',
     ...sharedArgs,
   },
@@ -74,7 +83,7 @@ export const WarningSnackbar: Story = {
 
 export const LoadingSnackbar: Story = {
   args: {
-    type: 'loading',
+    type: SnackbarType.Loading,
     message: 'Loading, please wait...',
     ...sharedArgs,
     showClose: false,

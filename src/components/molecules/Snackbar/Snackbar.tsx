@@ -24,7 +24,14 @@ export interface CustomStyles {
   button?: SxProps<Theme>;
 }
 
-export type SnackbarType = 'info' | 'success' | 'alert' | 'warning' | 'loading';
+export enum SnackbarType {
+  Default = 'default',
+  Info = 'info',
+  Success = 'success',
+  Alert = 'alert',
+  Warning = 'warning',
+  Loading = 'loading',
+}
 
 export interface SnackbarProps {
   id?: string;
@@ -39,15 +46,17 @@ export interface SnackbarProps {
 
 const mapTypeToSeverity = (type: SnackbarType) => {
   switch (type) {
-    case 'info':
+    case SnackbarType.Default:
       return 'info';
-    case 'success':
+    case SnackbarType.Info:
+      return 'info';
+    case SnackbarType.Success:
       return 'success';
-    case 'alert':
+    case SnackbarType.Alert:
       return 'error';
-    case 'warning':
+    case SnackbarType.Warning:
       return 'warning';
-    case 'loading':
+    case SnackbarType.Loading:
       return 'info';
     default:
       return 'info';
@@ -59,33 +68,26 @@ const setStyles = (
   type: SnackbarType,
   customIcon: ReactNode
 ) => {
-  let actionColor;
+  let fontColor = palette.common.white;
   let icon = null;
 
-  switch (type) {
-    case 'success':
-    case 'alert':
-    case 'info':
-    case 'loading':
-      actionColor = palette.common.white;
-      break;
-    case 'warning':
-      actionColor = palette.uiGray[800];
-      break;
-    default:
-      actionColor = palette.uiGray[800];
+  if (type === SnackbarType.Warning) {
+    fontColor = palette.uiGray[800];
   }
 
   if (customIcon) icon = customIcon;
-  if (type === 'loading')
+  if (type === SnackbarType.Loading)
     icon = (
       <CircularProgress
         size={20}
-        sx={{ color: actionColor, margin: '0px 4px 0px 8px' }}
+        sx={{ color: fontColor, margin: '0px 4px 0px 8px' }}
       />
     );
+  if (type === SnackbarType.Default && !customIcon) {
+    icon = false;
+  }
 
-  return { actionColor, icon };
+  return { fontColor, icon };
 };
 
 export function Snackbar({
@@ -100,7 +102,7 @@ export function Snackbar({
 }: SnackbarProps) {
   const { palette } = useTheme();
   const severity = mapTypeToSeverity(type);
-  const { actionColor, icon } = setStyles(palette, type, customIcon);
+  const { fontColor, icon } = setStyles(palette, type, customIcon);
 
   return (
     <Box
@@ -129,7 +131,10 @@ export function Snackbar({
             backgroundColor: palette.uiGreen['600'],
           },
           '&.MuiAlert-colorInfo': {
-            backgroundColor: palette.uiCoolGray[900],
+            backgroundColor:
+              type === SnackbarType.Info
+                ? palette.uiBlue[600]
+                : palette.uiCoolGray[900],
           },
           '&.MuiAlert-colorError': {
             backgroundColor: palette.uiRed[600],
@@ -137,7 +142,6 @@ export function Snackbar({
           '&.MuiAlert-colorWarning': {
             backgroundColor: palette.uiYellow[400],
           },
-          color: actionColor,
           ...customStyles?.alert,
         }}
         action={
@@ -145,7 +149,7 @@ export function Snackbar({
             {actionButton && (
               <Button
                 sx={{
-                  color: actionColor,
+                  color: fontColor,
                   padding: 0,
                   ...customStyles?.button,
                 }}
@@ -158,7 +162,7 @@ export function Snackbar({
             )}
             {showClose && (
               <IconButton onClick={onClose} size="small">
-                <CloseIcon weight="bold" size={16} color={actionColor} />
+                <CloseIcon weight="bold" size={16} color={fontColor} />
               </IconButton>
             )}
           </>

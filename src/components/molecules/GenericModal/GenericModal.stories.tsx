@@ -66,3 +66,19 @@ export const WithTagAndIcon: Story = {
   },
   ...sharedRender,
 };
+
+export const WithLeftPaneIcon: Story = {
+  args: {
+    title: {
+      text: 'Modal with Left Pane Icon',
+    },
+    leftPaneIcon: <Check size={32} />,
+    children: (
+      <Typography>
+        This modal has an icon on the left pane and a title without an end icon.
+      </Typography>
+    ),
+    width: 600,
+  },
+  ...sharedRender,
+};

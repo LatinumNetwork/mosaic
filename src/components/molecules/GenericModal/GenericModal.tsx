@@ -1,11 +1,4 @@
-import {
-  Box,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  useTheme,
-} from '@mui/material';
+import { Box, Dialog, IconButton, Stack, useTheme } from '@mui/material';
 import { XIcon } from '@phosphor-icons/react';
 import React from 'react';
 import { Typography } from 'src/components';
@@ -14,6 +7,7 @@ import { hexToRgba } from 'src/index';
 export interface GenericModalProps {
   tag?: string;
   title: { text: string; endIcon?: React.ReactNode };
+  leftPaneIcon?: React.ReactNode;
   children: React.ReactNode;
   open: boolean;
   onClose: () => void;
@@ -24,6 +18,7 @@ export interface GenericModalProps {
 export const GenericModal = ({
   tag,
   title,
+  leftPaneIcon,
   children,
   open,
   onClose,
@@ -49,44 +44,49 @@ export const GenericModal = ({
         },
       }}
     >
-      <DialogTitle
+      <Stack
         sx={{
-          color: palette.uiGray[800],
-          padding: '24px 32px 8px',
+          padding: leftPaneIcon ? '24px 32px 32px 24px' : '24px 32px 32px 32px',
+          flexDirection: 'row',
+          gap: '16px',
         }}
-        component="div"
       >
-        {tag && (
-          <Typography
-            variant="b3"
-            weight="semiBold"
-            sx={{ color: palette.collageRaspberry[500] }}
+        {leftPaneIcon && <Box flexShrink={0}>{leftPaneIcon}</Box>}
+        <Stack sx={{ gap: '8px', flexGrow: 1 }}>
+          <Box>
+            {tag && (
+              <Typography
+                variant="b3"
+                weight="semiBold"
+                sx={{ color: palette.collageRaspberry[500] }}
+              >
+                {tag}
+              </Typography>
+            )}
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Typography variant="h2" weight="semiBold">
+                {title.text}
+              </Typography>
+              {title.endIcon}
+            </Box>
+          </Box>
+          <IconButton
+            aria-label="close"
+            data-testid="close"
+            onClick={onClose}
+            sx={{
+              position: 'absolute',
+              right: 8,
+              top: 8,
+              color: hexToRgba(palette.uiGray[800], 65),
+              '&:hover': { color: palette.uiGray[800], background: 'none' },
+            }}
           >
-            {tag}
-          </Typography>
-        )}
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Typography variant="h2" weight="semiBold">
-            {title.text}
-          </Typography>
-          {title.endIcon}
-        </Box>
-        <IconButton
-          aria-label="close"
-          data-testid="close"
-          onClick={onClose}
-          sx={{
-            position: 'absolute',
-            right: 8,
-            top: 8,
-            color: hexToRgba(palette.uiGray[800], 65),
-            '&:hover': { color: palette.uiGray[800], background: 'none' },
-          }}
-        >
-          <XIcon size={32} />
-        </IconButton>
-      </DialogTitle>
-      <DialogContent sx={{ padding: '32px' }}>{children}</DialogContent>
+            <XIcon size={32} />
+          </IconButton>
+          <Box>{children}</Box>
+        </Stack>
+      </Stack>
     </Dialog>
   );
 };
