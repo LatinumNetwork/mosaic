@@ -122,6 +122,7 @@ export function Snackbar({
             display: 'flex',
             alignItems: 'center',
             padding: '4px 0',
+            margin: 0,
             marginLeft: '24px',
           },
           '.MuiAlert-icon': {
