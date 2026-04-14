@@ -1,0 +1,5 @@
+import { BoxProps } from '@mui/material';
+export type RowProps = BoxProps;
+export declare const Row: import("styled-components").StyledComponent<import("@mui/types").OverridableComponent<import("@mui/system").BoxTypeMap<{}, "div", import("@mui/material").Theme>>, import("@mui/material/styles/createTheme").Theme, import("@mui/system").MUIStyledCommonProps<import("@mui/material/styles/createTheme").Theme> & import("@mui/system").BoxOwnProps<import("@mui/material").Theme> & import("@mui/material/OverridableComponent").CommonProps & Omit<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & {
+    ref?: ((instance: HTMLDivElement | null) => void | import("react").DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES[keyof import("react").DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES]) | import("react").RefObject<HTMLDivElement> | null | undefined;
+}, keyof import("@mui/system").BoxOwnProps<import("@mui/material").Theme> | keyof import("@mui/material/OverridableComponent").CommonProps>, never>;

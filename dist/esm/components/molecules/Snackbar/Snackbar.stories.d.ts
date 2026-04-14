@@ -1,0 +1,11 @@
+import { Meta, StoryObj } from '@storybook/react';
+import { Snackbar } from 'src/components';
+declare const meta: Meta<typeof Snackbar>;
+export default meta;
+type Story = StoryObj<typeof Snackbar>;
+export declare const Default: Story;
+export declare const Info: Story;
+export declare const SuccessSnackbar: Story;
+export declare const AlertSnackbar: Story;
+export declare const WarningSnackbar: Story;
+export declare const LoadingSnackbar: Story;

@@ -1,0 +1,13 @@
+import { Meta, StoryObj } from '@storybook/react';
+import { Button } from 'src/components';
+declare const meta: Meta<typeof Button>;
+export default meta;
+type Story = StoryObj<typeof Button>;
+export declare const Primary: Story;
+export declare const Secondary: Story;
+export declare const Tertiary: Story;
+export declare const Text: Story;
+export declare const Link: Story;
+export declare const Nav: Story;
+export declare const WithIconStart: Story;
+export declare const WithIconEnd: Story;
